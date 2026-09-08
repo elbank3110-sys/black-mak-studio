@@ -58,7 +58,7 @@ export default function Pricing() {
           {PLANS.map((p, i) => (
             <Reveal key={p.tier} delay={i * 0.05} className={p.featured ? "md:-mt-4" : ""}>
               <article
-                className={`relative flex h-full flex-col border bg-surface p-8 transition duration-300 hover:-translate-y-1 ${
+                className={`pricing-card relative flex h-full flex-col border bg-surface p-8 transition duration-300 hover:-translate-y-1 ${
                   p.featured ? "border-ink shadow-[0_24px_60px_-24px_rgba(0,0,0,0.35)]" : "border-line hover:border-line-strong"
                 }`}
               >

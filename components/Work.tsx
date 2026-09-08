@@ -59,7 +59,7 @@ function Card({ w, i, eager }: { w: (typeof FEATURED)[number]; i: number; eager?
         href={w.href}
         target="_blank"
         rel="noopener"
-        className="group block"
+        className="work-card group block"
       >
         <div className="relative overflow-hidden border border-line bg-surface">
           <div className="absolute inset-0 z-[1] bg-gradient-to-br from-transparent to-white/[0.06] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -84,6 +84,7 @@ function Card({ w, i, eager }: { w: (typeof FEATURED)[number]; i: number; eager?
           </div>
           <span className="text-end font-mono text-[0.6rem] text-muted">{t(w.tagsKey)}</span>
         </div>
+        <span className="work-title-line mt-2 block" aria-hidden="true" />
       </a>
     </Reveal>
   );

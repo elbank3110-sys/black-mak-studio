@@ -27,7 +27,7 @@ export default function StickyCta() {
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
       }`}
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-bg" aria-hidden="true" />
+      <span className="sticky-dot h-1.5 w-1.5 rounded-full bg-bg" aria-hidden="true" />
       <span>{t("nav.cta")}</span>
       <span aria-hidden="true">↗</span>
     </a>

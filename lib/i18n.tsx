@@ -112,10 +112,10 @@ const EN: Dict = {
   "about.p1":
     "My background spans logo design, Arabic & Latin typography, brand identity systems, and outdoor advertising. Years on signs, streets, and large-format applications taught me that a good mark must survive the real world — not just a presentation board.",
   "about.p2":
-    "I work locally in Egypt and worldwide, in Arabic and English, with an AI-augmented creative workflow that speeds up exploration without replacing the designer's judgment.",
+    "I work locally in Egypt and worldwide, in Arabic and English, with an AI-augmented creative workflow that speeds up exploration without replacing the designer's judgment. The practice is built on long-term client relationships, repeat work, and referrals.",
   "about.stat1": "Years of Practice",
   "about.stat2": "Logos Delivered",
-  "about.stat3": "Built on Repeat Work & Referrals",
+  "about.stat3": "Bilingual Identities — One System",
   "about.cv": "View CV",
   "cv.index": "CURRICULUM VITÆ",
   "cv.title": "Muhamed Alaa — CV",
@@ -454,10 +454,10 @@ const AR: Dict = {
   "about.p1":
     "خلفيتي تمتد بين تصميم الشعارات، الخط العربي واللاتيني، أنظمة الهوية التجارية، والإعلانات الخارجية. سنوات على اللوحات والشوارع والتطبيقات كبيرة الحجم علّمتني أن العلامة الجيدة يجب أن تنجو في العالم الحقيقي لا على لوحة العرض فقط.",
   "about.p2":
-    "أعمل محليًا في مصر وحول العالم، بالعربية والإنجليزية، بأسلوب عمل إبداعي معزَّز بالذكاء الاصطناعي يسرّع الاستكشاف دون أن يحل محل حكم المصمم.",
+    "أعمل محليًا في مصر وحول العالم، بالعربية والإنجليزية، بأسلوب عمل إبداعي معزَّز بالذكاء الاصطناعي يسرّع الاستكشاف دون أن يحل محل حكم المصمم. الممارسة مبنية على علاقات عملاء طويلة الأمد وعمل متكرر وإحالات.",
   "about.stat1": "سنوات من الخبرة",
   "about.stat2": "شعار تم تسليمها",
-  "about.stat3": "مبنية على عمل متكرر وإحالات",
+  "about.stat3": "هويات ثنائية اللغة — نظام واحد",
   "about.cv": "عرض السيرة",
   "cv.index": "السيرة الذاتية",
   "cv.title": "محمد علاء — السيرة الذاتية",

@@ -378,3 +378,73 @@ html[lang="ar"] .eyebrow {
 [data-theme="light"] .icon-sun {
   display: block;
 }
+
+/* ============================================================
+   Craft refinements — metallic sheen, tactile interactions
+   ============================================================ */
+
+/* display headlines: subtle metallic gradient on the <em> accents */
+.display em {
+  background: linear-gradient(100deg, var(--ink) 20%, var(--muted) 50%, var(--ink) 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* pricing cards: premium tactile hover — sheen sweep */
+.pricing-card {
+  position: relative;
+  overflow: hidden;
+}
+.pricing-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(245, 245, 241, 0.06) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.pricing-card:hover::after {
+  transform: translateX(120%);
+}
+
+/* eyebrow rule lines: fine tick before labels */
+.eyebrow::before {
+  content: "— ";
+  color: var(--faint);
+}
+
+/* selected-work cards: underline draw on hover */
+.work-card .work-title-line {
+  background: linear-gradient(90deg, var(--ink), var(--ink));
+  height: 1px;
+  width: 0;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.work-card:hover .work-title-line {
+  width: 100%;
+}
+
+/* sticky CTA: pulse dot breathing */
+@keyframes breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.75); }
+}
+.sticky-dot {
+  animation: breathe 2.2s ease-in-out infinite;
+}
+
+/* focus-visible polish for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-card::after,
+  .sticky-dot {
+    animation: none;
+    transition: none;
+  }
+}
