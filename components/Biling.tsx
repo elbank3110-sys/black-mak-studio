@@ -18,12 +18,12 @@ export default function Biling() {
           </div>
         </Reveal>
         <Reveal delay={0.15}>
-          <div className="mt-12 flex flex-wrap items-center justify-between gap-8 border-t border-line pt-8 font-mono text-[0.72rem] uppercase tracking-[0.2em] text-faint">
-            <span dir="ltr">عربي — AR</span>
+          <div className="biling-row mt-12 flex flex-wrap items-center justify-between gap-8 border-t border-line pt-8 font-mono text-[0.72rem] uppercase tracking-[0.2em] text-faint">
+            <span className="biling-chip" dir="ltr">عربي — AR</span>
             <span className="text-ink">◆</span>
-            <span dir="ltr">LATIN — EN</span>
+            <span className="biling-chip" dir="ltr">LATIN — EN</span>
             <span className="text-ink">◆</span>
-            <span dir="ltr">ONE SYSTEM</span>
+            <span className="biling-chip" dir="ltr">ONE SYSTEM</span>
           </div>
         </Reveal>
 

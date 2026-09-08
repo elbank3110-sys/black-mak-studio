@@ -43,12 +43,12 @@ export default function Payment() {
             </div>
             <div>
               {ROWS.map((r) => (
-                <button
-                  key={r.value}
-                  type="button"
-                  onClick={() => copy(r.value)}
-                  className="grid w-full grid-cols-[1fr_auto_auto] items-center gap-4 border-b border-line py-5 text-start"
-                >
+              <button
+                key={r.value}
+                type="button"
+                onClick={() => copy(r.value)}
+                className={`grid w-full grid-cols-[1fr_auto_auto] items-center gap-4 border-b border-line py-5 text-start ${copied === r.value ? "copy-flash" : ""}`}
+              >
                   <span className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted">{t(r.label)}</span>
                   <strong className="font-mono text-[0.85rem] font-normal" dir="ltr">{r.value}</strong>
                   <span className={`font-mono text-[0.6rem] uppercase tracking-[0.1em] transition-colors ${copied === r.value ? "text-ink" : "text-muted"}`}>

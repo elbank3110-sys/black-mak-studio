@@ -30,8 +30,8 @@ export default function Who() {
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {CLIENTS.map((c, i) => (
             <Reveal key={i} delay={i * 0.04}>
-              <div className="border border-line bg-surface p-6 text-center transition duration-300 hover:-translate-y-1 hover:border-line-strong">
-                <span className="block text-2xl text-faint">{c.icon}</span>
+              <div className="who-card border border-line bg-surface p-6 text-center transition duration-300 hover:-translate-y-1 hover:border-line-strong">
+                <span className="who-icon block text-2xl text-faint">{c.icon}</span>
                 <span className="mt-3 block text-[0.85rem] font-bold">{t(c.label)}</span>
               </div>
             </Reveal>

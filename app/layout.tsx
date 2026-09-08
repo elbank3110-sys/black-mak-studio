@@ -3,6 +3,7 @@ import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
 import WebGLBackground from "@/components/WebGLBackground";
 import UIEffects from "@/components/UIEffects";
+import MagicLayer from "@/components/MagicLayer";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Intro />
           <WebGLBackground />
           <UIEffects />
+          <MagicLayer />
           <Header />
           {children}
           <Footer />

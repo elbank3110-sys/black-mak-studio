@@ -114,7 +114,7 @@ export default function Work() {
         <Reveal delay={0.1}>
           <div className="mt-[clamp(3rem,7vw,6rem)] mb-[clamp(1.5rem,4vw,3rem)] flex items-center gap-4">
             <span className="eyebrow text-faint">{t("work.moreIndex")}</span>
-            <span className="h-px flex-1 bg-line" />
+            <span className="hairline-draw h-px flex-1 bg-line" />
           </div>
         </Reveal>
 

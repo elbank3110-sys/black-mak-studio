@@ -17,7 +17,7 @@ export default function Hero() {
         <Reveal>
           <div className="flex items-center gap-4 text-muted">
             <span className="h-px w-12 bg-ink" />
-            <span className="eyebrow">{t("hero.kicker")}</span>
+            <span className="eyebrow kicker-shimmer" data-words>{t("hero.kicker")}</span>
           </div>
         </Reveal>
 
@@ -34,11 +34,11 @@ export default function Hero() {
             </Reveal>
             <Reveal delay={0.16}>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#start-a-project" className="btn btn-light">
+                <a href="#start-a-project" data-magnetic className="btn btn-light">
                   <span>{t("hero.cta")}</span>
                   <span>↗</span>
                 </a>
-                <a href="#work" className="btn btn-ghost">
+                <a href="#work" data-magnetic className="btn btn-ghost">
                   <span>{t("hero.work")}</span>
                   <span>↓</span>
                 </a>

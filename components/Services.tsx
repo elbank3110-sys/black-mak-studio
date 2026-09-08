@@ -32,9 +32,9 @@ export default function Services() {
             <Reveal key={s.no} delay={i * 0.04}>
               <a
                 href="#start-a-project"
-                className="group grid grid-cols-[80px_1fr_auto] items-center gap-8 border-b border-line py-[clamp(1.5rem,3vw,2.7rem)] transition-colors duration-300 hover:bg-surface"
+                className="service-row group grid grid-cols-[80px_1fr_auto] items-center gap-8 border-b border-line py-[clamp(1.5rem,3vw,2.7rem)] transition-colors duration-300 hover:bg-surface"
               >
-                <span className="font-mono text-faint">{s.no}</span>
+                <span className="service-no font-mono text-faint">{s.no}</span>
                 <div>
                   <h3 className="text-[clamp(1.3rem,3vw,2.2rem)] font-bold leading-none tracking-tight">{t(s.name)}</h3>
                   <p className="mt-3 max-w-[54ch] text-muted">{t(s.desc)}</p>
