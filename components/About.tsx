@@ -81,7 +81,7 @@ export default function About() {
                 </div>
                 <div className="p-5">
                   <b className="block text-[clamp(2rem,4vw,3.8rem)] font-bold leading-none tracking-tight" data-count="95" data-suffix="%">95%</b>
-                  <span className="mt-3 block font-mono text-[0.6rem] uppercase tracking-[0.13em] text-muted">{t("about.stat3")}</span>
+                  <span className="mt-3 block max-w-[16ch] font-mono text-[0.6rem] uppercase tracking-[0.13em] text-muted">{t("about.stat3")}</span>
                 </div>
               </div>
 

@@ -18,10 +18,12 @@ export default function Who() {
     <section className="section border-t border-line py-[var(--section)]">
       <div className="container">
         <Reveal>
-          <div className="mb-[clamp(2.5rem,6vw,5.2rem)]">
-            <span className="eyebrow mb-4 block text-faint">{t("who.index")}</span>
-            <h2 className="display text-[clamp(3rem,7vw,7rem)]" dangerouslySetInnerHTML={{ __html: t("who.title") }} />
-            <p className="lede mt-6 max-w-[52ch]">{t("who.note")}</p>
+          <div className="mb-[clamp(2.5rem,6vw,5.2rem)] flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <span className="eyebrow mb-4 block text-faint">{t("who.index")}</span>
+              <h2 className="display text-[clamp(3rem,7vw,7rem)]" dangerouslySetInnerHTML={{ __html: t("who.title") }} />
+            </div>
+            <p className="lede max-w-[46ch]">{t("who.note")}</p>
           </div>
         </Reveal>
 
@@ -36,8 +38,17 @@ export default function Who() {
           ))}
         </div>
 
-        <Reveal delay={0.3}>
-          <p className="mt-10 max-w-[52ch] text-[0.85rem] text-muted">{t("who.closing")}</p>
+        <Reveal delay={0.15}>
+          <div className="mt-10 border border-line bg-surface p-[clamp(1.2rem,3vw,2.2rem)]">
+            <strong className="block text-[0.95rem] font-bold">{t("who.fitTitle")}</strong>
+            <p className="mt-3 max-w-[72ch] text-[0.9rem] text-muted">{t("who.fit")}</p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.25}>
+          <p className="mt-10 max-w-[62ch] border-s-2 border-ink ps-5 text-[clamp(0.95rem,1.4vw,1.1rem)] font-medium leading-relaxed">
+            {t("who.closing")}
+          </p>
         </Reveal>
       </div>
     </section>

@@ -6,14 +6,14 @@ import Reveal from "./Reveal";
 export default function Statement() {
   const { t } = useI18n();
   return (
-    <section className="section border-y border-line bg-surface py-[clamp(4.5rem,10vw,9rem)]">
-      <div className="container flex flex-col items-end justify-between gap-8 md:flex-row">
+    <section className="section border-y border-line bg-surface py-[clamp(4rem,9vw,8rem)]">
+      <div className="container flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <Reveal>
-          <h2 className="display text-[clamp(2.4rem,5.8vw,6.5rem)]" dangerouslySetInnerHTML={{ __html: t("statement.title") }} />
+          <h2 className="display max-w-[24ch] text-[clamp(2rem,4.8vw,5rem)]" dangerouslySetInnerHTML={{ __html: t("work.cta.line") }} />
         </Reveal>
         <Reveal delay={0.1}>
-          <a href="#start-a-project" className="btn btn-light">
-            <span>{t("statement.cta")}</span>
+          <a href="#start-a-project" className="btn btn-light shrink-0">
+            <span>{t("work.cta.btn")}</span>
             <span>↗</span>
           </a>
         </Reveal>

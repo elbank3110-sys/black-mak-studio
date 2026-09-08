@@ -34,13 +34,13 @@ export default function Hero() {
             </Reveal>
             <Reveal delay={0.16}>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#work" className="btn btn-light">
-                  <span>{t("hero.work")}</span>
-                  <span>↓</span>
-                </a>
-                <a href="#start-a-project" className="btn btn-ghost">
+                <a href="#start-a-project" className="btn btn-light">
                   <span>{t("hero.cta")}</span>
                   <span>↗</span>
+                </a>
+                <a href="#work" className="btn btn-ghost">
+                  <span>{t("hero.work")}</span>
+                  <span>↓</span>
                 </a>
               </div>
             </Reveal>

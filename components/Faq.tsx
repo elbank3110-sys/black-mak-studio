@@ -7,6 +7,7 @@ const FAQ = [
   { q: "faq.1q", a: "faq.1a" },
   { q: "faq.2q", a: "faq.2a" },
   { q: "faq.3q", a: "faq.3a" },
+  { q: "faq.4q", a: "faq.4a" },
 ];
 
 export default function Faq() {

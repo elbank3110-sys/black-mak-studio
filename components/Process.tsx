@@ -8,6 +8,7 @@ const PROCESS = [
   { n: "02", title: "process.2title", text: "process.2text" },
   { n: "03", title: "process.3title", text: "process.3text" },
   { n: "04", title: "process.4title", text: "process.4text" },
+  { n: "05", title: "process.5title", text: "process.5text" },
 ];
 
 export default function Process() {
@@ -25,12 +26,12 @@ export default function Process() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 border-y border-line sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 border-y border-line sm:grid-cols-2 lg:grid-cols-5">
           {PROCESS.map((p, i) => (
             <Reveal key={p.n} delay={i * 0.05}>
               <div className="border-line p-7 transition-colors duration-300 hover:bg-surface sm:border-e lg:[&:not(:last-child)]:border-e">
                 <span className="font-mono text-faint">{p.n}</span>
-                <h3 className="mb-3 mt-16 text-[clamp(1.4rem,2.5vw,2.1rem)] font-bold tracking-tight">{t(p.title)}</h3>
+                <h3 className="mb-3 mt-14 text-[clamp(1.3rem,2.3vw,1.8rem)] font-bold tracking-tight">{t(p.title)}</h3>
                 <p className="max-w-[22ch] text-muted">{t(p.text)}</p>
               </div>
             </Reveal>
