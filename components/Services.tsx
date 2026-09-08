@@ -5,10 +5,10 @@ import Reveal from "./Reveal";
 
 const SERVICES = [
   { no: "S.01", name: "services.s1name", desc: "services.s1desc", type: "Logo Design" },
-  { no: "S.02", name: "services.s2name", desc: "services.s2desc", type: "Minimal Logo Design" },
-  { no: "S.03", name: "services.s3name", desc: "services.s3desc", type: "Typographic Logo Design" },
-  { no: "S.04", name: "services.s4name", desc: "services.s4desc", type: "Brand Identity / Visual Identity" },
-  { no: "S.05", name: "services.s5name", desc: "services.s5desc", type: "Creative Visual Design" },
+  { no: "S.02", name: "services.s2name", desc: "services.s2desc", type: "Visual Identity Systems" },
+  { no: "S.03", name: "services.s3name", desc: "services.s3desc", type: "Arabic & Latin Typography" },
+  { no: "S.04", name: "services.s4name", desc: "services.s4desc", type: "Applied Design & Outdoor" },
+  { no: "S.05", name: "services.s5name", desc: "services.s5desc", type: "Custom Digital Brand Experience" },
 ];
 
 export default function Services() {

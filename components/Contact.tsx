@@ -13,8 +13,9 @@ export default function Contact() {
     const fd = new FormData(e.currentTarget);
     const name = fd.get("name") || "";
     const type = fd.get("type") || "";
+    const budget = fd.get("budget") || "";
     const msg = fd.get("msg") || "";
-    const text = `${t("wa.msg")}\n${name} — ${type}\n${msg}`;
+    const text = `${t("wa.msg")}\n${name} — ${type}${budget ? ` — Budget: ${budget}` : ""}\n${msg}`;
     window.open(`https://wa.me/201002462821?text=${encodeURIComponent(text)}`, "_blank");
     setSent(true);
   };
@@ -73,11 +74,21 @@ export default function Contact() {
                   <span className="text-[0.62rem] text-muted">{t("form.type")}</span>
                   <select name="type" required className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink">
                     <option value="Logo Design">{t("form.opt1")}</option>
-                    <option value="Minimal Logo Design">{t("form.opt2")}</option>
-                    <option value="Typographic Logo Design">{t("form.opt3")}</option>
-                    <option value="Brand & Visual Identity">{t("form.opt4")}</option>
-                    <option value="Creative Visual Design">{t("form.opt5")}</option>
-                    <option value="Outdoor Advertising">{t("form.opt6")}</option>
+                    <option value="Visual Identity System">{t("form.opt2")}</option>
+                    <option value="Arabic / Latin Typography">{t("form.opt3")}</option>
+                    <option value="Applied Design / Outdoor">{t("form.opt4")}</option>
+                    <option value="Custom Digital Experience">{t("form.opt5")}</option>
+                  </select>
+                </label>
+                <label className="flex flex-col gap-2 sm:col-span-2">
+                  <span className="text-[0.62rem] text-muted">{t("form.budget")}</span>
+                  <select name="budget" className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink">
+                    <option value="">{t("form.budgetPh")}</option>
+                    <option value="Under $300">{t("form.budgetOpt1")}</option>
+                    <option value="$300–$600">{t("form.budgetOpt2")}</option>
+                    <option value="$600–$1,500">{t("form.budgetOpt3")}</option>
+                    <option value="$1,500+">{t("form.budgetOpt4")}</option>
+                    <option value="Not sure yet">{t("form.budgetOpt5")}</option>
                   </select>
                 </label>
                 <label className="flex flex-col gap-2 sm:col-span-2">

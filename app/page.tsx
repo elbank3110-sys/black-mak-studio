@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import About from "@/components/About";
 import Journey from "@/components/Journey";
 import Process from "@/components/Process";
+import Who from "@/components/Who";
 import Pricing from "@/components/Pricing";
 import Payment from "@/components/Payment";
 import Faq from "@/components/Faq";
@@ -22,6 +23,7 @@ export default function Page() {
       <About />
       <Journey />
       <Process />
+      <Who />
       <Pricing />
       <Payment />
       <Faq />
