@@ -26,6 +26,16 @@ export default function Biling() {
             <span dir="ltr">ONE SYSTEM</span>
           </div>
         </Reveal>
+
+        <Reveal delay={0.1}>
+          <div className="mt-[clamp(3rem,7vw,6rem)] grid grid-cols-1 gap-[clamp(2rem,5vw,4rem)] border border-line bg-bg p-[clamp(1.5rem,4vw,3.5rem)] lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <span className="eyebrow mb-4 block text-faint">{t("bts.index")}</span>
+              <h3 className="display text-[clamp(1.6rem,3.6vw,2.8rem)]">{t("bts.title")}</h3>
+            </div>
+            <p className="text-[clamp(1rem,1.6vw,1.2rem)] leading-relaxed text-muted">{t("bts.text")}</p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

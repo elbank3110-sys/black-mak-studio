@@ -105,6 +105,16 @@ export default function Pricing() {
           </div>
         </Reveal>
 
+        <Reveal delay={0.18}>
+          <div className="mt-6 flex flex-col items-start justify-between gap-6 border-t border-line pt-8 md:flex-row md:items-center">
+            <p className="display max-w-[28ch] text-[clamp(1.3rem,2.6vw,2rem)]">{t("pricing.ctaQ")}</p>
+            <a href="#start-a-project" className="btn btn-light shrink-0">
+              <span>{t("pricing.ctaBtn")}</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </Reveal>
+
         <Reveal delay={0.2}>
           <p className="mt-8 max-w-[72ch] text-[0.72rem] leading-relaxed text-faint">
             {t("pricing.disclaimer")}

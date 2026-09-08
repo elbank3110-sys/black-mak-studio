@@ -42,6 +42,8 @@ const EN: Dict = {
   "signal.4": "04 / WORLDWIDE COLLABORATION",
 
   "work.index": "01 / SELECTED WORK",
+  "work.moreIndex": "MORE WORK",
+  "work.moreTitle": "More<br/><em>work.</em>",
   "work.title": "Work that holds<br/><em>its own.</em>",
   "work.note":
     "A focused selection of logo design, typography, identity systems, and applied communication. Every project starts with a question: what should this mark make people feel?",
@@ -68,6 +70,7 @@ const EN: Dict = {
   "work.cta.btn": "Start a Brand Project",
 
   "services.index": "02 / SERVICES",
+  "services.incLabel": "WHAT'S INCLUDED —",
   "services.title": "What I<br/><em>build.</em>",
   "services.note":
     "An independent design practice focused on logos, visual identities, typography, and distinctive brand systems.",
@@ -85,7 +88,17 @@ const EN: Dict = {
     "Turning the identity into a practical system for packaging, signage, print, social, and digital use.",
   "services.s5name": "Digital Brand Experiences",
   "services.s5desc":
-    "Custom portfolio and brand microsites designed around the identity — not generic templates dressed in a logo. Available as an extension of selected branding projects or as a standalone digital identity experience.",
+    "Custom portfolio and brand microsites designed around the identity — not generic templates dressed in a logo. This studio itself is an example of the digital brand experiences I build. Available as an extension of selected branding projects or as a standalone digital identity experience.",
+  "services.s1inc": "Concepts · Refinement rounds · Final files (AI · PDF · PNG · SVG)",
+  "services.s2inc": "Logo system · Color & type · Guidelines · Applications",
+  "services.s3inc": "Custom letterforms · Bilingual lockups · Typographic system",
+  "services.s4inc": "Packaging · Signage · Print · Social & digital",
+  "services.s5inc": "Custom microsite · Visual direction · Interactive sections · Conversion content",
+  "services.s6inc": "Identity audit · New direction · Transition system",
+  "services.portTitle": "NEED A PORTFOLIO LIKE THIS FOR YOUR OWN WORK?",
+  "services.portText":
+    "I also build custom portfolio microsites for designers, photographers, creative professionals, and brands.",
+  "services.portCta": "Request a Digital Project",
   "services.s6name": "Rebrand",
   "services.s6desc":
     "For businesses that have outgrown their current identity and need a clearer, more distinctive visual direction.",
@@ -208,6 +221,8 @@ const EN: Dict = {
   "pricing.upsellQ": "Need the identity translated into digital?",
   "pricing.upsellA": "Extend the system into a custom digital brand experience.",
   "pricing.upsellCta": "Explore Digital Brand Experiences",
+  "pricing.ctaQ": "Know what you need? Send the brief. I'll take it from there.",
+  "pricing.ctaBtn": "Request a Project Estimate",
 
   "payment.index": "08 / PAYMENT",
   "payment.title": "Payment<br/><em>after approval.</em>",
@@ -279,6 +294,11 @@ const EN: Dict = {
   "biling.text":
     "I design bilingual identities where Arabic lettering and Latin typography feel like one coherent visual language — not two separate systems.",
 
+  "bts.index": "DESIGNED BEYOND THE SCREEN",
+  "bts.title": "A strong identity has to survive more than a presentation mockup.",
+  "bts.text":
+    "It has to work at 24px, on packaging, on signage, in monochrome, and from a distance. Years of outdoor and large-format work built that instinct into every mark I draw.",
+
   "contact.index": "10 / START A BRAND PROJECT",
   "contact.title": "Have a brand worth building?",
   "contact.titleEm": "Let's give it an identity that can carry it forward.",
@@ -326,7 +346,8 @@ const EN: Dict = {
   "form.submit": "Send inquiry",
   "form.sent": "Thanks — opening WhatsApp with your brief.",
 
-  "footer.tagline": "A premium logo & visual identity practice by Muhamed Alaa Elbank.",
+  "footer.tagline": "Marks with meaning. Identities with character. A premium logo & visual identity practice by Muhamed Alaa Elbank.",
+  "footer.sig": "Marks with meaning. Identities with character.",
   "footer.end": "Designed with intent. New Valley, Egypt.",
   "footer.rights": "© 2026 BLACK-MAK",
 
@@ -375,6 +396,8 @@ const AR: Dict = {
   "signal.4": "04 / تعاون حول العالم",
 
   "work.index": "01 / أعمال مختارة",
+  "work.moreIndex": "أعمال أخرى",
+  "work.moreTitle": "أعمال<br/><em>أخرى.</em>",
   "work.title": "أعمال تثبت<br/><em>حضورها.</em>",
   "work.note":
     "مختارات مركّزة من تصميم الشعارات، والتايبوغرافي، وأنظمة الهوية، والتواصل البصري التطبيقي. كل مشروع يبدأ بسؤال: ماذا يجب أن يجعل هذا الشعار الناس يشعرون؟",
@@ -398,6 +421,7 @@ const AR: Dict = {
   "statement.cta": "ابنِ علامتك",
 
   "services.index": "02 / الخدمات",
+  "services.incLabel": "ما يشمله —",
   "services.title": "ما الذي<br/><em>أبنيه.</em>",
   "services.note": "خدمات مركّزة وقِصَرُها مقصود. العمق قبل الاتساع — من الاستراتيجية إلى نظام الهوية الكامل.",
   "services.s1name": "تصميم شعار",
@@ -409,7 +433,16 @@ const AR: Dict = {
   "services.s4name": "تطبيقات العلامة",
   "services.s4desc": "تحويل الهوية إلى نظام عملي للتغليف واللوحات والمطبوعات والسوشيال والرقمي.",
   "services.s5name": "تجارب رقمية للعلامة",
-  "services.s5desc": "مواقع بورتفوليو وبراند مايكروسايت مصممة حول الهوية — لا قوالب عامة بملبس شعار. متاحة كامتداد لمشاريع الهوية المختارة أو كتجربة رقمية مستقلة.",
+  "services.s5desc": "مواقع بورتفوليو وبراند مايكروسايت مصممة حول الهوية — لا قوالب عامة بملبس شعار. هذا الاستوديو نفسه مثال على التجارب الرقمية التي أبنيها. متاحة كامتداد لمشاريع الهوية المختارة أو كتجربة رقمية مستقلة.",
+  "services.s1inc": "مفاهيم · جولات صقل · ملفات نهائية (AI · PDF · PNG · SVG)",
+  "services.s2inc": "نظام الشعار · اللون والخط · الدليل · التطبيقات",
+  "services.s3inc": "حروف مخصصة · قفل ثنائي اللغة · نظام تايبوغرافي",
+  "services.s4inc": "تغليف · لوحات · مطبوعات · سوشيال ورقمي",
+  "services.s5inc": "مايكروسايت مخصص · اتجاه بصري · أقسام تفاعلية · محتوى تحويلي",
+  "services.s6inc": "تدقيق الهوية · اتجاه جديد · نظام انتقال",
+  "services.portTitle": "تحتاج بورتفوليو مثل هذا لعملك أنت؟",
+  "services.portText": "أبني أيضًا مواقع بورتفوليو مخصصة للمصممين والمصورين والمهنيين الإبداعيين والعلامات.",
+  "services.portCta": "اطلب مشروعًا رقميًا",
   "services.s6name": "إعادة تصميم الهوية",
   "services.s6desc": "للأعمال التي تجاوزت هويتها الحالية وتحتاج اتجاهًا بصريًا أوضح وأكثر تميزًا.",
 
@@ -523,6 +556,8 @@ const AR: Dict = {
   "pricing.upsellQ": "تحتاج الهوية مترجمة إلى الرقمي؟",
   "pricing.upsellA": "امتد النظام إلى تجربة رقمية مخصصة للعلامة.",
   "pricing.upsellCta": "استكشف التجارب الرقمية للعلامة",
+  "pricing.ctaQ": "تعرف ما تحتاجه؟ أرسل البريف وأنا أكمل من هناك.",
+  "pricing.ctaBtn": "اطلب عرض مشروع",
   "pricing.4name": "التصميم التطبيقي والخارجي",
   "pricing.4a": "لوحات، شعارات، مطبوعات",
   "pricing.4b": "جريء ومقروء من بعيد",
@@ -616,7 +651,8 @@ const AR: Dict = {
   "form.submit": "أرسل الاستفسار",
   "form.sent": "شكرًا — نفتح واتساب مع ملخّصك.",
 
-  "footer.tagline": "ممارسة شعارات وهوية بصرية متميّزة بقيادة محمد علاء البنك.",
+  "footer.tagline": "علامات تحمل معنى. هويات لها شخصية. ممارسة شعارات وهوية بصرية متميّزة بقيادة محمد علاء البنك.",
+  "footer.sig": "علامات تحمل معنى. هويات لها شخصية.",
   "footer.end": "مصمَّم بهوية. الوادي الجديد، مصر.",
   "footer.rights": "© 2026 BLACK-MAK",
 
@@ -653,6 +689,11 @@ const AR: Dict = {
   "biling.title": "مبني للعربية.<br/>مبني للاتينية.<br/><em>مبني ليعملا معًا.</em>",
   "biling.text":
     "أصمم هويات ثنائية اللغة حيث يبدو الحرف العربي والتايبوغرافي اللاتيني لغة بصرية واحدة متماسكة — لا نظامين منفصلين.",
+
+  "bts.index": "مصمم ما وراء الشاشة",
+  "bts.title": "الهوية القوية يجب أن تنجو من أكثر من موك-أب عرض.",
+  "bts.text":
+    "يجب أن تعمل على 24 بكسل، وعلى التغليف، وعلى اللوحات، وبأحادي اللون، ومن مسافة. سنوات العمل الخارجي والصيغ الكبيرة بنت هذا الحسّ في كل علامة أرسمها.",
 
   "work.cta.line": "أعجبك ما ترى؟<br/><em>علامتك تستحق نفس مستوى التفكير.</em>",
   "work.cta.btn": "ابدأ مشروع علامة",

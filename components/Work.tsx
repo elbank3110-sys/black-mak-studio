@@ -3,7 +3,7 @@
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
 
-const WORK = [
+const FEATURED = [
   {
     n: "01",
     href: "https://www.behance.net/gallery/181721153/LOGOS-VOL2",
@@ -30,6 +30,17 @@ const WORK = [
     tagsKey: "work.p3tags",
     hover: "View on Behance ↗",
   },
+];
+
+const MORE = [
+  {
+    n: "04",
+    href: "https://www.behance.net/gallery/224445345/MAKEEN",
+    img: "/images/work/makeen/makeen-calligraphy.jpg",
+    titleKey: "work.p4title",
+    tagsKey: "work.p4tags",
+    hover: "View on Behance ↗",
+  },
   {
     n: "05",
     href: "https://www.behance.net/gallery/67494575/CALLIGRAPHI-WORKS",
@@ -38,16 +49,45 @@ const WORK = [
     tagsKey: "work.p5tags",
     hover: "View on Behance ↗",
   },
-  {
-    n: "04",
-    href: "https://www.behance.net/gallery/224445345/MAKEEN",
-    img: "/images/work/makeen/makeen-calligraphy.jpg",
-    titleKey: "work.p4title",
-    tagsKey: "work.p4tags",
-    wide: true,
-    hover: "View on Behance ↗",
-  },
 ];
+
+function Card({ w, i, eager }: { w: (typeof FEATURED)[number]; i: number; eager?: boolean }) {
+  const { t } = useI18n();
+  return (
+    <Reveal delay={i * 0.05} className={w.cls}>
+      <a
+        href={w.href}
+        target="_blank"
+        rel="noopener"
+        className="group block"
+      >
+        <div className="relative overflow-hidden border border-line bg-surface">
+          <div className="absolute inset-0 z-[1] bg-gradient-to-br from-transparent to-white/[0.06] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <img
+            src={w.img}
+            alt={t(w.titleKey)}
+            loading={eager ? "eager" : "lazy"}
+            className={`w-full object-cover transition duration-700 group-hover:scale-[1.045] ${
+              w.feature ? "aspect-[16/10]" : "aspect-[16/10]"
+            }`}
+          />
+          <span className="absolute bottom-4 right-4 z-[2] bg-white px-3 py-2 font-mono text-[0.62rem] uppercase tracking-[0.1em] text-black opacity-0 transition duration-300 group-hover:opacity-100">
+            {w.hover}
+          </span>
+        </div>
+        <div className="flex items-start justify-between gap-4 border-b border-line py-5">
+          <div className="flex items-baseline gap-4">
+            <span className="font-mono text-[0.6rem] text-faint">{w.n}</span>
+            <h3 className="text-[clamp(1.15rem,2vw,1.75rem)] font-bold leading-[1.05] tracking-tight">
+              {t(w.titleKey)}
+            </h3>
+          </div>
+          <span className="text-end font-mono text-[0.6rem] text-muted">{t(w.tagsKey)}</span>
+        </div>
+      </a>
+    </Reveal>
+  );
+}
 
 export default function Work() {
   const { t } = useI18n();
@@ -65,39 +105,21 @@ export default function Work() {
         </Reveal>
 
         <div className="grid grid-cols-1 gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-[clamp(2.5rem,6vw,6rem)] lg:grid-cols-[1.45fr_1fr]">
-          {WORK.map((w, i) => (
-            <Reveal key={w.n} delay={i * 0.05} className={w.cls}>
-              <a
-                href={w.href}
-                target={w.href.startsWith("http") ? "_blank" : undefined}
-                rel="noopener"
-                className={`group block ${w.wide ? "lg:col-span-2" : ""}`}
-              >
-                <div className="relative overflow-hidden border border-line bg-surface">
-                  <div className="absolute inset-0 z-[1] bg-gradient-to-br from-transparent to-white/[0.06] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  <img
-                    src={w.img}
-                    alt={t(w.titleKey)}
-                    loading={i < 2 ? "eager" : "lazy"}
-                    className={`w-full object-cover transition duration-700 group-hover:scale-[1.045] ${
-                      w.feature ? "aspect-[16/10]" : w.wide ? "aspect-[16/7]" : "aspect-[16/10]"
-                    }`}
-                  />
-                  <span className="absolute bottom-4 right-4 z-[2] bg-white px-3 py-2 font-mono text-[0.62rem] uppercase tracking-[0.1em] text-black opacity-0 transition duration-300 group-hover:opacity-100">
-                    {w.hover}
-                  </span>
-                </div>
-                <div className="flex items-start justify-between gap-4 border-b border-line py-5">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-[0.6rem] text-faint">{w.n}</span>
-                    <h3 className="text-[clamp(1.15rem,2vw,1.75rem)] font-bold leading-[1.05] tracking-tight">
-                      {t(w.titleKey)}
-                    </h3>
-                  </div>
-                  <span className="text-end font-mono text-[0.6rem] text-muted">{t(w.tagsKey)}</span>
-                </div>
-              </a>
-            </Reveal>
+          {FEATURED.map((w, i) => (
+            <Card key={w.n} w={w} i={i} eager={i < 2} />
+          ))}
+        </div>
+
+        <Reveal delay={0.1}>
+          <div className="mt-[clamp(3rem,7vw,6rem)] mb-[clamp(1.5rem,4vw,3rem)] flex items-center gap-4">
+            <span className="eyebrow text-faint">{t("work.moreIndex")}</span>
+            <span className="h-px flex-1 bg-line" />
+          </div>
+        </Reveal>
+
+        <div className="grid grid-cols-1 gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-[clamp(2.5rem,6vw,6rem)] md:grid-cols-2">
+          {MORE.map((w, i) => (
+            <Card key={w.n} w={w} i={i} />
           ))}
         </div>
 
