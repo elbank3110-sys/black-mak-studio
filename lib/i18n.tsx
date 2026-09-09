@@ -22,13 +22,13 @@ const EN: Dict = {
   "hero.kicker": "BLACK-MAK® / LOGO & VISUAL IDENTITY",
   "hero.title": "Logo & Visual Identity Design<br/><em>for brands that want to be recognized.</em>",
   "hero.lede":
-    "Distinctive identities built around strategy, typography, and real-world application — in Arabic, Latin, and everything in between.",
+    "Distinctive identities built around strategy, calligraphy, and real-world application — in Arabic, Latin, and everything in between.",
   "hero.work": "View Selected Work",
   "hero.cta": "Start a Brand Project",
   "hero.sideLabel": "The practice",
   "hero.sideTitle": "Strategy, craft & real-world application.",
   "hero.sideText":
-    "Arabic & Latin typography, identity systems, and applied design — built to survive the street, not just the screen.",
+    "Arabic & Latin calligraphy, identity systems, and applied design — built to survive the street, not just the screen.",
   "hero.scroll": "Scroll to explore",
   "hero.cardLabel": "BLACK-MAK / DIRECT CONTACT",
   "hero.role": "Logo & Visual Identity Designer",
@@ -38,7 +38,7 @@ const EN: Dict = {
 
   "signal.1": "01 / STRATEGY BEFORE SHAPE",
   "signal.2": "02 / BUILT FOR REAL SCALE",
-  "signal.3": "03 / ARABIC + LATIN FLUENCY",
+  "signal.3": "03 / BILINGUAL CALLIGRAPHY",
   "signal.4": "04 / WORLDWIDE COLLABORATION",
 
   "work.index": "01 / SELECTED WORK",
@@ -46,7 +46,7 @@ const EN: Dict = {
   "work.moreTitle": "More<br/><em>work.</em>",
   "work.title": "Work that holds<br/><em>its own.</em>",
   "work.note":
-    "A focused selection of logo design, typography, identity systems, and applied communication. Every project starts with a question: what should this mark make people feel?",
+    "A focused selection of logo design, calligraphy, identity systems, and applied communication. Every project starts with a question: what should this mark make people feel?",
   "work.p1title": "Logo Collection — Vol. II",
   "work.p1tags": "Logo Design · Logotype · Identity",
   "work.p2title": "Logo Collection — Vol. I",
@@ -73,16 +73,16 @@ const EN: Dict = {
   "services.incLabel": "WHAT'S INCLUDED —",
   "services.title": "What I<br/><em>build.</em>",
   "services.note":
-    "An independent design practice focused on logos, visual identities, typography, and distinctive brand systems.",
+    "An independent design practice focused on logos, visual identities, calligraphy, and distinctive brand systems.",
   "services.s1name": "Logo Design",
   "services.s1desc":
     "Distinctive marks built to be recognized, remembered, and used everywhere.",
   "services.s2name": "Visual Identity",
   "services.s2desc":
     "A complete visual system built around your logo, typography, color, and brand behavior.",
-  "services.s3name": "Arabic & Latin Typography",
+  "services.s3name": "Arabic & Latin Calligraphy",
   "services.s3desc":
-    "Custom wordmarks, lettering, and bilingual typographic systems designed as one visual language.",
+    "Freestyle calligraphy, custom-drawn wordmarks, and bilingual calligraphic systems designed as one visual language.",
   "services.s4name": "Brand Applications",
   "services.s4desc":
     "Turning the identity into a practical system for packaging, signage, print, social, and digital use.",
@@ -91,7 +91,7 @@ const EN: Dict = {
     "Custom portfolio and brand microsites designed around the identity — not generic templates dressed in a logo. This studio itself is an example of the digital brand experiences I build. Available as an extension of selected branding projects or as a standalone digital identity experience.",
   "services.s1inc": "Concepts · Refinement rounds · Final files (AI · PDF · PNG · SVG)",
   "services.s2inc": "Logo system · Color & type · Guidelines · Applications",
-  "services.s3inc": "Custom letterforms · Bilingual lockups · Typographic system",
+  "services.s3inc": "Freestyle letterforms · Bilingual lockups · Calligraphic system",
   "services.s4inc": "Packaging · Signage · Print · Social & digital",
   "services.s5inc": "Custom microsite · Visual direction · Interactive sections · Conversion content",
   "services.s6inc": "Identity audit · New direction · Transition system",
@@ -110,7 +110,7 @@ const EN: Dict = {
   "about.lede":
     "I'm <strong>Muhamed Alaa Elbank</strong> — a Logo &amp; Visual Identity Designer who turns business visions into recognizable, memorable identities with clarity, character, and staying power.",
   "about.p1":
-    "My background spans logo design, Arabic & Latin typography, brand identity systems, and outdoor advertising. Years on signs, streets, and large-format applications taught me that a good mark must survive the real world — not just a presentation board.",
+    "My background spans logo design, Arabic & Latin calligraphy, brand identity systems, and outdoor advertising. Years on signs, streets, and large-format applications taught me that a good mark must survive the real world — not just a presentation board.",
   "about.p2":
     "I work locally in Egypt and worldwide, in Arabic and English, with an AI-augmented creative workflow that speeds up exploration without replacing the designer's judgment. The practice is built on long-term client relationships, repeat work, and referrals.",
   "about.stat1": "Years of Practice",
@@ -146,7 +146,7 @@ const EN: Dict = {
     "Signage, banners and campaign work for retail chains across Egypt. Design learned on the street: bold, readable, built for distance.",
   "journey.3title": "Identity Focus",
   "journey.3text":
-    "Deep dive into typographic logos and full brand systems. Published collections on Behance; clients across MENA and Europe.",
+    "Deep dive into calligraphy-led logotypes and full brand systems. Published collections on Behance; clients across MENA and Europe.",
   "journey.4year": "2024 — Today",
   "journey.4title": "BLACK-MAK",
   "journey.4text":
@@ -206,10 +206,10 @@ const EN: Dict = {
   "pricing.1b": "3 refinement rounds",
   "pricing.1c": "Editable AI · PDF · PNG · SVG",
   "pricing.1d": "1–2 weeks",
-  "pricing.2name": "Typographic Identity",
-  "pricing.2desc": "Custom wordmarks and lettering-led identities built around typography.",
+  "pricing.2name": "Calligraphic Identity",
+  "pricing.2desc": "Custom wordmarks and calligraphy-led identities built around free-drawn letterforms.",
   "pricing.2a": "Custom-drawn letterforms",
-  "pricing.2b": "Arabic & Latin lockups",
+  "pricing.2b": "Arabic & Latin calligraphic lockups",
   "pricing.2c": "2 concepts + refinement",
   "pricing.2d": "1–2 weeks",
   "pricing.3name": "Full Visual Identity",
@@ -270,13 +270,13 @@ const EN: Dict = {
   "why.index": "WHY BLACK-MAK",
   "why.title": "What makes<br/><em>BLACK-MAK different.</em>",
   "why.note":
-    "12+ years of designing marks that have to work in the real world — from identity systems and typography to signage and large-format applications.",
+    "12+ years of designing marks that have to work in the real world — from identity systems and calligraphy to signage and large-format applications.",
   "why.p1title": "Specialized in Identity",
   "why.p1text":
     "Logo and visual identity are the core practice — not one service among dozens.",
-  "why.p2title": "Arabic + Latin Expertise",
+  "why.p2title": "Arabic + Latin Calligraphy",
   "why.p2text":
-    "Bilingual identities are designed as one coherent visual language — not two separate systems.",
+    "Bilingual calligraphy is designed as one coherent visual language — not two separate systems.",
   "why.p3title": "Real-world Thinking",
   "why.p3text":
     "Every mark is considered for scale, reproduction, signage, print, and digital use.",
@@ -292,7 +292,7 @@ const EN: Dict = {
   "biling.index": "ARABIC + LATIN",
   "biling.title": "Built for Arabic.<br/>Built for Latin.<br/><em>Built to work together.</em>",
   "biling.text":
-    "I design bilingual identities where Arabic lettering and Latin typography feel like one coherent visual language — not two separate systems.",
+    "I design bilingual identities where Arabic and Latin calligraphy feel like one coherent visual language — not two separate systems.",
 
   "bts.index": "DESIGNED BEYOND THE SCREEN",
   "bts.title": "A strong identity has to survive more than a presentation mockup.",
@@ -330,7 +330,7 @@ const EN: Dict = {
   "form.type": "Project Type *",
   "form.opt1": "Logo",
   "form.opt2": "Visual Identity",
-  "form.opt3": "Arabic / Latin Typography",
+  "form.opt3": "Arabic / Latin Calligraphy",
   "form.opt4": "Rebrand",
   "form.opt5": "Digital Brand Experience",
   "form.opt6": "Other",
@@ -376,13 +376,13 @@ const AR: Dict = {
   "hero.kicker": "BLACK-MAK® / شعارات وهوية بصرية",
   "hero.title": "تصميم شعارات وهوية بصرية<br/><em>للعلامات التي تريد أن تُعرَف.</em>",
   "hero.lede":
-    "هويات مميزة مبنية على الاستراتيجية والتايبوغرافي والتطبيق الواقعي — بالعربية واللاتينية وكل ما بينهما.",
+    "هويات مميزة مبنية على الاستراتيجية والكاليجرافي والتطبيق الواقعي — بالعربية واللاتينية وكل ما بينهما.",
   "hero.work": "استعرض الأعمال المختارة",
   "hero.cta": "ابدأ مشروع علامة",
   "hero.sideLabel": "الممارسة",
   "hero.sideTitle": "دقة، مفهوم وشخصية.",
   "hero.sideText":
-    "شعارات عربية ولاتينية، وأنظمة هوية، وتصميم تطبيقي تشكّلها أكثر من 12 سنة في العالم الحقيقي.",
+    "كاليجرافي عربي ولاتيني، وأنظمة هوية، وتصميم تطبيقي تشكّله أكثر من 12 سنة في العالم الحقيقي.",
   "hero.scroll": "مرّر للاستكشاف",
   "hero.cardLabel": "BLACK-MAK / تواصل مباشر",
   "hero.role": "مصمم شعارات وهوية بصرية",
@@ -392,7 +392,7 @@ const AR: Dict = {
 
   "signal.1": "01 / الاستراتيجية قبل الشكل",
   "signal.2": "02 / مصممة للمقاسات الحقيقية",
-  "signal.3": "03 / خبرة عربية ولاتينية",
+  "signal.3": "03 / كاليجرافي ثنائي اللغة",
   "signal.4": "04 / تعاون حول العالم",
 
   "work.index": "01 / أعمال مختارة",
@@ -400,7 +400,7 @@ const AR: Dict = {
   "work.moreTitle": "أعمال<br/><em>أخرى.</em>",
   "work.title": "أعمال تثبت<br/><em>حضورها.</em>",
   "work.note":
-    "مختارات مركّزة من تصميم الشعارات، والتايبوغرافي، وأنظمة الهوية، والتواصل البصري التطبيقي. كل مشروع يبدأ بسؤال: ماذا يجب أن يجعل هذا الشعار الناس يشعرون؟",
+    "مختارات مركّزة من تصميم الشعارات، والكاليجرافي، وأنظمة الهوية، والتواصل البصري التطبيقي. كل مشروع يبدأ بسؤال واحد: ما الذي يجب أن تُشعر به هذه العلامة الناس؟",
   "work.p1title": "مجموعة الشعارات — الجزء الثاني",
   "work.p1tags": "تصميم شعار · لوجوتايب · هوية",
   "work.p2title": "مجموعة الشعارات — الجزء الأول",
@@ -423,20 +423,20 @@ const AR: Dict = {
   "services.index": "02 / الخدمات",
   "services.incLabel": "ما يشمله —",
   "services.title": "ما الذي<br/><em>أبنيه.</em>",
-  "services.note": "خدمات مركّزة وقِصَرُها مقصود. العمق قبل الاتساع — من الاستراتيجية إلى نظام الهوية الكامل.",
+  "services.note": "ممارسة تصميم مستقلة متخصصة في الشعارات والهويات البصرية والكاليجرافي وأنظمة العلامات المميزة.",
   "services.s1name": "تصميم شعار",
   "services.s1desc": "علامات مميزة مصممة ليتعرّف عليها الناس ويتذكروها ويستخدموها في كل مكان.",
   "services.s2name": "الهوية البصرية",
   "services.s2desc": "نظام بصري كامل مبني حول شعارك والتايبوغرافي والألوان وسلوك العلامة.",
-  "services.s3name": "الخط العربي واللاتيني",
-  "services.s3desc": "كلمات وحروف ونظم تايبوغرافية ثنائية اللغة مصممة كلغة بصرية واحدة.",
+  "services.s3name": "الكاليجرافي العربي واللاتيني",
+  "services.s3desc": "كاليجرافي حر وحروف مرسومة يدويًا وأنظمة خطّية ثنائية اللغة مصممة كلغة بصرية واحدة.",
   "services.s4name": "تطبيقات العلامة",
   "services.s4desc": "تحويل الهوية إلى نظام عملي للتغليف واللوحات والمطبوعات والسوشيال والرقمي.",
   "services.s5name": "تجارب رقمية للعلامة",
   "services.s5desc": "مواقع بورتفوليو وبراند مايكروسايت مصممة حول الهوية — لا قوالب عامة بملبس شعار. هذا الاستوديو نفسه مثال على التجارب الرقمية التي أبنيها. متاحة كامتداد لمشاريع الهوية المختارة أو كتجربة رقمية مستقلة.",
   "services.s1inc": "مفاهيم · جولات صقل · ملفات نهائية (AI · PDF · PNG · SVG)",
   "services.s2inc": "نظام الشعار · اللون والخط · الدليل · التطبيقات",
-  "services.s3inc": "حروف مخصصة · قفل ثنائي اللغة · نظام تايبوغرافي",
+  "services.s3inc": "حروف مرسومة بحرية · قفل ثنائي اللغة · نظام كاليجرافي",
   "services.s4inc": "تغليف · لوحات · مطبوعات · سوشيال ورقمي",
   "services.s5inc": "مايكروسايت مخصص · اتجاه بصري · أقسام تفاعلية · محتوى تحويلي",
   "services.s6inc": "تدقيق الهوية · اتجاه جديد · نظام انتقال",
@@ -452,7 +452,7 @@ const AR: Dict = {
   "about.lede":
     "أنا <strong>محمد علاء البنك</strong> — مصمم شعارات وهوية بصرية يحوّل رؤى الأعمال إلى هويات يتعرّف عليها الناس ويثقون بها، بوضوح وشخصية وبقاء.",
   "about.p1":
-    "خلفيتي تمتد بين تصميم الشعارات، الخط العربي واللاتيني، أنظمة الهوية التجارية، والإعلانات الخارجية. سنوات على اللوحات والشوارع والتطبيقات كبيرة الحجم علّمتني أن العلامة الجيدة يجب أن تنجو في العالم الحقيقي لا على لوحة العرض فقط.",
+    "خلفيتي تمتد بين تصميم الشعارات، الكاليجرافي العربي واللاتيني، أنظمة الهوية التجارية، والإعلانات الخارجية. سنوات على اللوحات والشوارع والتطبيقات كبيرة الحجم علّمتني أن العلامة الجيدة يجب أن تنجو في العالم الحقيقي — لا على لوحة العرض فقط.",
   "about.p2":
     "أعمل محليًا في مصر وحول العالم، بالعربية والإنجليزية، بأسلوب عمل إبداعي معزَّز بالذكاء الاصطناعي يسرّع الاستكشاف دون أن يحل محل حكم المصمم. الممارسة مبنية على علاقات عملاء طويلة الأمد وعمل متكرر وإحالات.",
   "about.stat1": "سنوات من الخبرة",
@@ -487,7 +487,7 @@ const AR: Dict = {
     "لوحات وشعارات وحملات لسلاسل تجارية في أنحاء مصر. تصميمٌ تعلّمه في الشارع: جريء، مقروء، مصمّم للمسافة.",
   "journey.3title": "التركيز على الهوية",
   "journey.3text":
-    "غوص عميق في الشعارات التايبوغرافية وأنظمة الهوية الكاملة. مجموعات منشورة على Behance وعملاء في الشرق الأوسط وأوروبا.",
+    "غوص عميق في اللوجوتايبات الكاليجرافية وأنظمة الهوية الكاملة. مجموعات منشورة على Behance وعملاء في الشرق الأوسط وأوروبا.",
   "journey.4year": "2024 — اليوم",
   "journey.4title": "BLACK-MAK",
   "journey.4text":
@@ -541,10 +541,10 @@ const AR: Dict = {
   "pricing.1b": "3 جولات صقل",
   "pricing.1c": "ملفات قابلة للتعديل · PDF · PNG · SVG",
   "pricing.1d": "1–2 أسبوع",
-  "pricing.2name": "هوية تايبوغرافية",
-  "pricing.2desc": "كلمات وهويات يقودها الخط، مبنية حول التايبوغرافي.",
+  "pricing.2name": "هوية كاليجرافية",
+  "pricing.2desc": "كلمات وهويات يقودها الكاليجرافي، مبنية حول حروف مرسومة بحرية.",
   "pricing.2a": "حرفات مرسومة يدويًا",
-  "pricing.2b": "قفل عربي ولاتيني",
+  "pricing.2b": "قفل كاليجرافي عربي ولاتيني",
   "pricing.2c": "مفهومان + صقل",
   "pricing.2d": "1–2 أسبوع",
   "pricing.3name": "هوية بصرية كاملة",
@@ -602,7 +602,7 @@ const AR: Dict = {
   "who.restaurants": "مطاعم",
   "who.creative": "علامات إبداعية",
   "who.closing":
-    "ليس كل مشروع يحتاج هوية كاملة. وليس كل عمل يحتاج شعارًا جديدًا. سأقول لك ما يحتاجه مشروعك فعلًا — حتى когда الإجابة عمل أقل.",
+    "ليست كل الأعمال تحتاج هويةً كاملة، وليست كل علامة تحتاج شعارًا جديدًا. سأرشدك إلى ما يناسب مشروعك فعلًا — وإن كان ذلك يعني نطاقًا أصغر.",
 
   "contact.index": "10 / ابدأ مشروعًا",
   "contact.title": "عندك علامة تستحق البناء؟",
@@ -634,7 +634,7 @@ const AR: Dict = {
   "form.companyPh": "اسم نشاطك أو علامتك",
   "form.opt1": "شعار",
   "form.opt2": "هوية بصرية",
-  "form.opt3": "خط عربي / لاتيني",
+  "form.opt3": "كاليجرافي عربي / لاتيني",
   "form.opt4": "إعادة تصميم",
   "form.opt5": "تجربة رقمية للعلامة",
   "form.opt6": "أخرى",
@@ -670,11 +670,11 @@ const AR: Dict = {
   "why.index": "لماذا BLACK-MAK",
   "why.title": "ما يجعل<br/><em>BLACK-MAK مختلفًا.</em>",
   "why.note":
-    "أكثر من 12 سنة في تصميم علامات يجب أن تعمل في العالم الحقيقي — من أنظمة الهوية والتايبوغرافي إلى اللوحات والتطبيقات الكبيرة.",
+    "أكثر من 12 سنة في تصميم علامات يجب أن تعمل في العالم الحقيقي — من أنظمة الهوية والكاليجرافي إلى اللوحات والتطبيقات الكبيرة.",
   "why.p1title": "متخصص في الهوية",
   "why.p1text": "الشعار والهوية البصرية هما جوهر الممارسة — لا خدمة واحدة بين عشرات.",
-  "why.p2title": "خبرة عربية + لاتينية",
-  "why.p2text": "الهويات الثنائية تُصمم كلغة بصرية واحدة متماسكة — لا نظامين منفصلين.",
+  "why.p2title": "كاليجرافي عربي + لاتيني",
+  "why.p2text": "الكاليجرافي الثنائي يُصمم كلغة بصرية واحدة متماسكة — لا نظامين منفصلين.",
   "why.p3title": "تفكير واقعي",
   "why.p3text": "كل علامة تُدرس من حيث الحجم وإعادة الإنتاج واللوحات والطباعة والاستخدام الرقمي.",
   "why.p4title": "أكثر من 12 سنة ممارسة",
@@ -688,7 +688,7 @@ const AR: Dict = {
   "biling.index": "عربي + لاتيني",
   "biling.title": "مبني للعربية.<br/>مبني للاتينية.<br/><em>مبني ليعملا معًا.</em>",
   "biling.text":
-    "أصمم هويات ثنائية اللغة حيث يبدو الحرف العربي والتايبوغرافي اللاتيني لغة بصرية واحدة متماسكة — لا نظامين منفصلين.",
+    "أصمم هويات ثنائية اللغة حيث يبدو الكاليجرافي العربي واللاتيني لغة بصرية واحدة متماسكة — لا نظامين منفصلين.",
 
   "bts.index": "مصمم ما وراء الشاشة",
   "bts.title": "الهوية القوية يجب أن تنجو من أكثر من موك-أب عرض.",

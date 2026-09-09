@@ -1,11 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
 
 export default function Hero() {
   const { t } = useI18n();
+  const { scrollY } = useScroll();
+  // parallax depths — dark card sinks slower, light card lifts (counter-scroll)
+  const parallaxA = useTransform(scrollY, [0, 600], [0, 70]);
+  const parallaxB = useTransform(scrollY, [0, 600], [0, -60]);
 
   return (
     <section
@@ -54,11 +58,16 @@ export default function Hero() {
                 <p className="mt-4 text-muted">{t("hero.sideText")}</p>
               </div>
               <div className="relative mt-6 flex items-end justify-center" style={{ minHeight: 200 }}>
+                {/* Lissajous organic float + scroll parallax — the veteran move:
+                    each card drifts on its own elliptical path (x/y desynced),
+                    and both cards counter-scroll at different depths. */}
                 <motion.div
-                  initial={{ rotate: -7, y: 10 }}
-                  animate={{ rotate: -7, y: [10, -4, 10] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute left-0 top-2 w-[280px] rounded-md border border-line-strong bg-gradient-to-br from-[#19191b] to-[#080809] p-5 text-white shadow-2xl"
+                  initial={{ rotate: -7, x: "-8%", y: 12 }}
+                  animate={{ rotate: [-7, -5.2, -7], x: ["-8%", "2%", "-8%"], y: [12, -6, 12] }}
+                  transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", times: [0, 0.5, 1] }}
+                  whileHover={{ scale: 1.04, rotate: -3, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } }}
+                  style={{ y: parallaxA }}
+                  className="hero-card absolute left-0 top-2 w-[280px] rounded-md border border-line-strong bg-gradient-to-br from-[#19191b] to-[#080809] p-5 text-white shadow-2xl"
                 >
                   <span className="eyebrow text-white/60">{t("hero.cardLabel")}</span>
                   <strong className="mt-3 block text-xl text-white">BLACK-MAK</strong>
@@ -66,10 +75,12 @@ export default function Hero() {
                   <span className="mt-2 block font-mono text-xs" dir="ltr">+20 100 246 2821</span>
                 </motion.div>
                 <motion.div
-                  initial={{ rotate: 5, y: -6 }}
-                  animate={{ rotate: 5, y: [-6, 6, -6] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute bottom-0 right-0 z-10 w-[280px] rounded-md border border-line-strong bg-gradient-to-br from-[#faf9f4] to-[#deddd8] p-5 text-[#090909] shadow-2xl"
+                  initial={{ rotate: 5, x: "8%", y: -8 }}
+                  animate={{ rotate: [5, 6.8, 5], x: ["8%", "-2%", "8%"], y: [-8, 8, -8] }}
+                  transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", times: [0, 0.5, 1], delay: 0.9 }}
+                  whileHover={{ scale: 1.04, rotate: 2, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } }}
+                  style={{ y: parallaxB }}
+                  className="hero-card absolute bottom-0 right-0 z-10 w-[280px] rounded-md border border-line-strong bg-gradient-to-br from-[#faf9f4] to-[#deddd8] p-5 text-[#090909] shadow-2xl"
                 >
                   <span className="eyebrow text-[#62615c]">{t("hero.cardLabel")}</span>
                   <strong className="mt-3 block text-xl">BLACK-MAK</strong>

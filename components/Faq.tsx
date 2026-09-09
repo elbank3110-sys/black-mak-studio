@@ -28,7 +28,7 @@ export default function Faq() {
               <details key={i} className="border-b border-line group">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-8 py-6 text-xl font-bold">
                   {t(f.q)}
-                  <span className="font-mono text-faint transition-transform duration-300 group-open:rotate-45 group-open:text-ink">+</span>
+                  <span className="faq-plus font-mono text-faint transition-colors group-open:rotate-45 group-open:text-ink">+</span>
                 </summary>
                 <p className="max-w-[66ch] pb-6 text-muted">{t(f.a)}</p>
               </details>

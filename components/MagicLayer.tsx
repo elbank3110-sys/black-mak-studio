@@ -7,13 +7,10 @@ import { useEffect, useRef } from "react";
  *  1. word-rise: wraps [data-words] children per word for the staggered rise
  *  2. magnetic: elements with [data-magnetic] pull toward the cursor
  *  3. hairline: .hairline-draw observes intersection and adds .is-in
- *  4. custom cursor ring (fine pointers only, respects reduced motion)
+ * (custom cursor removed — native system cursor only)
  * All effects are progressive — if JS fails, content renders normally.
  */
 export default function MagicLayer() {
-  const dotRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -74,7 +71,7 @@ export default function MagicLayer() {
     }
 
     // 3 — hairline draw
-    const lines = document.querySelectorAll<HTMLElement>(".hairline-draw");
+    const lines = document.querySelectorAll<HTMLElement>(".hairline-draw, .tspine");
     const lineObs = new IntersectionObserver(
       (entries) =>
         entries.forEach((en) => {
@@ -87,58 +84,9 @@ export default function MagicLayer() {
     );
     lines.forEach((l) => lineObs.observe(l));
 
-    // 4 — custom cursor (fine pointer only)
-    let dot: HTMLDivElement | null = null;
-    let ring: HTMLDivElement | null = null;
-    if (!reduce && window.matchMedia("(pointer: fine)").matches && !("ontouchstart" in window)) {
-      dot = document.createElement("div");
-      dot.className = "cursor-dot";
-      ring = document.createElement("div");
-      ring.className = "cursor-ring";
-      document.body.appendChild(dot);
-      document.body.appendChild(ring);
-    }
-    let rx = 0;
-    let ry = 0;
-    let cx = 0;
-    let cy = 0;
-    let raf = 0;
-    const renderLoop = () => {
-      if (ring && dot) {
-        rx += (cx - rx) * 0.16;
-        ry += (cy - ry) * 0.16;
-        dot.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-        ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-      }
-      raf = requestAnimationFrame(renderLoop);
-    };
-    const onMouse = (e: MouseEvent) => {
-      cx = e.clientX;
-      cy = e.clientY;
-    };
-    // grow on interactive hover — event delegation (works for late-mounted nodes)
-    const onOver = (e: MouseEvent) => {
-      const t = e.target as HTMLElement;
-      if (t.closest("a, button, [role='button'], input, select, textarea")) {
-        ring?.classList.add("is-active");
-      } else {
-        ring?.classList.remove("is-active");
-      }
-    };
-    if (dot && ring) {
-      window.addEventListener("mousemove", onMouse, { passive: true });
-      window.addEventListener("mouseover", onOver, { passive: true });
-      raf = requestAnimationFrame(renderLoop);
-    }
-
     return () => {
       window.removeEventListener("mousemove", onMagMove);
-      window.removeEventListener("mousemove", onMouse);
-      window.removeEventListener("mouseover", onOver);
-      cancelAnimationFrame(raf);
       lineObs.disconnect();
-      dot?.remove();
-      ring?.remove();
     };
   }, []);
 

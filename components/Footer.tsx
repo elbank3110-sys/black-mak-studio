@@ -16,7 +16,7 @@ export default function Footer() {
               Logo & Visual Identity Design
             </p>
             <p className="mt-4 max-w-[40ch] text-[0.85rem] text-muted">{t("footer.tagline")}</p>
-            <p className="mt-2 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-faint">
+            <p className="mt-2 sig-line font-mono text-[0.6rem] uppercase tracking-[0.14em]">
               {t("footer.sig")}
             </p>
             <p className="mt-4 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-faint">
