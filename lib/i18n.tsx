@@ -346,7 +346,7 @@ const EN: Dict = {
   "form.submit": "Send inquiry",
   "form.sent": "Thanks — opening WhatsApp with your brief.",
 
-  "footer.tagline": "Marks with meaning. Identities with character. A premium logo & visual identity practice by Muhamed Alaa Elbank.",
+  "footer.tagline": "A premium logo & visual identity practice by Muhamed Alaa Elbank.",
   "footer.sig": "Marks with meaning. Identities with character.",
   "footer.end": "Designed with intent. New Valley, Egypt.",
   "footer.rights": "© 2026 BLACK-MAK",
@@ -651,7 +651,7 @@ const AR: Dict = {
   "form.submit": "أرسل الاستفسار",
   "form.sent": "شكرًا — نفتح واتساب مع ملخّصك.",
 
-  "footer.tagline": "علامات تحمل معنى. هويات لها شخصية. ممارسة شعارات وهوية بصرية متميّزة بقيادة محمد علاء البنك.",
+  "footer.tagline": "ممارسة شعارات وهوية بصرية متميّزة بقيادة محمد علاء البنك.",
   "footer.sig": "علامات تحمل معنى. هويات لها شخصية.",
   "footer.end": "مصمَّم بهوية. الوادي الجديد، مصر.",
   "footer.rights": "© 2026 BLACK-MAK",
