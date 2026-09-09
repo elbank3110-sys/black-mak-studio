@@ -45,6 +45,20 @@ export default function Who() {
           </div>
         </Reveal>
 
+        <Reveal delay={0.2}>
+          <div className="mt-10 border border-line bg-bg p-[clamp(1.2rem,3vw,2.2rem)]">
+            <strong className="block font-mono text-[0.68rem] uppercase tracking-[0.14em] text-ink">{t("who.refreshTitle")}</strong>
+            <ul className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {["who.r1", "who.r2", "who.r3", "who.r4", "who.r5"].map((k) => (
+                <li key={k} className="text-[0.85rem] text-muted">
+                  <span className="me-2 text-faint">—</span>
+                  {t(k)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+
         <Reveal delay={0.25}>
           <p className="mt-10 max-w-[62ch] border-s-2 border-ink ps-5 text-[clamp(0.95rem,1.4vw,1.1rem)] font-medium leading-relaxed">
             {t("who.closing")}

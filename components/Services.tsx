@@ -49,15 +49,20 @@ export default function Services() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-10 flex flex-col items-start justify-between gap-6 border border-line bg-surface p-[clamp(1.2rem,3vw,2rem)] md:flex-row md:items-center">
-            <div>
-              <strong className="block text-[1.05rem] font-bold">{t("services.portTitle")}</strong>
-              <p className="mt-2 max-w-[52ch] text-[0.85rem] text-muted">{t("services.portText")}</p>
+          <div className="mt-10 border border-line bg-surface p-[clamp(1.2rem,3vw,2rem)]">
+            <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+              <div>
+                <strong className="block text-[1.05rem] font-bold">{t("services.portTitle")}</strong>
+                <p className="mt-2 max-w-[52ch] text-[0.85rem] text-muted">{t("services.portText")}</p>
+              </div>
+              <a href="#start-a-project" className="btn btn-ghost shrink-0">
+                <span>{t("services.portCta")}</span>
+                <span>↗</span>
+              </a>
             </div>
-            <a href="#start-a-project" className="btn btn-ghost shrink-0">
-              <span>{t("services.portCta")}</span>
-              <span>↗</span>
-            </a>
+            <p className="mt-4 border-t border-line pt-3 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-faint">
+              ◆ {t("services.built")}
+            </p>
           </div>
         </Reveal>
       </div>

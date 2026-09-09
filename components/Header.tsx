@@ -38,8 +38,8 @@ export default function Header() {
   const links = [
     { href: "#work", k: "nav.work" },
     { href: "#services", k: "nav.services" },
-    { href: "#about", k: "nav.about" },
     { href: "#pricing", k: "nav.pricing" },
+    { href: "#about", k: "nav.about" },
   ];
 
   return (
@@ -94,7 +94,7 @@ export default function Header() {
             href="https://mu-cv.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted transition-colors hover:text-ink"
+            className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint transition-colors hover:text-muted"
           >
             {t("nav.cv")}
           </a>

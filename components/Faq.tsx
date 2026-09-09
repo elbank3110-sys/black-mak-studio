@@ -8,6 +8,8 @@ const FAQ = [
   { q: "faq.2q", a: "faq.2a" },
   { q: "faq.3q", a: "faq.3a" },
   { q: "faq.4q", a: "faq.4a" },
+  { q: "faq.5q", a: "faq.5a" },
+  { q: "faq.6q", a: "faq.6a" },
 ];
 
 export default function Faq() {

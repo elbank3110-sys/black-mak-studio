@@ -32,7 +32,7 @@ const EN: Dict = {
   "hero.scroll": "Scroll to explore",
   "hero.cardLabel": "BLACK-MAK / DIRECT CONTACT",
   "hero.role": "Logo & Visual Identity Designer",
-  "hero.location": "New Valley, Egypt",
+  "hero.location": "Egypt",
   "hero.world": "Working worldwide",
   "hero.experience": "12+ years of practice",
 
@@ -69,7 +69,7 @@ const EN: Dict = {
   "work.cta.line": "Like what you see?<br/><em>Your brand deserves the same level of thinking.</em>",
   "work.cta.btn": "Start a Brand Project",
 
-  "services.index": "02 / SERVICES",
+  "services.index": "03 / SERVICES",
   "services.incLabel": "WHAT'S INCLUDED —",
   "services.title": "What I<br/><em>build.</em>",
   "services.note":
@@ -85,20 +85,21 @@ const EN: Dict = {
     "Freestyle calligraphy, custom-drawn wordmarks, and bilingual calligraphic systems designed as one visual language.",
   "services.s4name": "Brand Applications",
   "services.s4desc":
-    "Turning the identity into a practical system for packaging, signage, print, social, and digital use.",
+    "Applications of an existing identity — signage, print, and large-format use, built for distance and clarity.",
   "services.s5name": "Digital Brand Experiences",
   "services.s5desc":
     "Custom portfolio and brand microsites designed around the identity — not generic templates dressed in a logo. This studio itself is an example of the digital brand experiences I build. Available as an extension of selected branding projects or as a standalone digital identity experience.",
   "services.s1inc": "Concepts · Refinement rounds · Final files (AI · PDF · PNG · SVG)",
   "services.s2inc": "Logo system · Color & type · Guidelines · Applications",
-  "services.s3inc": "Freestyle letterforms · Bilingual lockups · Calligraphic system",
-  "services.s4inc": "Packaging · Signage · Print · Social & digital",
+  "services.s3inc": "Freestyle calligraphy · Bilingual lockups · Calligraphic system",
+  "services.s4inc": "Signage · Print · Large-format",
   "services.s5inc": "Custom microsite · Visual direction · Interactive sections · Conversion content",
   "services.s6inc": "Identity audit · New direction · Transition system",
   "services.portTitle": "NEED A PORTFOLIO LIKE THIS FOR YOUR OWN WORK?",
   "services.portText":
     "I also build custom portfolio microsites for designers, photographers, creative professionals, and brands.",
   "services.portCta": "Request a Digital Project",
+  "services.built": "Built by BLACK-MAK — Art Direction · Interface Design · Interaction · Conversion Architecture",
   "services.s6name": "Rebrand",
   "services.s6desc":
     "For businesses that have outgrown their current identity and need a clearer, more distinctive visual direction.",
@@ -110,11 +111,11 @@ const EN: Dict = {
   "about.lede":
     "I'm <strong>Muhamed Alaa Elbank</strong> — a Logo &amp; Visual Identity Designer who turns business visions into recognizable, memorable identities with clarity, character, and staying power.",
   "about.p1":
-    "My background spans logo design, Arabic & Latin calligraphy, brand identity systems, and outdoor advertising. Years on signs, streets, and large-format applications taught me that a good mark must survive the real world — not just a presentation board.",
+    "My background spans logo design, Arabic & Latin calligraphy, and brand identity systems. Years of outdoor and large-format work shaped the conviction that a good mark must survive the real world — not just a presentation board.",
   "about.p2":
     "I work locally in Egypt and worldwide, in Arabic and English, with an AI-augmented creative workflow that speeds up exploration without replacing the designer's judgment. The practice is built on long-term client relationships, repeat work, and referrals.",
   "about.stat1": "Years of Practice",
-  "about.stat2": "Logos Delivered",
+  "about.stat2": "Logos & Identities Delivered",
   "about.stat3": "Bilingual Identities — One System",
   "about.cv": "View CV",
   "cv.index": "CURRICULUM VITÆ",
@@ -146,7 +147,7 @@ const EN: Dict = {
     "Signage, banners and campaign work for retail chains across Egypt. Design learned on the street: bold, readable, built for distance.",
   "journey.3title": "Identity Focus",
   "journey.3text":
-    "Deep dive into calligraphy-led logotypes and full brand systems. Published collections on Behance; clients across MENA and Europe.",
+    "Deep dive into calligraphy-led logotypes and full brand systems. Published collections on Behance; selected work across MENA and Europe.",
   "journey.4year": "2024 — Today",
   "journey.4title": "BLACK-MAK",
   "journey.4text":
@@ -200,8 +201,8 @@ const EN: Dict = {
     "All projects are scoped individually. Final pricing depends on the complexity, number of deliverables, and level of strategic involvement required.",
   "pricing.microcopy":
     "Every project starts with understanding the problem before defining the deliverables.",
-  "pricing.1name": "Logo Identity",
-  "pricing.1desc": "For focused logo projects where the mark is the primary deliverable.",
+  "pricing.1name": "Focused Logo Project",
+  "pricing.1desc": "For focused logo projects where the mark is the primary deliverable — scope is defined after the brief.",
   "pricing.1a": "2–3 original concepts",
   "pricing.1b": "3 refinement rounds",
   "pricing.1c": "Editable AI · PDF · PNG · SVG",
@@ -213,7 +214,7 @@ const EN: Dict = {
   "pricing.2c": "2 concepts + refinement",
   "pricing.2d": "1–2 weeks",
   "pricing.3name": "Full Visual Identity",
-  "pricing.3desc": "A complete identity system covering the mark, typography, color, and essential brand applications.",
+  "pricing.3desc": "For brands that need a complete visual system rather than a standalone mark — covering the logo, typography, color, and essential brand applications.",
   "pricing.3a": "Logo system + color + type",
   "pricing.3b": "Brand guidelines document",
   "pricing.3c": "Applied design set",
@@ -224,10 +225,10 @@ const EN: Dict = {
   "pricing.ctaQ": "Know what you need? Send the brief. I'll take it from there.",
   "pricing.ctaBtn": "Request a Project Estimate",
 
-  "payment.index": "08 / PAYMENT",
+  "payment.index": "09 / PAYMENT",
   "payment.title": "Payment<br/><em>after approval.</em>",
   "payment.note":
-    "After the proposal is approved, choose the payment method that suits you. Tap any value to copy it.",
+    "After the proposal is approved, choose your preferred payment method and copy the details securely.",
   "payment.label": "PAYMENT — AFTER PROPOSAL APPROVAL",
   "payment.vodafone": "EGYPT — VODAFONE CASH",
   "payment.instapay": "EGYPT — INSTAPAY",
@@ -237,7 +238,7 @@ const EN: Dict = {
   "payment.footnote":
     "Tap any value to copy it, transfer via the method that suits you, then send the transfer confirmation on WhatsApp — your project is confirmed and scheduled the same day.",
 
-  "faq.index": "09 / FAQ",
+  "faq.index": "08 / FAQ",
   "faq.title": "Before<br/><em>we begin.</em>",
   "faq.1q": "How long does a project take?",
   "faq.1a":
@@ -245,12 +246,18 @@ const EN: Dict = {
   "faq.2q": "What do I receive?",
   "faq.2a":
     "Final logo files, required variations, typography and color specifications, and the agreed identity assets based on the project scope.",
-  "faq.3q": "Do you work internationally?",
+  "faq.3q": "What happens after I send an inquiry?",
   "faq.3a":
-    "Yes. BLACK-MAK works with clients worldwide in both Arabic and English.",
-  "faq.4q": "Do you use AI?",
+    "I review the brief, ask only the questions needed to understand the project, then send a clear recommendation and project estimate. If we're a fit, we schedule the start and move into the first stage.",
+  "faq.4q": "What counts as a revision round?",
   "faq.4a":
-    "Yes, where it improves exploration and efficiency. Final concepts, typography, art direction, and design decisions remain human-led.",
+    "A revision round refines the chosen direction — adjusting proportions, weights, spacing, and color. It does not restart the concept from scratch; concept exploration happens earlier in the process.",
+  "faq.5q": "What isn't included?",
+  "faq.5a":
+    "Services beyond the agreed scope — such as social media kits, packaging production, copywriting, or web development — are quoted separately based on the project's needs.",
+  "faq.6q": "Do you work internationally?",
+  "faq.6a":
+    "Yes. BLACK-MAK works with clients worldwide in both Arabic and English.",
 
   "who.index": "06 / WHO I WORK WITH",
   "who.title": "Who I<br/><em>work with.</em>",
@@ -260,6 +267,12 @@ const EN: Dict = {
   "who.fitTitle": "Best suited for",
   "who.closing":
     "Not every project needs a full identity. Not every business needs a new logo. I'll tell you what your project actually needs — even when the answer is less work.",
+  "who.refreshTitle": "YOU MAY NEED AN IDENTITY REFRESH IF…",
+  "who.r1": "Your business has outgrown its current look.",
+  "who.r2": "Your logo no longer reflects your positioning.",
+  "who.r3": "You're entering a new market.",
+  "who.r4": "Your Arabic and Latin identities feel disconnected.",
+  "who.r5": "Your brand looks inconsistent across touchpoints.",
   "who.founders": "Founders",
   "who.startups": "Startups",
   "who.retail": "Retail & Food",
@@ -267,22 +280,26 @@ const EN: Dict = {
   "who.restaurants": "Restaurants",
   "who.creative": "Creative Brands",
 
-  "why.index": "WHY BLACK-MAK",
+  "why.index": "02 / WHY BLACK-MAK",
   "why.title": "What makes<br/><em>BLACK-MAK different.</em>",
   "why.note":
     "12+ years of designing marks that have to work in the real world — from identity systems and calligraphy to signage and large-format applications.",
   "why.p1title": "Specialized in Identity",
   "why.p1text":
     "Logo and visual identity are the core practice — not one service among dozens.",
+  "why.p1proof": "50+ logos & identities delivered",
   "why.p2title": "Arabic + Latin Calligraphy",
   "why.p2text":
     "Bilingual calligraphy is designed as one coherent visual language — not two separate systems.",
+  "why.p2proof": "Bilingual systems designed as one language",
   "why.p3title": "Real-world Thinking",
   "why.p3text":
     "Every mark is considered for scale, reproduction, signage, print, and digital use.",
+  "why.p3proof": "Outdoor & large-format experience",
   "why.p4title": "12+ Years of Practice",
   "why.p4text":
     "A process shaped by years of actual client work, not just presentation projects.",
+  "why.p4proof": "Practice since 2014",
 
   "phil.index": "DESIGN PHILOSOPHY",
   "phil.title": "A logo is not decoration.<br/><em>It is a recognition device.</em>",
@@ -305,7 +322,7 @@ const EN: Dict = {
   "contact.note":
     "A short brief is enough to start. We discuss, I propose, then we begin.",
   "contact.pricingCta": "Know what you need? Send the brief. I'll take it from there.",
-  "contact.qual": "BLACK-MAK is built for focused, collaborative projects — not high-volume logo production. Serious inquiries only.",
+  "contact.qual": "BLACK-MAK is built for focused, collaborative projects and clients who value thoughtful design.",
   "contact.qualTitle": "A note on project fit",
   "contact.fitTitle": "A good fit if you:",
   "contact.fit1": "Have a real business or serious project",
@@ -348,7 +365,7 @@ const EN: Dict = {
 
   "footer.tagline": "A premium logo & visual identity practice by Muhamed Alaa Elbank.",
   "footer.sig": "Marks with meaning. Identities with character.",
-  "footer.end": "Designed with intent. New Valley, Egypt.",
+  "footer.end": "Designed with intent. Egypt · Working Worldwide.",
   "footer.rights": "© 2026 BLACK-MAK",
 
   "case.back": "Back to work",
@@ -386,7 +403,7 @@ const AR: Dict = {
   "hero.scroll": "مرّر للاستكشاف",
   "hero.cardLabel": "BLACK-MAK / تواصل مباشر",
   "hero.role": "مصمم شعارات وهوية بصرية",
-  "hero.location": "الوادي الجديد، مصر",
+  "hero.location": "مصر",
   "hero.world": "أعمل مع عملاء حول العالم",
   "hero.experience": "أكثر من 12 سنة خبرة",
 
@@ -420,7 +437,7 @@ const AR: Dict = {
     "الشعار ليس زينة.<br/><em>إنه أقصر تعبير ممكن عن من أنت.</em>",
   "statement.cta": "ابنِ علامتك",
 
-  "services.index": "02 / الخدمات",
+  "services.index": "03 / الخدمات",
   "services.incLabel": "ما يشمله —",
   "services.title": "ما الذي<br/><em>أبنيه.</em>",
   "services.note": "ممارسة تصميم مستقلة متخصصة في الشعارات والهويات البصرية والكاليجرافي وأنظمة العلامات المميزة.",
@@ -431,18 +448,19 @@ const AR: Dict = {
   "services.s3name": "الكاليجرافي العربي واللاتيني",
   "services.s3desc": "كاليجرافي حر وحروف مرسومة يدويًا وأنظمة خطّية ثنائية اللغة مصممة كلغة بصرية واحدة.",
   "services.s4name": "تطبيقات العلامة",
-  "services.s4desc": "تحويل الهوية إلى نظام عملي للتغليف واللوحات والمطبوعات والسوشيال والرقمي.",
+  "services.s4desc": "تطبيقات لهوية قائمة بالفعل — لوحات ومطبوعات وصيغ كبيرة، مبنية للمسافة والوضوح.",
   "services.s5name": "تجارب رقمية للعلامة",
   "services.s5desc": "مواقع بورتفوليو وبراند مايكروسايت مصممة حول الهوية — لا قوالب عامة بملبس شعار. هذا الاستوديو نفسه مثال على التجارب الرقمية التي أبنيها. متاحة كامتداد لمشاريع الهوية المختارة أو كتجربة رقمية مستقلة.",
   "services.s1inc": "مفاهيم · جولات صقل · ملفات نهائية (AI · PDF · PNG · SVG)",
   "services.s2inc": "نظام الشعار · اللون والخط · الدليل · التطبيقات",
-  "services.s3inc": "حروف مرسومة بحرية · قفل ثنائي اللغة · نظام كاليجرافي",
-  "services.s4inc": "تغليف · لوحات · مطبوعات · سوشيال ورقمي",
+  "services.s3inc": "كاليجرافي حر · قفل ثنائي اللغة · نظام كاليجرافي",
+  "services.s4inc": "لوحات · مطبوعات · صيغ كبيرة",
   "services.s5inc": "مايكروسايت مخصص · اتجاه بصري · أقسام تفاعلية · محتوى تحويلي",
   "services.s6inc": "تدقيق الهوية · اتجاه جديد · نظام انتقال",
   "services.portTitle": "تحتاج بورتفوليو مثل هذا لعملك أنت؟",
   "services.portText": "أبني أيضًا مواقع بورتفوليو مخصصة للمصممين والمصورين والمهنيين الإبداعيين والعلامات.",
   "services.portCta": "اطلب مشروعًا رقميًا",
+  "services.built": "بُني بواسطة BLACK-MAK — إدارة فنية · تصميم واجهات · تفاعل · هندسة تحويل",
   "services.s6name": "إعادة تصميم الهوية",
   "services.s6desc": "للأعمال التي تجاوزت هويتها الحالية وتحتاج اتجاهًا بصريًا أوضح وأكثر تميزًا.",
 
@@ -452,11 +470,11 @@ const AR: Dict = {
   "about.lede":
     "أنا <strong>محمد علاء البنك</strong> — مصمم شعارات وهوية بصرية يحوّل رؤى الأعمال إلى هويات يتعرّف عليها الناس ويثقون بها، بوضوح وشخصية وبقاء.",
   "about.p1":
-    "خلفيتي تمتد بين تصميم الشعارات، الكاليجرافي العربي واللاتيني، أنظمة الهوية التجارية، والإعلانات الخارجية. سنوات على اللوحات والشوارع والتطبيقات كبيرة الحجم علّمتني أن العلامة الجيدة يجب أن تنجو في العالم الحقيقي — لا على لوحة العرض فقط.",
+    "خلفيتي تمتد بين تصميم الشعارات، الكاليجرافي العربي واللاتيني، وأنظمة الهوية التجارية. سنوات العمل الخارجي والصيغ الكبيرة صاغت قناعتي أن العلامة الجيدة يجب أن تنجو في العالم الحقيقي — لا على لوحة العرض فقط.",
   "about.p2":
     "أعمل محليًا في مصر وحول العالم، بالعربية والإنجليزية، بأسلوب عمل إبداعي معزَّز بالذكاء الاصطناعي يسرّع الاستكشاف دون أن يحل محل حكم المصمم. الممارسة مبنية على علاقات عملاء طويلة الأمد وعمل متكرر وإحالات.",
   "about.stat1": "سنوات من الخبرة",
-  "about.stat2": "شعار تم تسليمها",
+  "about.stat2": "شعارًا وهويةً تم تسليمها",
   "about.stat3": "هويات ثنائية اللغة — نظام واحد",
   "about.cv": "عرض السيرة",
   "cv.index": "السيرة الذاتية",
@@ -487,7 +505,7 @@ const AR: Dict = {
     "لوحات وشعارات وحملات لسلاسل تجارية في أنحاء مصر. تصميمٌ تعلّمه في الشارع: جريء، مقروء، مصمّم للمسافة.",
   "journey.3title": "التركيز على الهوية",
   "journey.3text":
-    "غوص عميق في اللوجوتايبات الكاليجرافية وأنظمة الهوية الكاملة. مجموعات منشورة على Behance وعملاء في الشرق الأوسط وأوروبا.",
+    "غوص عميق في اللوجوتايبات الكاليجرافية وأنظمة الهوية الكاملة. مجموعات منشورة على Behance وأعمال مختارة في الشرق الأوسط وأوروبا.",
   "journey.4year": "2024 — اليوم",
   "journey.4title": "BLACK-MAK",
   "journey.4text":
@@ -535,8 +553,8 @@ const AR: Dict = {
   "pricing.save": "",
   "pricing.offer": "سعة مشاريع محدودة",
   "pricing.endsIn": "نقبل حاليًا",
-  "pricing.1name": "هوية الشعار",
-  "pricing.1desc": "لمشاريع الشعار المركزة حيث تكون العلامة هي المخرج الأساسي.",
+  "pricing.1name": "مشروع شعار مركّز",
+  "pricing.1desc": "لمشاريع الشعار المركّزة حيث تكون العلامة هي المخرج الأساسي — يُحدد النطاق بعد البريف.",
   "pricing.1a": "2–3 مفاهيم أصلية",
   "pricing.1b": "3 جولات صقل",
   "pricing.1c": "ملفات قابلة للتعديل · PDF · PNG · SVG",
@@ -548,7 +566,7 @@ const AR: Dict = {
   "pricing.2c": "مفهومان + صقل",
   "pricing.2d": "1–2 أسبوع",
   "pricing.3name": "هوية بصرية كاملة",
-  "pricing.3desc": "نظام هوية متكامل يغطي العلامة والتايبوغرافي والألوان وتطبيقات العلامة الأساسية.",
+  "pricing.3desc": "للعلامات التي تحتاج نظامًا بصريًا متكاملًا لا مجرد شعار منفرد — يغطي الشعار والتايبوغرافي والألوان وتطبيقات العلامة الأساسية.",
   "pricing.3a": "نظام شعار + ألوان + خط",
   "pricing.3b": "وثيقة دليل الهوية",
   "pricing.3c": "مجموعة تطبيقات",
@@ -564,9 +582,9 @@ const AR: Dict = {
   "pricing.4c": "ملفات إنتاج جاهزة",
   "pricing.4d": "1–2 أسبوع",
 
-  "payment.index": "08 / الدفع",
+  "payment.index": "09 / الدفع",
   "payment.title": "الدفع<br/><em>بعد الموافقة.</em>",
-  "payment.note": "بعد الموافقة على العرض، اختر وسيلة الدفع الأنسب لك. اضغط أي قيمة لنسخها.",
+  "payment.note": "بعد الموافقة على العرض، اختر وسيلة الدفع المفضلة لديك وانسخ التفاصيل بأمان.",
   "payment.label": "الدفع — بعد موافقة العرض",
   "payment.vodafone": "مصر — فودافون كاش",
   "payment.instapay": "مصر — إنستاباي",
@@ -576,18 +594,25 @@ const AR: Dict = {
   "payment.footnote":
     "اضغط أي قيمة لنسخها، حوّل عبر الوسيلة الأنسب لك، ثم أرسل إيصال التحويل على واتساب — يُؤكّد مشروعك ويُجدول في نفس اليوم.",
 
-  "faq.index": "09 / أسئلة",
+  "faq.index": "08 / أسئلة",
   "faq.title": "قبل<br/><em>أن نبدأ.</em>",
   "faq.1q": "كم يستغرق المشروع؟",
   "faq.1a":
-    "معظم مشاريع الشعار المركزة تستغرق 1–2 أسبوع تقريبًا. مشاريع الهوية الكاملة عادة تحتاج 2–4 أسابيع حسب النطاق ودورات الملاحظات.",
+    "معظم مشاريع الشعار المركّزة تستغرق 1–2 أسبوع تقريبًا. مشاريع الهوية الكاملة عادة تحتاج 2–4 أسابيع حسب النطاق ودورات الملاحظات.",
   "faq.2q": "ماذا أستلم؟",
   "faq.2a":
     "ملفات الشعار النهائية والصيغ المطلوبة ومواصفات التايبوغرافي والألوان وأصول الهوية المتفق عليها حسب نطاق المشروع.",
-  "faq.3q": "هل تعمل دوليًا؟",
-  "faq.3a": "نعم. BLACK-MAK يعمل مع عملاء حول العالم بالعربية والإنجليزية.",
-  "faq.4q": "هل تستخدم الذكاء الاصطناعي؟",
-  "faq.4a": "نعم حيث يحسّن الاستكشاف والكفاءة. المفاهيم النهائية والتايبوغرافي والإدارة الفنية وقرارات التصميم تبقى بقيادة بشرية.",
+  "faq.3q": "ماذا يحدث بعد إرسال الاستفسار؟",
+  "faq.3a":
+    "أراجع البريف وأطرح فقط الأسئلة اللازمة لفهم المشروع، ثم أرسل توصية واضحة وعرضًا تقديريًا. إذا كنا مناسبين نحدد موعد البدء وننتقل إلى المرحلة الأولى.",
+  "faq.4q": "ما الذي يُحتسب كجولة تعديل؟",
+  "faq.4a":
+    "جولة التعديل تُصقل الاتجاه المختار — النسب والأوزان والمسافات واللون. لا تعيد المفهوم من الصفر؛ استكشاف المفاهيم يحدث في مرحلة سابقة من العملية.",
+  "faq.5q": "ما الذي غير متضمن؟",
+  "faq.5a":
+    "الخدمات خارج النطاق المتفق عليه — مثل حزم السوشيال ميديا وإنتاج التغليف وكتابة المحتوى وتطوير الويب — تُسعَّر منفصلًا حسب احتياجات المشروع.",
+  "faq.6q": "هل تعمل دوليًا؟",
+  "faq.6a": "نعم. BLACK-MAK يعمل مع عملاء حول العالم بالعربية والإنجليزية.",
 
   "who.index": "06 / لمن أعمل",
   "who.title": "لمن<br/><em>أعمل.</em>",
@@ -603,6 +628,12 @@ const AR: Dict = {
   "who.creative": "علامات إبداعية",
   "who.closing":
     "ليست كل الأعمال تحتاج هويةً كاملة، وليست كل علامة تحتاج شعارًا جديدًا. سأرشدك إلى ما يناسب مشروعك فعلًا — وإن كان ذلك يعني نطاقًا أصغر.",
+  "who.refreshTitle": "قد تحتاج تجديد هوية إذا…",
+  "who.r1": "نشاطك تجاوز شكله الحالي.",
+  "who.r2": "شعارك لم يعد يعكس تموضعك.",
+  "who.r3": "أنت تدخل سوقًا جديدة.",
+  "who.r4": "هويتك العربية واللاتينية تبدو منفصلة.",
+  "who.r5": "علامتك تبدو غير متسقة عبر نقاط التواصل.",
 
   "contact.index": "10 / ابدأ مشروعًا",
   "contact.title": "عندك علامة تستحق البناء؟",
@@ -622,7 +653,7 @@ const AR: Dict = {
   "form.contactPh": "+20 — أو قناتك المفضّلة",
   "form.type": "نوع المشروع *",
   "contact.qualTitle": "ملاحظة عن ملاءمة المشروع",
-  "contact.qual": "BLACK-MAK مبني لمشاريع مركزة وتعاونية — لا لإنتاج شعارات بالجملة. استفسارات جدية فقط.",
+  "contact.qual": "BLACK-MAK مبني لمشاريع مركزة وتعاونية، ولعملاء يقدّرون التصميم المدروس.",
   "contact.fitTitle": "مناسب لك إذا:",
   "contact.fit1": "لديك نشاط حقيقي أو مشروع جاد",
   "contact.fit2": "تقدّر التصميم المميز",
@@ -653,7 +684,7 @@ const AR: Dict = {
 
   "footer.tagline": "ممارسة شعارات وهوية بصرية متميّزة بقيادة محمد علاء البنك.",
   "footer.sig": "علامات تحمل معنى. هويات لها شخصية.",
-  "footer.end": "مصمَّم بهوية. الوادي الجديد، مصر.",
+  "footer.end": "مصمَّم بهوية. مصر · أعمل حول العالم.",
   "footer.rights": "© 2026 BLACK-MAK",
 
   "case.back": "العودة للأعمال",
@@ -667,7 +698,7 @@ const AR: Dict = {
 
   "wa.msg": "مرحبًا محمد، وجدت BLACK-MAK وأود مناقشة مشروع علامة. إليك ملخص موجز: ",
 
-  "why.index": "لماذا BLACK-MAK",
+  "why.index": "02 / لماذا BLACK-MAK",
   "why.title": "ما يجعل<br/><em>BLACK-MAK مختلفًا.</em>",
   "why.note":
     "أكثر من 12 سنة في تصميم علامات يجب أن تعمل في العالم الحقيقي — من أنظمة الهوية والكاليجرافي إلى اللوحات والتطبيقات الكبيرة.",
@@ -679,6 +710,10 @@ const AR: Dict = {
   "why.p3text": "كل علامة تُدرس من حيث الحجم وإعادة الإنتاج واللوحات والطباعة والاستخدام الرقمي.",
   "why.p4title": "أكثر من 12 سنة ممارسة",
   "why.p4text": "عملية صاغها سنوات من عمل العملاء الفعلي — لا مشاريع عروض فقط.",
+  "why.p1proof": "أكثر من 50 شعارًا وهوية تم تسليمها",
+  "why.p2proof": "أنظمة ثنائية اللغة مصممة كلغة واحدة",
+  "why.p3proof": "خبرة اللوحات والصيغ الكبيرة",
+  "why.p4proof": "ممارسة منذ 2014",
 
   "phil.index": "فلسفة التصميم",
   "phil.title": "الشعار ليس زينة.<br/><em>إنه أداة تعريف.</em>",

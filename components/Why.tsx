@@ -4,10 +4,10 @@ import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
 
 const POINTS = [
-  { n: "01", title: "why.p1title", text: "why.p1text" },
-  { n: "02", title: "why.p2title", text: "why.p2text" },
-  { n: "03", title: "why.p3title", text: "why.p3text" },
-  { n: "04", title: "why.p4title", text: "why.p4text" },
+  { n: "01", title: "why.p1title", text: "why.p1text", proof: "why.p1proof" },
+  { n: "02", title: "why.p2title", text: "why.p2text", proof: "why.p2proof" },
+  { n: "03", title: "why.p3title", text: "why.p3text", proof: "why.p3proof" },
+  { n: "04", title: "why.p4title", text: "why.p4text", proof: "why.p4proof" },
 ];
 
 export default function Why() {
@@ -30,8 +30,11 @@ export default function Why() {
             <Reveal key={p.n} delay={i * 0.05}>
               <div className="border-line p-7 transition-colors duration-300 hover:bg-surface sm:border-e lg:[&:not(:last-child)]:border-e">
                 <span className="font-mono text-faint">{p.n}</span>
-                <h3 className="mb-3 mt-16 text-[clamp(1.3rem,2.4vw,1.9rem)] font-bold tracking-tight">{t(p.title)}</h3>
+                <h3 className="mb-3 mt-14 text-[clamp(1.3rem,2.4vw,1.9rem)] font-bold tracking-tight">{t(p.title)}</h3>
                 <p className="max-w-[26ch] text-muted">{t(p.text)}</p>
+                <p className="mt-4 border-t border-line pt-3 font-mono text-[0.58rem] uppercase tracking-[0.12em] text-faint">
+                  ◆ {t(p.proof)}
+                </p>
               </div>
             </Reveal>
           ))}
