@@ -96,7 +96,7 @@ export default function Contact() {
                   <select name="type" required className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink">
                     <option value="Logo">{t("form.opt1")}</option>
                     <option value="Visual Identity">{t("form.opt2")}</option>
-                    <option value="Arabic / Latin Typography">{t("form.opt3")}</option>
+                    <option value="Arabic / Latin Calligraphy">{t("form.opt3")}</option>
                     <option value="Rebrand">{t("form.opt4")}</option>
                     <option value="Digital Brand Experience">{t("form.opt5")}</option>
                     <option value="Other">{t("form.opt6")}</option>

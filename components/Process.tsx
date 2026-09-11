@@ -14,7 +14,7 @@ const PROCESS = [
 export default function Process() {
   const { t } = useI18n();
   return (
-    <section className="section border-t border-line py-[var(--section)]">
+    <section id="process" className="section border-t border-line py-[var(--section)]">
       <div className="container">
         <Reveal>
           <div className="mb-[clamp(2.5rem,6vw,5.2rem)] flex flex-col justify-between gap-6 md:flex-row md:items-end">

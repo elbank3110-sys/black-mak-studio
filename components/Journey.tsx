@@ -8,7 +8,7 @@ import Reveal from "./Reveal";
 const STEPS: { year?: string; yearKey?: string; title: string; text: string }[] = [
   { year: "2014", title: "journey.1title", text: "journey.1text" },
   { year: "2016 — 2020", title: "journey.2title", text: "journey.2text" },
-  { year: "2019 — 2023", title: "journey.3title", text: "journey.3text" },
+  { year: "2020 — 2023", title: "journey.3title", text: "journey.3text" },
   { yearKey: "journey.4year", title: "journey.4title", text: "journey.4text" },
 ];
 
@@ -20,7 +20,7 @@ export default function Journey() {
     offset: ["start 70%", "end 60%"],
   });
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const tools = ["journey.tool1", "journey.tool2", "journey.tool4"];
+  const tools = ["journey.tool1", "journey.tool2"];
 
   return (
     <section className="section border-t border-line bg-surface py-[var(--section)]">

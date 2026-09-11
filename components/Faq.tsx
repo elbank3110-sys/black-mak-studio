@@ -15,7 +15,7 @@ const FAQ = [
 export default function Faq() {
   const { t } = useI18n();
   return (
-    <section className="section border-t border-line py-[var(--section)]">
+    <section id="faq" className="section border-t border-line py-[var(--section)]">
       <div className="container narrow">
         <Reveal>
           <div className="mb-10">

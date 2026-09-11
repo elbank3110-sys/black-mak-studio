@@ -1,12 +1,13 @@
 import Hero from "@/components/Hero";
 import SignalStrip from "@/components/SignalStrip";
+import Marquee from "@/components/Marquee";
 import Work from "@/components/Work";
+import Proof from "@/components/Proof";
 import Statement from "@/components/Statement";
 import Why from "@/components/Why";
 import Services from "@/components/Services";
 import Biling from "@/components/Biling";
 import About from "@/components/About";
-import Journey from "@/components/Journey";
 import Process from "@/components/Process";
 import Who from "@/components/Who";
 import Pricing from "@/components/Pricing";
@@ -20,13 +21,14 @@ export default function Page() {
     <main>
       <Hero />
       <SignalStrip />
+      <Marquee />
       <Work />
+      <Proof />
       <Statement />
       <Why />
       <Services />
       <Biling />
       <About />
-      <Journey />
       <Process />
       <Who />
       <Pricing />

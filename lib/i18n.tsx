@@ -16,19 +16,19 @@ const EN: Dict = {
   "nav.about": "About",
   "nav.pricing": "Pricing",
   "nav.cv": "CV",
-  "nav.cta": "Start a Brand Project",
+  "nav.cta": "Start Your Project",
   "lang.toggle": "العربية",
 
   "hero.kicker": "BLACK-MAK® / LOGO & VISUAL IDENTITY",
   "hero.title": "Logo & Visual Identity Design<br/><em>for brands that want to be recognized.</em>",
   "hero.lede":
-    "Distinctive identities built around strategy, calligraphy, and real-world application — in Arabic, Latin, and everything in between.",
+    "Distinctive identities shaped by strategy, typography, and real-world application — with particular expertise in Arabic and Latin visual systems.",
   "hero.work": "View Selected Work",
-  "hero.cta": "Start a Brand Project",
+  "hero.cta": "Start Your Journey",
   "hero.sideLabel": "The practice",
   "hero.sideTitle": "Strategy, craft & real-world application.",
   "hero.sideText":
-    "Arabic & Latin calligraphy, identity systems, and applied design — built to survive the street, not just the screen.",
+    "Typography, freestyle calligraphy, identity systems, and applied design — built to survive the street, not just the screen.",
   "hero.scroll": "Scroll to explore",
   "hero.cardLabel": "BLACK-MAK / DIRECT CONTACT",
   "hero.role": "Logo & Visual Identity Designer",
@@ -41,6 +41,8 @@ const EN: Dict = {
   "signal.3": "03 / BILINGUAL CALLIGRAPHY",
   "signal.4": "04 / WORLDWIDE COLLABORATION",
 
+  "marquee.text": "LOGO DESIGN · VISUAL IDENTITY · ARABIC + LATIN · TYPOGRAPHY · BRAND SYSTEMS · ",
+
   "work.index": "01 / SELECTED WORK",
   "work.moreIndex": "MORE WORK",
   "work.moreTitle": "More<br/><em>work.</em>",
@@ -49,14 +51,19 @@ const EN: Dict = {
     "A focused selection of logo design, calligraphy, identity systems, and applied communication. Every project starts with a question: what should this mark make people feel?",
   "work.p1title": "Logo Collection — Vol. II",
   "work.p1tags": "Logo Design · Logotype · Identity",
+  "work.p1out": "Outcome: scalable marks that stay legible from favicon to facade",
   "work.p2title": "Logo Collection — Vol. I",
   "work.p2tags": "Logo Design · Logotype · Identity",
+  "work.p2out": "Outcome: foundational identity systems still anchoring client brands today",
   "work.p3title": "Outdoor Advertising",
   "work.p3tags": "Applied Design · Campaigns",
+  "work.p3out": "Outcome: street-level visibility that drove foot traffic for retail chains",
   "work.p4title": "MAKEEN",
   "work.p4tags": "Arabic Calligraphy · Logotype",
+  "work.p4out": "Outcome: one calligraphic wordmark working as stamp, sign, and screen",
   "work.p5title": "CALLIGRAPHY WORK",
   "work.p5tags": "Arabic Calligraphy · Behance Collection",
+  "work.p5out": "Outcome: a reference library of contemporary Arabic letterforms",
   "work.footer":
     "Years of designing for print, distance, and the street — experience that makes every mark work beyond the screen.",
   "work.archive": "View full archive on Behance",
@@ -64,12 +71,12 @@ const EN: Dict = {
   "statement.index": "THE POINT",
   "statement.title":
     "A logo is not decoration.<br/><em>It is the shortest expression of who you are.</em>",
-  "statement.cta": "Start a Brand Project",
+  "statement.cta": "Start Your Journey",
 
   "work.cta.line": "Like what you see?<br/><em>Your brand deserves the same level of thinking.</em>",
-  "work.cta.btn": "Start a Brand Project",
+  "work.cta.btn": "Start Your Journey",
 
-  "services.index": "03 / SERVICES",
+  "services.index": "04 / SERVICES",
   "services.incLabel": "WHAT'S INCLUDED —",
   "services.title": "What I<br/><em>build.</em>",
   "services.note":
@@ -104,7 +111,7 @@ const EN: Dict = {
   "services.s6desc":
     "For businesses that have outgrown their current identity and need a clearer, more distinctive visual direction.",
 
-  "about.index": "04 / THE DESIGNER",
+  "about.index": "05 / THE DESIGNER",
   "about.title": "Behind<br/><em>the mark.</em>",
   "about.note":
     "A designer with a street-level understanding of how identity behaves in the real world.",
@@ -113,7 +120,7 @@ const EN: Dict = {
   "about.p1":
     "My background spans logo design, Arabic & Latin calligraphy, and brand identity systems. Years of outdoor and large-format work shaped the conviction that a good mark must survive the real world — not just a presentation board.",
   "about.p2":
-    "I work locally in Egypt and worldwide, in Arabic and English, with an AI-augmented creative workflow that speeds up exploration without replacing the designer's judgment. The practice is built on long-term client relationships, repeat work, and referrals.",
+    "I work locally in Egypt and worldwide, in Arabic and English. AI supports exploration, iteration, and efficiency — while strategy, art direction, typography, and final design decisions remain human-led. The practice is built on long-term client relationships, repeat work, and referrals.",
   "about.stat1": "Years of Practice",
   "about.stat2": "Logos & Identities Delivered",
   "about.stat3": "Bilingual Identities — One System",
@@ -151,12 +158,11 @@ const EN: Dict = {
   "journey.4year": "2024 — Today",
   "journey.4title": "BLACK-MAK",
   "journey.4text":
-    "A dedicated practice serving clients worldwide — Arabic & Latin marks, brand systems, and a creative workflow built for precision.",
+    "The practice's dedicated era — serving clients worldwide with Arabic & Latin marks, brand systems, and a creative workflow built for precision.",
   "journey.tool1": "Adobe Illustrator",
   "journey.tool2": "Adobe Photoshop",
-  "journey.tool4": "AI-assisted",
 
-  "process.index": "05 / PROCESS",
+  "process.index": "06 / PROCESS",
   "process.title": "From question<br/><em>to identity.</em>",
   "process.note":
     "A managed process keeps the work focused, collaborative, and moving forward — you always know what's next.",
@@ -176,10 +182,18 @@ const EN: Dict = {
   "process.5text":
     "Package the final identity into a practical system ready for real-world use.",
 
-  "proof.index": "05 / PROOF",
+  "proof.index": "02 / PROOF",
   "proof.title": "Good work<br/><em>travels.</em>",
   "proof.note":
     "Real feedback from people who needed a mark to do more than look good.",
+  "proof.clientsTitle": "SELECTED CLIENTS",
+  "proof.clientsNote": "A slice of the 50+ businesses the practice has built marks for.",
+  "proof.c1": "Specialty Coffee Roastery",
+  "proof.c2": "Skincare Brand",
+  "proof.c3": "Retail Chains",
+  "proof.c4": "Restaurants",
+  "proof.c5": "Agencies",
+  "proof.c6": "MAKEEN",
   "proof.1quote":
     "Muhamed asked about our story before he opened Illustrator. Three concepts, all usable — we chose ours in the first round and it still fits us two years later.",
   "proof.1role": "Founder, specialty coffee roastery — Cairo",
@@ -190,42 +204,78 @@ const EN: Dict = {
     "Responsive, professional, and patient with revisions. Delivered exactly what he promised, on time.",
   "proof.3role": "Restaurant owner — USA",
 
-  "pricing.index": "07 / INVESTMENT",
+  "pricing.index": "08 / INVESTMENT",
   "pricing.title": "Clear scope.<br/><em>Clear start.</em>",
   "pricing.note":
-    "Projects from, not fixed packages. Every engagement is scoped individually — final quote after a short conversation.",
-  "pricing.starting": "Projects from",
+    "Starting prices are based on focused project scopes. Every engagement is scoped individually according to complexity, deliverables, timeline, and level of strategic involvement.",
+  "pricing.notEvery":
+    "Not every project needs a full identity. I'll recommend the scope your brand actually needs before we begin.",
+  "pricing.starting": "From",
   "pricing.featured": "MOST COMPLETE",
   "pricing.offer": "LIMITED PROJECT CAPACITY",
-  "pricing.disclaimer":
-    "All projects are scoped individually. Final pricing depends on the complexity, number of deliverables, and level of strategic involvement required.",
-  "pricing.microcopy":
-    "Every project starts with understanding the problem before defining the deliverables.",
+  "pricing.project": "project",
+  "pricing.investment": "Investment",
+
   "pricing.1name": "Focused Logo Project",
-  "pricing.1desc": "For focused logo projects where the mark is the primary deliverable — scope is defined after the brief.",
-  "pricing.1a": "2–3 original concepts",
-  "pricing.1b": "3 refinement rounds",
-  "pricing.1c": "Editable AI · PDF · PNG · SVG",
-  "pricing.1d": "1–2 weeks",
-  "pricing.2name": "Calligraphic Identity",
-  "pricing.2desc": "Custom wordmarks and calligraphy-led identities built around free-drawn letterforms.",
-  "pricing.2a": "Custom-drawn letterforms",
-  "pricing.2b": "Arabic & Latin calligraphic lockups",
-  "pricing.2c": "2 concepts + refinement",
-  "pricing.2d": "1–2 weeks",
+  "pricing.1desc": "A professional logo built to become the recognizable core of your brand.",
+  "pricing.1a": "2–3 Initial Directions",
+  "pricing.1b": "2–3 Refinement Rounds",
+  "pricing.1c1": "Final Logo Variations",
+  "pricing.1c2": "Primary Logo",
+  "pricing.1c3": "Secondary / Stacked Version",
+  "pricing.1c4": "Monochrome Version",
+  "pricing.1c5": "Basic Clear-Space / Usage Guidance",
+  "pricing.1c6": "Editable Source File",
+  "pricing.1d": "Final Production Package",
+  "pricing.1e": "1–2 weeks",
+  "pricing.1f": "Additional edits are quoted as add-ons based on scope.",
+
+  "pricing.2name": "Typographic / Calligraphic Identity",
+  "pricing.2desc": "Custom lettering and wordmarks designed around the character of the brand.",
+  "pricing.2a": "2–3 Initial Directions",
+  "pricing.2b": "2–3 Refinement Rounds",
+  "pricing.2c1": "Custom Wordmark / Lettering",
+  "pricing.2c2": "Arabic / Latin Typographic Direction",
+  "pricing.2c3": "Custom Letterform Development",
+  "pricing.2c4": "Primary Wordmark",
+  "pricing.2c5": "Alternate Lockup",
+  "pricing.2c6": "Monochrome Version",
+  "pricing.2c7": "Editable Source Files",
+  "pricing.2d": "Final Production Files",
+  "pricing.2e": "1–2 weeks",
+  "pricing.2f": "Additional edits are quoted as add-ons based on scope.",
+
   "pricing.3name": "Full Visual Identity",
-  "pricing.3desc": "For brands that need a complete visual system rather than a standalone mark — covering the logo, typography, color, and essential brand applications.",
-  "pricing.3a": "Logo system + color + type",
-  "pricing.3b": "Brand guidelines document",
-  "pricing.3c": "Applied design set",
+  "pricing.3desc": "A complete visual system built to give the brand consistency, character, and room to grow.",
+  "pricing.3a": "Brand Discovery & Creative Direction",
+  "pricing.3b1": "Strategic Visual Direction",
+  "pricing.3b2": "Primary Logo",
+  "pricing.3b3": "Secondary Logo / Alternate Mark",
+  "pricing.3b4": "Logo Lockups",
+  "pricing.3b5": "Logo Usage Basics",
+  "pricing.3b6": "Color System",
+  "pricing.3b7": "Primary & Secondary Typography",
+  "pricing.3b8": "Typography Hierarchy",
+  "pricing.3b9": "Graphic Language",
+  "pricing.3b10": "Supporting Visual Elements",
+  "pricing.3b11": "Basic Brand Guidelines",
+  "pricing.3b12": "Selected Brand Applications",
+  "pricing.3b13": "Digital / Social Brand Direction",
+  "pricing.3b14": "Editable Source Files",
+  "pricing.3c": "Final Production Package",
   "pricing.3d": "3–4 weeks",
+  "pricing.3e": "Additional edits are quoted as add-ons based on scope.",
+
   "pricing.upsellQ": "Need the identity translated into digital?",
   "pricing.upsellA": "Extend the system into a custom digital brand experience.",
   "pricing.upsellCta": "Explore Digital Brand Experiences",
   "pricing.ctaQ": "Know what you need? Send the brief. I'll take it from there.",
-  "pricing.ctaBtn": "Request a Project Estimate",
 
-  "payment.index": "09 / PAYMENT",
+  "pricing.cta1": "Start a Logo Project",
+  "pricing.cta2": "Start a Typographic Project",
+  "pricing.cta3": "Build My Identity",
+
+  "payment.index": "10 / PAYMENT",
   "payment.title": "Payment<br/><em>after approval.</em>",
   "payment.note":
     "After the proposal is approved, choose your preferred payment method and copy the details securely.",
@@ -236,9 +286,9 @@ const EN: Dict = {
   "payment.copy": "Copy",
   "payment.copied": "Copied",
   "payment.footnote":
-    "Tap any value to copy it, transfer via the method that suits you, then send the transfer confirmation on WhatsApp — your project is confirmed and scheduled the same day.",
+    "Tap any value to copy it, transfer via the method that suits you, then send the transfer confirmation on WhatsApp. Once payment is confirmed, your project is officially scheduled and the first step is set in motion.",
 
-  "faq.index": "08 / FAQ",
+  "faq.index": "09 / FAQ",
   "faq.title": "Before<br/><em>we begin.</em>",
   "faq.1q": "How long does a project take?",
   "faq.1a":
@@ -251,7 +301,7 @@ const EN: Dict = {
     "I review the brief, ask only the questions needed to understand the project, then send a clear recommendation and project estimate. If we're a fit, we schedule the start and move into the first stage.",
   "faq.4q": "What counts as a revision round?",
   "faq.4a":
-    "A revision round refines the chosen direction — adjusting proportions, weights, spacing, and color. It does not restart the concept from scratch; concept exploration happens earlier in the process.",
+    "A revision round refines the chosen direction — adjusting proportions, weights, spacing, and color. It does not restart the concept from scratch; concept exploration happens earlier in the process. Each refinement round is based on one consolidated set of client feedback.",
   "faq.5q": "What isn't included?",
   "faq.5a":
     "Services beyond the agreed scope — such as social media kits, packaging production, copywriting, or web development — are quoted separately based on the project's needs.",
@@ -259,7 +309,7 @@ const EN: Dict = {
   "faq.6a":
     "Yes. BLACK-MAK works with clients worldwide in both Arabic and English.",
 
-  "who.index": "06 / WHO I WORK WITH",
+  "who.index": "07 / WHO I WORK WITH",
   "who.title": "Who I<br/><em>work with.</em>",
   "who.note":
     "I work with founders, businesses, professionals, and creative teams who need a distinctive identity — not a logo produced in isolation.",
@@ -280,7 +330,7 @@ const EN: Dict = {
   "who.restaurants": "Restaurants",
   "who.creative": "Creative Brands",
 
-  "why.index": "02 / WHY BLACK-MAK",
+  "why.index": "03 / WHY BLACK-MAK",
   "why.title": "What makes<br/><em>BLACK-MAK different.</em>",
   "why.note":
     "12+ years of designing marks that have to work in the real world — from identity systems and calligraphy to signage and large-format applications.",
@@ -316,11 +366,11 @@ const EN: Dict = {
   "bts.text":
     "It has to work at 24px, on packaging, on signage, in monochrome, and from a distance. Years of outdoor and large-format work built that instinct into every mark I draw.",
 
-  "contact.index": "10 / START A BRAND PROJECT",
+  "contact.index": "11 / START A BRAND PROJECT",
   "contact.title": "Have a brand worth building?",
   "contact.titleEm": "Let's give it an identity that can carry it forward.",
   "contact.note":
-    "A short brief is enough to start. We discuss, I propose, then we begin.",
+    "Tell me what you're building, where you are now, and what needs to change. I'll review the brief and recommend the right scope before we begin.",
   "contact.pricingCta": "Know what you need? Send the brief. I'll take it from there.",
   "contact.qual": "BLACK-MAK is built for focused, collaborative projects and clients who value thoughtful design.",
   "contact.qualTitle": "A note on project fit",
@@ -387,19 +437,19 @@ const AR: Dict = {
   "nav.about": "عنّي",
   "nav.pricing": "الأسعار",
   "nav.cv": "السيرة",
-  "nav.cta": "ابدأ مشروع علامة",
+  "nav.cta": "ابدأ مشروعك",
   "lang.toggle": "EN",
 
   "hero.kicker": "BLACK-MAK® / شعارات وهوية بصرية",
   "hero.title": "تصميم شعارات وهوية بصرية<br/><em>للعلامات التي تريد أن تُعرَف.</em>",
   "hero.lede":
-    "هويات مميزة مبنية على الاستراتيجية والكاليجرافي والتطبيق الواقعي — بالعربية واللاتينية وكل ما بينهما.",
+    "هويات مميزة تتشكّل حول الاستراتيجية والتايبوغرافي والتطبيق الواقعي — مع خبرة خاصة في الأنظمة البصرية العربية واللاتينية.",
   "hero.work": "استعرض الأعمال المختارة",
-  "hero.cta": "ابدأ مشروع علامة",
+  "hero.cta": "ابدأ رحلتك",
   "hero.sideLabel": "الممارسة",
   "hero.sideTitle": "دقة، مفهوم وشخصية.",
   "hero.sideText":
-    "كاليجرافي عربي ولاتيني، وأنظمة هوية، وتصميم تطبيقي تشكّله أكثر من 12 سنة في العالم الحقيقي.",
+    "التايبوغرافي، الكاليجرافي الحر، وأنظمة الهوية، وتصميم تطبيقي تشكّله أكثر من 12 سنة في العالم الحقيقي.",
   "hero.scroll": "مرّر للاستكشاف",
   "hero.cardLabel": "BLACK-MAK / تواصل مباشر",
   "hero.role": "مصمم شعارات وهوية بصرية",
@@ -412,6 +462,8 @@ const AR: Dict = {
   "signal.3": "03 / كاليجرافي ثنائي اللغة",
   "signal.4": "04 / تعاون حول العالم",
 
+  "marquee.text": "تصميم شعار · هوية بصرية · عربي + لاتيني · تايبوغرافي · أنظمة العلامات · ",
+
   "work.index": "01 / أعمال مختارة",
   "work.moreIndex": "أعمال أخرى",
   "work.moreTitle": "أعمال<br/><em>أخرى.</em>",
@@ -420,14 +472,19 @@ const AR: Dict = {
     "مختارات مركّزة من تصميم الشعارات، والكاليجرافي، وأنظمة الهوية، والتواصل البصري التطبيقي. كل مشروع يبدأ بسؤال واحد: ما الذي يجب أن تُشعر به هذه العلامة الناس؟",
   "work.p1title": "مجموعة الشعارات — الجزء الثاني",
   "work.p1tags": "تصميم شعار · لوجوتايب · هوية",
+  "work.p1out": "النتيجة: علامات قابلة للتوسع تحافظ على وضوحها من الأيقونة الصغيرة إلى واجهة المبنى",
   "work.p2title": "مجموعة الشعارات — الجزء الأول",
   "work.p2tags": "تصميم شعار · لوجوتايب · هوية",
+  "work.p2out": "النتيجة: أنظمة هوية تأسيسية ما زالت ترسو هويات العملاء حتى اليوم",
   "work.p3title": "إعلانات خارجية",
   "work.p3tags": "تصميم تطبيقي · حملات",
+  "work.p3out": "النتيجة: حضور على مستوى الشارع رفع حركة العملاء لسلاسل التجزئة",
   "work.p4title": "MAKEEN",
   "work.p4tags": "خط عربي · لوجوتايب",
+  "work.p4out": "النتيجة: لوجوتايب خطي واحد يعمل كختم ولافتة وشاشة",
   "work.p5title": "أعمال الخط العربي",
   "work.p5tags": "خط عربي · مجموعة Behance",
+  "work.p5out": "النتيجة: مكتبة مرجعية للحروف العربية المعاصرة",
   "work.footer":
     "سنوات من التصميم للطباعة، والمسافات، والشارع — خبرة تجعل كل علامة تعمل خارج الشاشة أيضًا.",
   "work.archive": "شاهد الأرشيف الكامل على Behance",
@@ -437,7 +494,7 @@ const AR: Dict = {
     "الشعار ليس زينة.<br/><em>إنه أقصر تعبير ممكن عن من أنت.</em>",
   "statement.cta": "ابنِ علامتك",
 
-  "services.index": "03 / الخدمات",
+  "services.index": "04 / الخدمات",
   "services.incLabel": "ما يشمله —",
   "services.title": "ما الذي<br/><em>أبنيه.</em>",
   "services.note": "ممارسة تصميم مستقلة متخصصة في الشعارات والهويات البصرية والكاليجرافي وأنظمة العلامات المميزة.",
@@ -464,7 +521,7 @@ const AR: Dict = {
   "services.s6name": "إعادة تصميم الهوية",
   "services.s6desc": "للأعمال التي تجاوزت هويتها الحالية وتحتاج اتجاهًا بصريًا أوضح وأكثر تميزًا.",
 
-  "about.index": "04 / المصمم",
+  "about.index": "05 / المصمم",
   "about.title": "وراء<br/><em>العلامة.</em>",
   "about.note": "مصمم بفهمٍ ميداني لكيفية تصرف الهوية في العالم الحقيقي.",
   "about.lede":
@@ -472,7 +529,7 @@ const AR: Dict = {
   "about.p1":
     "خلفيتي تمتد بين تصميم الشعارات، الكاليجرافي العربي واللاتيني، وأنظمة الهوية التجارية. سنوات العمل الخارجي والصيغ الكبيرة صاغت قناعتي أن العلامة الجيدة يجب أن تنجو في العالم الحقيقي — لا على لوحة العرض فقط.",
   "about.p2":
-    "أعمل محليًا في مصر وحول العالم، بالعربية والإنجليزية، بأسلوب عمل إبداعي معزَّز بالذكاء الاصطناعي يسرّع الاستكشاف دون أن يحل محل حكم المصمم. الممارسة مبنية على علاقات عملاء طويلة الأمد وعمل متكرر وإحالات.",
+    "أعمل محليًا في مصر وحول العالم، بالعربية والإنجليزية. الذكاء الاصطناعي يدعم الاستكشاف والتنقيح والكفاءة — بينما الاستراتيجية والتايبوغرافي والتصميم النهائي تبقى بقيادة بشرية. الممارسة مبنية على علاقات عملاء طويلة الأمد وعمل متكرر وإحالات.",
   "about.stat1": "سنوات من الخبرة",
   "about.stat2": "شعارًا وهويةً تم تسليمها",
   "about.stat3": "هويات ثنائية اللغة — نظام واحد",
@@ -512,9 +569,8 @@ const AR: Dict = {
     "ممارسة مخصّصة لخدمة العملاء حول العالم — علامات عربية ولاتينية، أنظمة هوية وأسلوب عمل إبداعي مبني للدقة.",
   "journey.tool1": "Adobe Illustrator",
   "journey.tool2": "Adobe Photoshop",
-  "journey.tool4": "مدعوم بالذكاء الاصطناعي",
 
-  "process.index": "05 / العملية",
+  "process.index": "06 / العملية",
   "process.title": "من سؤال<br/><em>إلى هوية.</em>",
   "process.note": "عملية مُدارة تبقي العمل مركّزًا وتعاونيًا ومتقدمًا — تعرف دائمًا ما الخطوة التالية.",
   "process.1title": "اكتشاف",
@@ -528,61 +584,97 @@ const AR: Dict = {
   "process.5title": "تسليم",
   "process.5text": "تغليف الهوية النهائية في نظام عملي جاهز للاستخدام في العالم الحقيقي.",
 
-  "proof.index": "05 / إثبات",
+  "proof.index": "٠٢ / إثبات",
   "proof.title": "العمل الجيد<br/><em>يسافر.</em>",
   "proof.note": "تغذية راجعة حقيقية ممن احتاجوا علامة تفعل أكثر من أن تبدو جيدة.",
+  "proof.clientsTitle": "عملاء مختارون",
+  "proof.clientsNote": "غيض من فيض أكثر من ٥٠ نشاطًا تجاريًا بُنيت لهم علامات.",
+  "proof.c1": "محمصة قهوة مختصة",
+  "proof.c2": "علامة عناية بالبشرة",
+  "proof.c3": "سلاسل تجزئة",
+  "proof.c4": "مطاعم",
+  "proof.c5": "وكالات",
+  "proof.c6": "MAKEEN",
   "proof.1quote":
-    "سألني محمد عن قصتنا قبل أن يفتح إليستريتور. ثلاثة مفاهيم الكلّ usable — اخترنا ours في الجولة الأولى وما زالت تناسبنا بعد سنتين.",
+    "سألني محمد عن قصتنا قبل أن يفتح إليستريتور. ثلاثة مفاهيم، كلها قابلة للاستخدام — اخترنا جهتنا في الجولة الأولى وما زالت تناسبنا بعد سنتين.",
   "proof.1role": "مؤسس محمصة قهوة مختصة — القاهرة",
   "proof.2quote":
-    "عملية واضحة، جدول زمني صادق، صفر دراما. الكلمة التي رسمها تحمل الآن خط إنتاجنا بالكامل.",
+    "عملية واضحة، جدول زمني صادق، صفر دراما. اللوجوتايب الذي رسمه يحمل الآن خط إنتاجنا بالكامل.",
   "proof.2role": "مؤسسة علامة عناية بالبشرة — دبي",
   "proof.3quote":
     "متجاوب، احترافي، وصبور مع المراجعات. سلّم بالضبط ما وعد به، في موعده.",
   "proof.3role": "صاحب مطعم — أمريكا",
 
-  "pricing.index": "07 / الاستثمار",
+  "pricing.index": "08 / الاستثمار",
   "pricing.title": "نطاق واضح.<br/><em>بداية واضحة.</em>",
-  "pricing.note": "مشاريع من، لا باقات ثابتة. كل مشروع يُحدد فرديًا — عرض نهائي بعد حديث قصير.",
-  "pricing.disclaimer":
-    "كل المشاريع تُحدد فرديًا. السعر النهائي يعتمد على التعقيد وعدد المخرجات ومستوى المشاركة الاستراتيجية المطلوبة.",
-  "pricing.microcopy":
-    "كل مشروع يبدأ بفهم المشكلة قبل تحديد المخرجات.",
-  "pricing.starting": "مشاريع من",
+  "pricing.note": "أسعار البداية مبنية على نطاقات مشاريع مركّزة. كل مشروع يُحدد فرديًا حسب التعقيد والمخرجات والجدول الزمني ومستوى المشاركة الاستراتيجية المطلوبة.",
+  "pricing.notEvery": "ليس كل مشروع يحتاج هوية كاملة. سأوصي بالنطاق الذي يحتاجه مشروعك فعلاً قبل أن نبدأ.",
+  "pricing.starting": "من",
   "pricing.featured": "الأكثر اكتمالًا",
-  "pricing.save": "",
   "pricing.offer": "سعة مشاريع محدودة",
-  "pricing.endsIn": "نقبل حاليًا",
+  "pricing.project": "مشروع",
+  "pricing.investment": "استثمار",
+
   "pricing.1name": "مشروع شعار مركّز",
-  "pricing.1desc": "لمشاريع الشعار المركّزة حيث تكون العلامة هي المخرج الأساسي — يُحدد النطاق بعد البريف.",
-  "pricing.1a": "2–3 مفاهيم أصلية",
-  "pricing.1b": "3 جولات صقل",
-  "pricing.1c": "ملفات قابلة للتعديل · PDF · PNG · SVG",
-  "pricing.1d": "1–2 أسبوع",
-  "pricing.2name": "هوية كاليجرافية",
-  "pricing.2desc": "كلمات وهويات يقودها الكاليجرافي، مبنية حول حروف مرسومة بحرية.",
-  "pricing.2a": "حرفات مرسومة يدويًا",
-  "pricing.2b": "قفل كاليجرافي عربي ولاتيني",
-  "pricing.2c": "مفهومان + صقل",
-  "pricing.2d": "1–2 أسبوع",
+  "pricing.1desc": "شعار احترافي يُبنى ليصبح جوهر العلامة التUIntية المُعترف بها.",
+  "pricing.1a": "2–3 اتجاهات أولية",
+  "pricing.1b": "2–3 جولات تنقيح",
+  "pricing.1c1": "تنويعات الشعار النهائية",
+  "pricing.1c2": "الشعار الأساسي",
+  "pricing.1c3": "النسخة الثانوية / المكدّسة",
+  "pricing.1c4": "النسخة أحادية اللون",
+  "pricing.1c5": "إرشادات المسافة الفارغة والاستخدام الأساسية",
+  "pricing.1c6": "ملف المصدر القابل للتعديل",
+  "pricing.1d": "حزمة الإنتاج النهائية",
+  "pricing.1e": "1–2 أسبوع",
+  "pricing.1f": "التعديلات الإضافية تُسعَّر كإضافة حسب النطاق.",
+
+  "pricing.2name": "هوية تايبوغرافية / كاليجرافية",
+  "pricing.2desc": "حروف وكلمات مصممة مخصصًا حول طبيعة العلامة التUIntية.",
+  "pricing.2a": "2–3 اتجاهات أولية",
+  "pricing.2b": "2–3 جولات تنقيح",
+  "pricing.2c1": "كلمة معرفية / حروف مصممة",
+  "pricing.2c2": "الاتجاه التايبوغرافي العربي / اللاتيني",
+  "pricing.2c3": "تطوير أشكال الحروف مخصصًا",
+  "pricing.2c4": "الكلمة المعرفية الأساسية",
+  "pricing.2c5": "النسخة البديلة",
+  "pricing.2c6": "النسخة أحادية اللون",
+  "pricing.2c7": "ملفات المصدر القابلة للتعديل",
+  "pricing.2d": "ملفات الإنتاج النهائية",
+  "pricing.2e": "1–2 أسبوع",
+  "pricing.2f": "التعديلات الإضافية تُسعَّر كإضافة حسب النطاق.",
+
   "pricing.3name": "هوية بصرية كاملة",
-  "pricing.3desc": "للعلامات التي تحتاج نظامًا بصريًا متكاملًا لا مجرد شعار منفرد — يغطي الشعار والتايبوغرافي والألوان وتطبيقات العلامة الأساسية.",
-  "pricing.3a": "نظام شعار + ألوان + خط",
-  "pricing.3b": "وثيقة دليل الهوية",
-  "pricing.3c": "مجموعة تطبيقات",
+  "pricing.3desc": "نظام بصري متكامل يمنح العلامة الت UIntية الاتساق والشخصية وفرصة للنمو.",
+  "pricing.3a": "اكتشاف واست direction إبداعي",
+  "pricing.3b1": "الاتجاه البصري الاستراتيجي",
+  "pricing.3b2": "الشعار الأساسي",
+  "pricing.3b3": "الشعار الثانوي / العلامة البديلة",
+  "pricing.3b4": "تجميعات الشعار",
+  "pricing.3b5": "إرشادات استخدام الشعار",
+  "pricing.3b6": "نظام الألوان",
+  "pricing.3b7": "التايبوغرافي الأساسي والثانوي",
+  "pricing.3b8": "التسلسل الهرمي للتايبوغرافي",
+  "pricing.3b9": "اللغة البصرية",
+  "pricing.3b10": "العناصر البصرية الداعمة",
+  "pricing.3b11": "دليل هوية أساسي",
+  "pricing.3b12": "تطبيقات العلامة المختارة",
+  "pricing.3b13": "الاتجاه الرقمي / الاجتماعي",
+  "pricing.3b14": "ملفات المصدر القابلة للتعديل",
+  "pricing.3c": "حزمة الإنتاج النهائية",
   "pricing.3d": "3–4 أسابيع",
+  "pricing.3e": "التعديلات الإضافية تُسعَّر كإضافة حسب النطاق.",
+
   "pricing.upsellQ": "تحتاج الهوية مترجمة إلى الرقمي؟",
   "pricing.upsellA": "امتد النظام إلى تجربة رقمية مخصصة للعلامة.",
   "pricing.upsellCta": "استكشف التجارب الرقمية للعلامة",
   "pricing.ctaQ": "تعرف ما تحتاجه؟ أرسل البريف وأنا أكمل من هناك.",
-  "pricing.ctaBtn": "اطلب عرض مشروع",
-  "pricing.4name": "التصميم التطبيقي والخارجي",
-  "pricing.4a": "لوحات، شعارات، مطبوعات",
-  "pricing.4b": "جريء ومقروء من بعيد",
-  "pricing.4c": "ملفات إنتاج جاهزة",
-  "pricing.4d": "1–2 أسبوع",
 
-  "payment.index": "09 / الدفع",
+  "pricing.cta1": "ابدأ مشروع الشعار",
+  "pricing.cta2": "ابدأ مشروع التايبوغرافي",
+  "pricing.cta3": "ابنِ هويتي",
+
+  "payment.index": "10 / الدفع",
   "payment.title": "الدفع<br/><em>بعد الموافقة.</em>",
   "payment.note": "بعد الموافقة على العرض، اختر وسيلة الدفع المفضلة لديك وانسخ التفاصيل بأمان.",
   "payment.label": "الدفع — بعد موافقة العرض",
@@ -592,9 +684,9 @@ const AR: Dict = {
   "payment.copy": "نسخ",
   "payment.copied": "تم النسخ",
   "payment.footnote":
-    "اضغط أي قيمة لنسخها، حوّل عبر الوسيلة الأنسب لك، ثم أرسل إيصال التحويل على واتساب — يُؤكّد مشروعك ويُجدول في نفس اليوم.",
+    "اضغط أي قيمة لنسخها، حوّل عبر الوسيلة الأنسب لك، ثم أرسل إيصال التحويل على واتساب. بمجرد تأكيد الدفع، يُجدول مشروعك رسميًا وتبدأ الخطوة الأولى.",
 
-  "faq.index": "08 / أسئلة",
+  "faq.index": "09 / أسئلة",
   "faq.title": "قبل<br/><em>أن نبدأ.</em>",
   "faq.1q": "كم يستغرق المشروع؟",
   "faq.1a":
@@ -607,14 +699,14 @@ const AR: Dict = {
     "أراجع البريف وأطرح فقط الأسئلة اللازمة لفهم المشروع، ثم أرسل توصية واضحة وعرضًا تقديريًا. إذا كنا مناسبين نحدد موعد البدء وننتقل إلى المرحلة الأولى.",
   "faq.4q": "ما الذي يُحتسب كجولة تعديل؟",
   "faq.4a":
-    "جولة التعديل تُصقل الاتجاه المختار — النسب والأوزان والمسافات واللون. لا تعيد المفهوم من الصفر؛ استكشاف المفاهيم يحدث في مرحلة سابقة من العملية.",
+    "جولة التعديل تُصقل الاتجاه المختار — النسب والأوزان والمسافات واللون. لا تعيد المفهوم من الصفر؛ استكشاف المفاهيم يحدث في مرحلة سابقة من العملية. وكل جولة صقل تُبنى على مجموعة واحدة مجمّعة من ملاحظات العميل.",
   "faq.5q": "ما الذي غير متضمن؟",
   "faq.5a":
     "الخدمات خارج النطاق المتفق عليه — مثل حزم السوشيال ميديا وإنتاج التغليف وكتابة المحتوى وتطوير الويب — تُسعَّر منفصلًا حسب احتياجات المشروع.",
   "faq.6q": "هل تعمل دوليًا؟",
   "faq.6a": "نعم. BLACK-MAK يعمل مع عملاء حول العالم بالعربية والإنجليزية.",
 
-  "who.index": "06 / لمن أعمل",
+  "who.index": "07 / لمن أعمل",
   "who.title": "لمن<br/><em>أعمل.</em>",
   "who.note":
     "أعمل مع مؤسسين وأعمال ومهنيين وفرق إبداعية تحتاج هوية مميزة — لا شعارًا يُصنع معزولًا.",
@@ -635,10 +727,10 @@ const AR: Dict = {
   "who.r4": "هويتك العربية واللاتينية تبدو منفصلة.",
   "who.r5": "علامتك تبدو غير متسقة عبر نقاط التواصل.",
 
-  "contact.index": "10 / ابدأ مشروعًا",
+  "contact.index": "11 / ابدأ مشروعًا",
   "contact.title": "عندك علامة تستحق البناء؟",
   "contact.titleEm": "لنمنحها هوية تستطيع حملها للأمام.",
-  "contact.note": "ملخّص موجز يكفي للبدء. نناقش، أقترح، ثم ننطلق.",
+  "contact.note": "أخبرني ماذا تبني، وأين أنت الآن، وما الذي يحتاج أن يتغير. سأراجع البريف وأوصي بالنطاق الصحيح قبل أن نبدأ.",
   "contact.wa": "واتساب",
   "contact.email": "البريد",
   "contact.pdf": "حمّل البروفايل (PDF)",
@@ -698,7 +790,7 @@ const AR: Dict = {
 
   "wa.msg": "مرحبًا محمد، وجدت BLACK-MAK وأود مناقشة مشروع علامة. إليك ملخص موجز: ",
 
-  "why.index": "02 / لماذا BLACK-MAK",
+  "why.index": "03 / لماذا BLACK-MAK",
   "why.title": "ما يجعل<br/><em>BLACK-MAK مختلفًا.</em>",
   "why.note":
     "أكثر من 12 سنة في تصميم علامات يجب أن تعمل في العالم الحقيقي — من أنظمة الهوية والكاليجرافي إلى اللوحات والتطبيقات الكبيرة.",
@@ -731,7 +823,7 @@ const AR: Dict = {
     "يجب أن تعمل على 24 بكسل، وعلى التغليف، وعلى اللوحات، وبأحادي اللون، ومن مسافة. سنوات العمل الخارجي والصيغ الكبيرة بنت هذا الحسّ في كل علامة أرسمها.",
 
   "work.cta.line": "أعجبك ما ترى؟<br/><em>علامتك تستحق نفس مستوى التفكير.</em>",
-  "work.cta.btn": "ابدأ مشروع علامة",
+  "work.cta.btn": "ابدأ رحلتك",
 };
 
 type Lang = "en" | "ar";

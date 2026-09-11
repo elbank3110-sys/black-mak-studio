@@ -10,6 +10,7 @@ const FEATURED = [
     img: "/images/work/vol2/vol2-02.jpg",
     titleKey: "work.p1title",
     tagsKey: "work.p1tags",
+    outKey: "work.p1out",
     cls: "lg:row-span-2",
     feature: true,
     hover: "View on Behance ↗",
@@ -20,6 +21,7 @@ const FEATURED = [
     img: "/images/work/vol1/vol1-03.jpg",
     titleKey: "work.p2title",
     tagsKey: "work.p2tags",
+    outKey: "work.p2out",
     hover: "View on Behance ↗",
   },
   {
@@ -28,6 +30,7 @@ const FEATURED = [
     img: "/images/work/banners/ban-06.jpg",
     titleKey: "work.p3title",
     tagsKey: "work.p3tags",
+    outKey: "work.p3out",
     hover: "View on Behance ↗",
   },
 ];
@@ -39,6 +42,7 @@ const MORE = [
     img: "/images/work/makeen/makeen-calligraphy.jpg",
     titleKey: "work.p4title",
     tagsKey: "work.p4tags",
+    outKey: "work.p4out",
     hover: "View on Behance ↗",
   },
   {
@@ -47,6 +51,7 @@ const MORE = [
     img: "/images/work/calligraphi-work.jpg",
     titleKey: "work.p5title",
     tagsKey: "work.p5tags",
+    outKey: "work.p5out",
     hover: "View on Behance ↗",
   },
 ];
@@ -84,6 +89,11 @@ function Card({ w, i, eager }: { w: (typeof FEATURED)[number]; i: number; eager?
           </div>
           <span className="text-end font-mono text-[0.6rem] text-muted">{t(w.tagsKey)}</span>
         </div>
+        {w.outKey && (
+          <p className="mt-3 max-w-[52ch] font-mono text-[0.62rem] leading-relaxed tracking-[0.04em] text-faint">
+            {t(w.outKey)}
+          </p>
+        )}
         <span className="work-title-line mt-2 block" aria-hidden="true" />
       </a>
     </Reveal>

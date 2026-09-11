@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Intro from "@/components/Intro";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "BLACK-MAK — Logo & Visual Identity Designer",
@@ -50,16 +51,46 @@ const jsonLd = {
   "@type": "Person",
   name: "Muhamed Alaa Elbank",
   alternateName: "BLACK-MAK",
-  url: "https://black-mak.vercel.app/",
+  url: "https://black-mak-v4.vercel.app/",
+  image: "https://black-mak-v4.vercel.app/profile.webp",
   jobTitle: "Logo & Visual Identity Designer",
-  email: "mailto:muhemedalaa2699@gmail.com",
+  email: "muhemedalaa2699@gmail.com",
   telephone: "+201002462821",
   address: { "@type": "PostalAddress", addressLocality: "New Valley", addressCountry: "EG" },
   sameAs: [
     "https://www.behance.net/Muhmed-alaa-el-bank",
+    "https://www.instagram.com/muhamedalaaelbank/",
+
     "https://mu-cv.vercel.app/",
   ],
   knowsAbout: ["Logo Design", "Brand Identity", "Typography", "Arabic Calligraphy", "Visual Identity"],
+  knowsLanguage: ["ar", "en"],
+};
+
+const servicesLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "BLACK-MAK Services",
+  itemListElement: [
+    {
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: "Focused Logo Project", description: "Distinctive marks built to be recognized, remembered, and used everywhere. 2–3 initial directions, three structured concepts, editable final files." },
+      priceCurrency: "USD",
+      price: "159",
+    },
+    {
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: "Calligraphic Identity", description: "Custom wordmarks and calligraphy-led identities built around free-drawn letterforms. Four structured concepts." },
+      priceCurrency: "USD",
+      price: "249",
+    },
+    {
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: "Full Visual Identity", description: "A complete visual system: logo, typography, color, guidelines, and essential brand applications. Six structured concepts." },
+      priceCurrency: "USD",
+      price: "549",
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -79,6 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesLd) }} />
       </head>
       <body>
         <a
@@ -89,6 +121,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <I18nProvider>
           <Intro />
+          <SmoothScroll />
           <WebGLBackground />
           <UIEffects />
           <MagicLayer />

@@ -137,7 +137,7 @@ ul {
   mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
 
-/* scroll progress + cursor glow */
+/* scroll progress */
 .scroll-progress {
   position: fixed;
   inset: 0 0 auto 0;
@@ -612,6 +612,24 @@ details[open] .faq-plus {
   animation: spin-slow 14s linear infinite;
 }
 
+/* ============================================================
+   Marquee — one slow editorial band (translateX -50% on doubled list)
+   ============================================================ */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee-scroll 40s linear infinite;
+}
+.marquee-row:hover .marquee-track {
+  animation-play-state: paused;
+}
+/* RTL: reverse direction so it reads naturally */
+[dir="rtl"] .marquee-track {
+  animation-direction: reverse;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .word-rise > span,
   .kicker-shimmer,
@@ -635,5 +653,8 @@ details[open] .faq-plus {
     -webkit-text-fill-color: var(--ink);
     background: none;
     transform: none;
+  }
+  .marquee-track {
+    animation: none !important;
   }
 }

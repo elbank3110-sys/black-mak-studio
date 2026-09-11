@@ -9,7 +9,13 @@ const PLANS = [
     name: "pricing.1name",
     desc: "pricing.1desc",
     price: "$159",
-    items: ["pricing.1a", "pricing.1b", "pricing.1c", "pricing.1d"],
+    items: [
+      "pricing.1a", "pricing.1b",
+      "pricing.1c1", "pricing.1c2", "pricing.1c3", "pricing.1c4", "pricing.1c5",
+      "pricing.1c6", "pricing.1d",
+    ],
+    extra: "pricing.1e",
+    cta: "pricing.cta1",
     featured: false,
   },
   {
@@ -17,15 +23,28 @@ const PLANS = [
     name: "pricing.2name",
     desc: "pricing.2desc",
     price: "$249",
-    items: ["pricing.2a", "pricing.2b", "pricing.2c", "pricing.2d"],
+    items: [
+      "pricing.2a", "pricing.2b",
+      "pricing.2c1", "pricing.2c2", "pricing.2c3", "pricing.2c4", "pricing.2c5",
+      "pricing.2c6", "pricing.2c7", "pricing.2d",
+    ],
+    extra: "pricing.2e",
+    cta: "pricing.cta2",
     featured: false,
   },
   {
     tier: "S.03",
     name: "pricing.3name",
     desc: "pricing.3desc",
-    price: "$649",
-    items: ["pricing.3a", "pricing.3b", "pricing.3c", "pricing.3d"],
+    price: "$549",
+    items: [
+      "pricing.3a",
+      "pricing.3b1", "pricing.3b2", "pricing.3b3", "pricing.3b4", "pricing.3b5",
+      "pricing.3b6", "pricing.3b7", "pricing.3b8", "pricing.3b9", "pricing.3b10",
+      "pricing.3b11", "pricing.3b12", "pricing.3b13", "pricing.3b14", "pricing.3c",
+    ],
+    extra: "pricing.3d",
+    cta: "pricing.cta3",
     featured: true,
   },
 ];
@@ -48,16 +67,17 @@ export default function Pricing() {
             <div className="flex flex-col gap-4 md:items-end">
               <p className="lede max-w-[42ch] md:text-end">{t("pricing.note")}</p>
               <p className="max-w-[42ch] font-mono text-[0.62rem] uppercase tracking-[0.12em] text-faint md:text-end">
-                {t("pricing.microcopy")}
+                {t("pricing.notEvery")}
               </p>
             </div>
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {PLANS.map((p, i) => (
-            <Reveal key={p.tier} delay={i * 0.05} className={p.featured ? "md:-mt-4" : ""}>
+        <Reveal>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:auto-rows-fr">
+            {PLANS.map((p) => (
               <article
+                key={p.tier}
                 className={`pricing-card corner-frame relative flex h-full flex-col border bg-surface p-8 transition duration-300 hover:-translate-y-1 ${
                   p.featured ? "border-ink shadow-[0_24px_60px_-24px_rgba(0,0,0,0.35)]" : "border-line hover:border-line-strong"
                 }`}
@@ -69,28 +89,33 @@ export default function Pricing() {
                 )}
                 <span className="font-mono text-faint">{p.tier}</span>
                 <h3 className="mt-10 max-w-[15ch] text-[1.35rem] font-bold leading-tight">{t(p.name)}</h3>
-                <p className="mt-3 min-h-[3.5em] max-w-[36ch] text-[0.85rem] text-muted">{t(p.desc)}</p>
+                <p className="mt-3 max-w-[36ch] text-[0.85rem] text-muted">{t(p.desc)}</p>
                 <strong className="mt-5 block text-[2.6rem] font-bold leading-none tracking-tight">
                   {p.price}
                   <small className="mt-2 block font-mono text-[0.6rem] font-normal uppercase tracking-[0.1em] text-muted">
                     {t("pricing.starting")}
                   </small>
                 </strong>
-                <ul className="mt-6 border-t border-line pt-4">
+                <ul className="mt-6 flex-1 border-t border-line pt-4">
                   {p.items.map((k) => (
                     <li key={k} className="py-1 text-[0.85rem] text-muted before:text-faint">
                       <span className="me-2 text-faint">—</span>
                       {t(k)}
                     </li>
                   ))}
+                  {p.extra && (
+                    <li className="mt-2 border-t border-line/60 pt-2 text-[0.72rem] italic leading-relaxed text-faint">
+                      {t(p.extra)}
+                    </li>
+                  )}
                 </ul>
                 <a href="#start-a-project" className={`btn mt-6 w-full ${p.featured ? "btn-navy" : "btn-ghost"}`}>
-                  {t("nav.cta")} <span>↗</span>
+                  {t(p.cta)} <span>↗</span>
                 </a>
               </article>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
 
         <Reveal delay={0.15}>
           <div className="mt-10 flex flex-col items-start justify-between gap-6 border border-line bg-surface p-[clamp(1.2rem,3vw,2rem)] md:flex-row md:items-center">
@@ -109,7 +134,7 @@ export default function Pricing() {
           <div className="mt-6 flex flex-col items-start justify-between gap-6 border-t border-line pt-8 md:flex-row md:items-center">
             <p className="display max-w-[28ch] text-[clamp(1.3rem,2.6vw,2rem)]">{t("pricing.ctaQ")}</p>
             <a href="#start-a-project" className="btn btn-light shrink-0">
-              <span>{t("pricing.ctaBtn")}</span>
+              <span>{t("pricing.cta3")}</span>
               <span>↗</span>
             </a>
           </div>
@@ -117,7 +142,7 @@ export default function Pricing() {
 
         <Reveal delay={0.2}>
           <p className="mt-8 max-w-[72ch] text-[0.72rem] leading-relaxed text-faint">
-            {t("pricing.disclaimer")}
+            {t("pricing.notEvery")}
           </p>
         </Reveal>
       </div>
