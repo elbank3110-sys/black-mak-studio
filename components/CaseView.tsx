@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 import { getCase, CASES } from "@/lib/cases";
 import Reveal from "@/components/Reveal";
@@ -45,11 +46,11 @@ export default function CaseView({ slug }: { slug: string }) {
         <Reveal delay={0.05}>
           <div className="mt-8 grid grid-cols-2 gap-6 border-y border-line py-6 font-mono text-[0.62rem] uppercase tracking-[0.13em] text-muted sm:grid-cols-3">
             <div>
-              <span className="block text-faint">{t("about.index")}</span>
+              <span className="block text-faint">{t("case.roleLabel")}</span>
               {d.role}
             </div>
             <div>
-              <span className="block text-faint">{t("journey.4year")}</span>
+              <span className="block text-faint">{t("case.yearLabel")}</span>
               {d.year}
             </div>
             <div className="col-span-2 sm:col-span-1">
@@ -62,9 +63,13 @@ export default function CaseView({ slug }: { slug: string }) {
 
       <Reveal>
         <div className="container mt-10">
-          <img
+          <Image
             src={c.cover}
             alt={d.title}
+            width={1600}
+            height={1000}
+            priority
+            sizes="(max-width: 1380px) 92vw, 1380px"
             className="aspect-[16/9] w-full border border-line object-cover"
           />
         </div>
@@ -96,11 +101,13 @@ export default function CaseView({ slug }: { slug: string }) {
             {c.gallery.map((src, i) => (
               <Reveal key={src} delay={i * 0.05}>
                 <figure className="overflow-hidden border border-line bg-surface">
-                  <img
+                  <Image
                     src={src}
                     alt={`${d.title} — ${i + 1}`}
+                    width={1280}
+                    height={800}
                     loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 640px) 100vw, 46vw"
                     className="w-full object-cover transition duration-700 hover:scale-[1.03]"
                   />
                 </figure>

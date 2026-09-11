@@ -15,6 +15,16 @@ export default function Intro() {
       setGone(true);
       return;
     }
+    // The draw plays once per session — returning visitors skip straight
+    // to the page (a 1.7s curtain on every visit turns premium into annoying).
+    try {
+      if (sessionStorage.getItem("bm-intro") === "seen") {
+        setShow(false);
+        setGone(true);
+        return;
+      }
+    } catch {}
+    sessionStorage.setItem("bm-intro", "seen");
     // start drawing after first paint so dash values are applied
     const t0 = setTimeout(() => setDraw(true), 60);
     const t1 = setTimeout(() => setShow(false), 1700);

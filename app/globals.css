@@ -2,14 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "AsalLocal";
-  src: url("/asal-arabic.woff2") format("woff2"),
-    url("/asal-arabic.woff") format("woff");
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* Arabic face is now self-hosted through next/font (lib/fonts.ts) and wired
+   to --font-ar — this @font-face block is no longer needed. */
 
 :root {
   --bg: #070708;
@@ -24,7 +18,7 @@
   --container: min(1380px, 92vw);
   --section: clamp(5rem, 11vw, 10rem);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --font-ar: "AsalLocal", "IBM Plex Sans Arabic", Arial, sans-serif;
+  --font-ar: var(--font-ar-name, "Asal"), "IBM Plex Sans Arabic", Arial, sans-serif;
 }
 
 * {
@@ -215,88 +209,11 @@ ul {
   border-color: var(--ink);
 }
 
-/* prominent CV / Behance action links — impossible to miss */
-.cta-link {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  overflow: hidden;
-  padding: 0.85rem 1.35rem;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 1.5px solid var(--ink);
-  transition: color 0.4s var(--ease), transform 0.35s var(--ease),
-    box-shadow 0.4s var(--ease);
-}
-.cta-link__fill {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: var(--ink);
-  transform: translateX(-101%);
-  transition: transform 0.45s var(--ease);
-}
-html[dir="rtl"] .cta-link__fill {
-  transform: translateX(101%);
-}
-.cta-link__arrow {
-  transition: transform 0.35s var(--ease);
-}
-.cta-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.55);
-}
-.cta-link:hover .cta-link__fill {
-  transform: translateX(0);
-}
-.cta-link:hover .cta-link__arrow {
-  transform: translate(3px, -3px);
-}
-/* solid variant starts filled, inverts on hover */
-.cta-link--solid {
-  color: var(--bg);
-}
-.cta-link--solid .cta-link__fill {
-  transform: translateX(0);
-}
-.cta-link--solid:hover {
-  color: var(--ink);
-}
-.cta-link--solid:hover .cta-link__fill {
-  transform: translateX(-101%);
-}
-html[dir="rtl"] .cta-link--solid:hover .cta-link__fill {
-  transform: translateX(101%);
-}
-/* outline variant: transparent -> fills on hover */
-.cta-link--outline {
-  color: var(--ink);
-}
-.cta-link--outline:hover {
-  color: var(--bg);
-}
-
-/* reveal animation (framer-motion also used; this is CSS fallback) */
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-}
-.reveal.in {
-  opacity: 1;
-  transform: none;
-}
-
 /* arabic adjustments */
 html[lang="ar"] body {
   font-family: var(--font-ar);
   letter-spacing: 0;
-}
-html[lang="ar"] .display {
+}html[lang="ar"] .display {
   letter-spacing: 0;
   text-transform: none;
 }
@@ -308,11 +225,6 @@ html[lang="ar"] .eyebrow {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 }
 
@@ -518,17 +430,6 @@ html[lang="ar"] .eyebrow {
 .who-card:hover .who-icon {
   transform: rotate(45deg) scale(1.15);
 }
-
-/* 9 — CONTACT form: labels float up on focus (pure CSS with :has) */
-.form-field:focus-within span,
-.form-field:not(:placeholder-shown) span { color: var(--ink); }
-.form-field { transition: border-color 0.3s ease; }
-.form-field:focus-within { border-color: var(--ink) !important; }
-.form-field:focus-within .field-label {
-  transform: translateY(-2px);
-  color: var(--ink);
-}
-.field-label { transition: transform 0.3s ease, color 0.3s ease; }
 
 /* 10 — PAYMENT rows: copy feedback flash on value */
 .copy-flash { animation: copy-flash 0.6s ease; }

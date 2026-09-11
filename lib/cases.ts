@@ -165,10 +165,7 @@ export const CASES: CaseStudy[] = [
   {
     slug: "makeen",
     cover: "/images/work/makeen/makeen-calligraphy.jpg",
-    gallery: [
-      "/images/work/makeen/makeen-calligraphy.jpg",
-      "/images/work/makeen/makeen-02.jpg",
-    ],
+    gallery: ["/images/work/makeen/makeen-calligraphy.jpg"],
     behance: "https://www.behance.net/gallery/224445345/MAKEEN",
     en: {
       title: "MAKEEN",

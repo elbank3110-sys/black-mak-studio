@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
@@ -56,7 +57,15 @@ export default function About() {
         <div className="grid grid-cols-1 gap-[clamp(2.5rem,8vw,9rem)] lg:grid-cols-[minmax(280px,0.75fr)_1.25fr]">
           <Reveal>
             <figure className="relative overflow-hidden border border-line bg-surface">
-              <img src="/profile.webp" alt="Portrait of Muhamed Alaa Elbank" loading="lazy" className="aspect-[4/5] w-full object-cover grayscale contrast-105 transition duration-500 hover:scale-[1.02] hover:grayscale-[0.3]" />
+              <Image
+                src="/profile.webp"
+                alt="Portrait of Muhamed Alaa Elbank"
+                width={640}
+                height={800}
+                loading="lazy"
+                sizes="(max-width: 1024px) 92vw, 420px"
+                className="aspect-[4/5] w-full object-cover grayscale contrast-105 transition duration-500 hover:scale-[1.02] hover:grayscale-[0.3]"
+              />
               <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 bg-bg/85 px-4 py-3 font-mono text-[0.58rem] uppercase tracking-[0.13em] text-ink backdrop-blur-md">
                 <span>BLACK-MAK</span>
                 <span>MUHAMED ALAA ELBANK</span>

@@ -57,10 +57,12 @@ export default function Hero() {
                 <strong className="block text-2xl font-bold leading-tight">{t("hero.sideTitle")}</strong>
                 <p className="mt-4 text-muted">{t("hero.sideText")}</p>
               </div>
-              <div className="relative mt-6 flex items-end justify-center" style={{ minHeight: 200 }}>
+              <div className="relative mt-6 flex items-end justify-center" style={{ minHeight: 200 }} aria-hidden="true">
                 {/* Lissajous organic float + scroll parallax — the veteran move:
                     each card drifts on its own elliptical path (x/y desynced),
-                    and both cards counter-scroll at different depths. */}
+                    and both cards counter-scroll at different depths.
+                    Latin card (dark) + Arabic card (light) — the bilingual
+                    practice shown as two faces of one studio. */}
                 <motion.div
                   initial={{ rotate: -7, x: "-8%", y: 12 }}
                   animate={{ rotate: [-7, -5.2, -7], x: ["-8%", "2%", "-8%"], y: [12, -6, 12] }}
@@ -82,9 +84,9 @@ export default function Hero() {
                   style={{ y: parallaxB }}
                   className="hero-card absolute bottom-0 right-0 z-10 w-[280px] rounded-md border border-line-strong bg-gradient-to-br from-[#faf9f4] to-[#deddd8] p-5 text-[#090909] shadow-2xl"
                 >
-                  <span className="eyebrow text-[#62615c]">{t("hero.cardLabel")}</span>
-                  <strong className="mt-3 block text-xl">BLACK-MAK</strong>
-                  <span className="text-sm text-[#575650]">Muhamed Alaa Elbank</span>
+                  <span className="eyebrow text-[#62615c]">{t("hero.cardLabelAr")}</span>
+                  <strong className="mt-3 block text-xl">محمد علاء البنك</strong>
+                  <span className="text-sm text-[#575650]">بلاك ماك — شعارات وهوية بصرية</span>
                   <span className="mt-2 block font-mono text-xs" dir="ltr">+20 100 246 2821</span>
                 </motion.div>
               </div>

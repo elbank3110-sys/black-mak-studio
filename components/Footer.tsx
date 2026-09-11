@@ -44,7 +44,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-wrap gap-6">
               <a href="https://wa.me/201002462821?text=Hi%20Muhamed%2C%20I%20found%20BLACK-MAK%20and%20I%27d%20like%20to%20discuss%20a%20branding%20project." target="_blank" rel="noopener" className="transition-colors hover:text-ink">WhatsApp</a>
-              <a href="mailto:muhemedalaa2699@gmail.com?subject=New%20Brand%20Project%20%E2%80%94%20BLACK-MAK" className="transition-colors hover:text-ink">Email</a>
+              <a href="mailto:makeenmuhamed31@gmail.com?subject=New%20Brand%20Project%20%E2%80%94%20BLACK-MAK" className="transition-colors hover:text-ink">Email</a>
               <a href="https://www.behance.net/Muhmed-alaa-el-bank" target="_blank" rel="noopener" className="transition-colors hover:text-ink">Behance</a>
             </div>
           </nav>

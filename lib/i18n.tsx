@@ -31,6 +31,7 @@ const EN: Dict = {
     "Typography, freestyle calligraphy, identity systems, and applied design — built to survive the street, not just the screen.",
   "hero.scroll": "Scroll to explore",
   "hero.cardLabel": "BLACK-MAK / DIRECT CONTACT",
+  "hero.cardLabelAr": "BLACK-MAK / ARABIC FACE",
   "hero.role": "Logo & Visual Identity Designer",
   "hero.location": "Egypt",
   "hero.world": "Working worldwide",
@@ -42,6 +43,7 @@ const EN: Dict = {
   "signal.4": "04 / WORLDWIDE COLLABORATION",
 
   "marquee.text": "LOGO DESIGN · VISUAL IDENTITY · ARABIC + LATIN · TYPOGRAPHY · BRAND SYSTEMS · ",
+  "marquee.identity": "IDENTITY",
 
   "work.index": "01 / SELECTED WORK",
   "work.moreIndex": "MORE WORK",
@@ -67,6 +69,7 @@ const EN: Dict = {
   "work.footer":
     "Years of designing for print, distance, and the street — experience that makes every mark work beyond the screen.",
   "work.archive": "View full archive on Behance",
+  "work.viewCase": "View Case ↗",
 
   "statement.index": "THE POINT",
   "statement.title":
@@ -141,26 +144,6 @@ const EN: Dict = {
   "cv.liveBanner": "Prefer the full experience? Explore the interactive online CV",
   "cv.liveCta": "Open interactive CV",
   "about.behance": "Behance",
-
-  "journey.index": "THE JOURNEY",
-  "journey.title": "The work behind the mark.",
-  "journey.note":
-    "A timeline of the places, pressures, and practice that shaped BLACK-MAK.",
-  "journey.1title": "The Beginning",
-  "journey.1text":
-    "First steps into graphic design and my first professional logo commissions — learning that every mark carries a business, not just a shape.",
-  "journey.2title": "Outdoor Advertising Years",
-  "journey.2text":
-    "Signage, banners and campaign work for retail chains across Egypt. Design learned on the street: bold, readable, built for distance.",
-  "journey.3title": "Identity Focus",
-  "journey.3text":
-    "Deep dive into calligraphy-led logotypes and full brand systems. Published collections on Behance; selected work across MENA and Europe.",
-  "journey.4year": "2024 — Today",
-  "journey.4title": "BLACK-MAK",
-  "journey.4text":
-    "The practice's dedicated era — serving clients worldwide with Arabic & Latin marks, brand systems, and a creative workflow built for precision.",
-  "journey.tool1": "Adobe Illustrator",
-  "journey.tool2": "Adobe Photoshop",
 
   "process.index": "06 / PROCESS",
   "process.title": "From question<br/><em>to identity.</em>",
@@ -419,6 +402,8 @@ const EN: Dict = {
   "footer.rights": "© 2026 BLACK-MAK",
 
   "case.back": "Back to work",
+  "case.roleLabel": "ROLE",
+  "case.yearLabel": "YEAR",
   "case.behance": "View on Behance",
   "case.startTitle": "Have a project like this?",
   "case.startHeading": "Let's build your mark.",
@@ -452,6 +437,7 @@ const AR: Dict = {
     "التايبوغرافي، الكاليجرافي الحر، وأنظمة الهوية، وتصميم تطبيقي تشكّله أكثر من 12 سنة في العالم الحقيقي.",
   "hero.scroll": "مرّر للاستكشاف",
   "hero.cardLabel": "BLACK-MAK / تواصل مباشر",
+  "hero.cardLabelAr": "BLACK-MAK / الوجه العربي",
   "hero.role": "مصمم شعارات وهوية بصرية",
   "hero.location": "مصر",
   "hero.world": "أعمل مع عملاء حول العالم",
@@ -463,6 +449,7 @@ const AR: Dict = {
   "signal.4": "04 / تعاون حول العالم",
 
   "marquee.text": "تصميم شعار · هوية بصرية · عربي + لاتيني · تايبوغرافي · أنظمة العلامات · ",
+  "marquee.identity": "هُوِيَّة",
 
   "work.index": "01 / أعمال مختارة",
   "work.moreIndex": "أعمال أخرى",
@@ -488,6 +475,7 @@ const AR: Dict = {
   "work.footer":
     "سنوات من التصميم للطباعة، والمسافات، والشارع — خبرة تجعل كل علامة تعمل خارج الشاشة أيضًا.",
   "work.archive": "شاهد الأرشيف الكامل على Behance",
+  "work.viewCase": "شاهد المشروع ↗",
 
   "statement.index": "الفكرة",
 "statement.title":
@@ -550,25 +538,6 @@ const AR: Dict = {
   "cv.liveBanner": "تفضّل التجربة الكاملة؟ استكشف السيرة الذاتية التفاعلية",
   "cv.liveCta": "افتح السيرة التفاعلية",
   "about.behance": "Behance",
-
-  "journey.index": "الرحلة",
-  "journey.title": "العمل خلف العلامة.",
-  "journey.note": "خط زمني للأماكن والضغوط والممارسة التي صاغت BLACK-MAK.",
-  "journey.1title": "البداية",
-  "journey.1text":
-    "أولى خطواتي في التصميم الجرافيكي وأولى عمولات الشعارات الاحترافية — تعلمت أن كل علامة تحمل عملًا لا مجرد شكل.",
-  "journey.2title": "سنوات الإعلانات الخارجية",
-  "journey.2text":
-    "لوحات وشعارات وحملات لسلاسل تجارية في أنحاء مصر. تصميمٌ تعلّمه في الشارع: جريء، مقروء، مصمّم للمسافة.",
-  "journey.3title": "التركيز على الهوية",
-  "journey.3text":
-    "غوص عميق في اللوجوتايبات الكاليجرافية وأنظمة الهوية الكاملة. مجموعات منشورة على Behance وأعمال مختارة في الشرق الأوسط وأوروبا.",
-  "journey.4year": "2024 — اليوم",
-  "journey.4title": "BLACK-MAK",
-  "journey.4text":
-    "ممارسة مخصّصة لخدمة العملاء حول العالم — علامات عربية ولاتينية، أنظمة هوية وأسلوب عمل إبداعي مبني للدقة.",
-  "journey.tool1": "Adobe Illustrator",
-  "journey.tool2": "Adobe Photoshop",
 
   "process.index": "06 / العملية",
   "process.title": "من سؤال<br/><em>إلى هوية.</em>",
@@ -780,6 +749,8 @@ const AR: Dict = {
   "footer.rights": "© 2026 BLACK-MAK",
 
   "case.back": "العودة للأعمال",
+  "case.roleLabel": "الدور",
+  "case.yearLabel": "السنة",
   "case.behance": "شاهد على Behance",
   "case.startTitle": "عندك مشروع مشابه؟",
   "case.startHeading": "هيا نبني علامتك.",

@@ -1,58 +1,62 @@
 "use client";
 
+import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
 
+// Cards open INTERNAL case-study pages (/work/[slug]) — the visitor stays
+// inside the studio's narrative (pricing, process, CTA all one scroll away).
+// Behance remains reachable from the case page itself + the archive link.
 const FEATURED = [
   {
     n: "01",
-    href: "https://www.behance.net/gallery/181721153/LOGOS-VOL2",
+    href: "/work/logos-vol-2",
     img: "/images/work/vol2/vol2-02.jpg",
     titleKey: "work.p1title",
     tagsKey: "work.p1tags",
     outKey: "work.p1out",
     cls: "lg:row-span-2",
     feature: true,
-    hover: "View on Behance ↗",
+    hover: "work.viewCase",
   },
   {
     n: "02",
-    href: "https://www.behance.net/gallery/60219345/LOGOS-VOL-1",
+    href: "/work/logos-vol-1",
     img: "/images/work/vol1/vol1-03.jpg",
     titleKey: "work.p2title",
     tagsKey: "work.p2tags",
     outKey: "work.p2out",
-    hover: "View on Behance ↗",
+    hover: "work.viewCase",
   },
   {
     n: "03",
-    href: "https://www.behance.net/gallery/37676905/OUTDOOR-ADVERTISING-WORKS-BANNERS",
+    href: "/work/outdoor-advertising",
     img: "/images/work/banners/ban-06.jpg",
     titleKey: "work.p3title",
     tagsKey: "work.p3tags",
     outKey: "work.p3out",
-    hover: "View on Behance ↗",
+    hover: "work.viewCase",
   },
 ];
 
 const MORE = [
   {
     n: "04",
-    href: "https://www.behance.net/gallery/224445345/MAKEEN",
+    href: "/work/makeen",
     img: "/images/work/makeen/makeen-calligraphy.jpg",
     titleKey: "work.p4title",
     tagsKey: "work.p4tags",
     outKey: "work.p4out",
-    hover: "View on Behance ↗",
+    hover: "work.viewCase",
   },
   {
     n: "05",
-    href: "https://www.behance.net/gallery/67494575/CALLIGRAPHI-WORKS",
+    href: "/work/calligraphi-works",
     img: "/images/work/calligraphi-work.jpg",
     titleKey: "work.p5title",
     tagsKey: "work.p5tags",
     outKey: "work.p5out",
-    hover: "View on Behance ↗",
+    hover: "work.viewCase",
   },
 ];
 
@@ -62,22 +66,23 @@ function Card({ w, i, eager }: { w: (typeof FEATURED)[number]; i: number; eager?
     <Reveal delay={i * 0.05} className={w.cls}>
       <a
         href={w.href}
-        target="_blank"
-        rel="noopener"
         className="work-card group block"
       >
         <div className="relative overflow-hidden border border-line bg-surface">
           <div className="absolute inset-0 z-[1] bg-gradient-to-br from-transparent to-white/[0.06] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          <img
+          <Image
             src={w.img}
             alt={t(w.titleKey)}
-            loading={eager ? "eager" : "lazy"}
+            width={1280}
+            height={800}
+            priority={eager}
+            sizes={w.feature ? "(max-width: 1024px) 100vw, 58vw" : "(max-width: 768px) 100vw, 45vw"}
             className={`w-full object-cover transition duration-700 group-hover:scale-[1.045] ${
               w.feature ? "aspect-[16/10]" : "aspect-[16/10]"
             }`}
           />
           <span className="absolute bottom-4 right-4 z-[2] bg-white px-3 py-2 font-mono text-[0.62rem] uppercase tracking-[0.1em] text-black opacity-0 transition duration-300 group-hover:opacity-100">
-            {w.hover}
+            {t(w.hover)}
           </span>
         </div>
         <div className="flex items-start justify-between gap-4 border-b border-line py-5">

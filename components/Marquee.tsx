@@ -2,25 +2,35 @@
 
 import { useI18n } from "@/lib/i18n";
 
-// One slow marquee — CSS-only (translateX -50% on a doubled list).
-// Pauses for reduced-motion users; aria-hidden because the text
-// duplicates the SignalStrip facts above it.
+// The bilingual identity strip — Latin and Arabic alternate as one system,
+// which IS the studio's core differentiator, instead of a generic English
+// service list. CSS-only (translateX -50% on a doubled list).
+// Pauses for reduced-motion users; aria-hidden (purely decorative).
 export default function Marquee() {
   const { t } = useI18n();
-  const text = t("marquee.text");
+  const latin = "IDENTITY ";
+  const arabic = "هُوِيَّة ";
+  const diamond = "◆ ";
+
+  // One cell: IDENTITY ◆ هوية ◆ — the message is the duality itself.
+  const cell = `${t("marquee.identity")}${diamond}${arabic.trim()}${diamond}`;
 
   return (
     <div
-      className="marquee-row overflow-hidden border-b border-line bg-surface py-3"
+      className="marquee-row overflow-hidden border-b border-line bg-surface py-4"
       aria-hidden="true"
     >
       <div className="marquee-track flex w-max">
-        <span className="marquee-cell font-mono text-[0.6rem] uppercase tracking-[0.22em] text-faint">
-          {text}
-        </span>
-        <span className="marquee-cell font-mono text-[0.6rem] uppercase tracking-[0.22em] text-faint">
-          {text}
-        </span>
+        {[0, 1].map((n) => (
+          <span
+            key={n}
+            className="marquee-cell whitespace-nowrap pe-8 text-[clamp(1rem,2vw,1.5rem)] font-bold uppercase tracking-[0.18em] text-faint"
+          >
+            {cell}
+            <span className="mx-6 align-middle text-[0.8em]">{latin.trim()}</span>
+            {diamond}
+          </span>
+        ))}
       </div>
     </div>
   );

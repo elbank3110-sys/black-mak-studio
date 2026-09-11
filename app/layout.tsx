@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
+import { archivo, plexMono, asalArabic } from "@/lib/fonts";
 import WebGLBackground from "@/components/WebGLBackground";
 import UIEffects from "@/components/UIEffects";
 import MagicLayer from "@/components/MagicLayer";
@@ -9,6 +10,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Intro from "@/components/Intro";
 import SmoothScroll from "@/components/SmoothScroll";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "BLACK-MAK — Logo & Visual Identity Designer",
@@ -17,10 +19,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://black-mak-v4.vercel.app/"),
   alternates: {
     canonical: "https://black-mak-v4.vercel.app/",
-    languages: {
-      en: "https://black-mak-v4.vercel.app/",
-      ar: "https://black-mak-v4.vercel.app/",
-    },
   },
   robots: { index: true, follow: true },
   openGraph: {
@@ -54,7 +52,7 @@ const jsonLd = {
   url: "https://black-mak-v4.vercel.app/",
   image: "https://black-mak-v4.vercel.app/profile.webp",
   jobTitle: "Logo & Visual Identity Designer",
-  email: "muhemedalaa2699@gmail.com",
+  email: "makeenmuhamed31@gmail.com",
   telephone: "+201002462821",
   address: { "@type": "PostalAddress", addressLocality: "New Valley", addressCountry: "EG" },
   sameAs: [
@@ -95,19 +93,18 @@ const servicesLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
+    <html
+      lang="en"
+      dir="ltr"
+      suppressHydrationWarning
+      className={`${archivo.variable} ${plexMono.variable} ${asalArabic.variable}`}
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
             __html:
               "(function(){try{var l=localStorage.getItem('bm-lang');if(!l){var n=navigator.language||'en';l=n.toLowerCase().indexOf('ar')===0?'ar':'en';}if(l==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}var t=localStorage.getItem('bm-theme');if(t==='light'){document.documentElement.dataset.theme='light';}}catch(e){}})();",
           }}
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
         />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesLd) }} />
@@ -130,6 +127,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <WhatsAppFloat />
         </I18nProvider>
+        <Analytics />
       </body>
     </html>
   );

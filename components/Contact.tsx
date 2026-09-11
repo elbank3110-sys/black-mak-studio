@@ -12,11 +12,21 @@ export default function Contact() {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const name = fd.get("name") || "";
+    const email = fd.get("email") || "";
+    const contact = fd.get("contact") || "";
+    const company = fd.get("company") || "";
     const type = fd.get("type") || "";
     const budget = fd.get("budget") || "";
     const msg = fd.get("msg") || "";
-    const text = `${t("wa.msg")}\n${name} — ${type}${budget ? ` — Investment: ${budget}` : ""}\n${msg}`;
-    window.open(`https://wa.me/201002462821?text=${encodeURIComponent(text)}`, "_blank");
+    const lines = [
+      t("wa.msg"),
+      `${name}${company ? ` (${company})` : ""} — ${type}`,
+      email ? `Email: ${email}` : "",
+      contact && contact !== email ? `Channel: ${contact}` : "",
+      budget ? `Investment: ${budget}` : "",
+      msg,
+    ].filter(Boolean);
+    window.open(`https://wa.me/201002462821?text=${encodeURIComponent(lines.join("\n"))}`, "_blank");
     setSent(true);
   };
 
@@ -44,11 +54,11 @@ export default function Contact() {
                   <span dir="ltr">Discuss Your Project on WhatsApp →</span>
                 </a>
                 <a
-                  href="mailto:muhemedalaa2699@gmail.com?subject=New%20Brand%20Project%20%E2%80%94%20BLACK-MAK"
+                  href="mailto:makeenmuhamed31@gmail.com?subject=New%20Brand%20Project%20%E2%80%94%20BLACK-MAK"
                   className="flex items-center gap-4 border-b border-line py-4 font-mono text-[0.75rem] text-muted transition-colors hover:text-ink"
                 >
                   <span className="w-[92px] shrink-0 text-[0.6rem] uppercase tracking-[0.13em] text-faint">{t("contact.email")}</span>
-                  <span dir="ltr">muhemedalaa2699@gmail.com</span>
+                  <span dir="ltr">makeenmuhamed31@gmail.com</span>
                 </a>
                 <a href="https://www.behance.net/Muhmed-alaa-el-bank" target="_blank" rel="noopener" className="flex items-center gap-4 border-b border-line py-4 font-mono text-[0.75rem] text-muted transition-colors hover:text-ink">
                   <span className="w-[92px] shrink-0 text-[0.6rem] uppercase tracking-[0.13em] text-faint">Behance</span>
