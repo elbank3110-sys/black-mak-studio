@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
+import HeadlineReveal from "./HeadlineReveal";
 import CvViewer from "./CvViewer";
 
 export default function About() {
@@ -48,7 +49,7 @@ export default function About() {
           <div className="mb-[clamp(2.5rem,6vw,5.2rem)] flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <span className="eyebrow mb-4 block text-faint">{t("about.index")}</span>
-              <h2 className="display text-[clamp(3rem,7vw,7rem)]" dangerouslySetInnerHTML={{ __html: t("about.title") }} />
+              <HeadlineReveal className="display text-[clamp(3rem,7vw,7rem)]" html={t("about.title")} />
             </div>
             <p className="lede max-w-[42ch]">{t("about.note")}</p>
           </div>

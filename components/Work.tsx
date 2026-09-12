@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
+import ScaleTest from "./ScaleTest";
+import HeadlineReveal from "./HeadlineReveal";
 
 // Cards open INTERNAL case-study pages (/work/[slug]) — the visitor stays
 // inside the studio's narrative (pricing, process, CTA all one scroll away).
@@ -114,7 +116,7 @@ export default function Work() {
           <div className="mb-[clamp(2.5rem,6vw,5.2rem)] flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <span className="eyebrow mb-4 block text-faint">{t("work.index")}</span>
-              <h2 className="display text-[clamp(3rem,7vw,7rem)]" dangerouslySetInnerHTML={{ __html: t("work.title") }} />
+              <HeadlineReveal className="display text-[clamp(3rem,7vw,7rem)]" html={t("work.title")} />
             </div>
             <p className="lede max-w-[42ch]">{t("work.note")}</p>
           </div>
@@ -125,6 +127,9 @@ export default function Work() {
             <Card key={w.n} w={w} i={i} eager={i < 2} />
           ))}
         </div>
+
+        {/* the promise, made tangible — favicon to facade */}
+        <ScaleTest />
 
         <Reveal delay={0.1}>
           <div className="mt-[clamp(3rem,7vw,6rem)] mb-[clamp(1.5rem,4vw,3rem)] flex items-center gap-4">

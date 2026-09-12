@@ -26,6 +26,15 @@ This file is for AI agents / future sessions. Read it before making changes.
   - These are defined in `globals.css`; do not re-inflate headings.
 - **Hero cards** (Latin dark + Arabic light, desktop only `hidden lg:block`): the two faces of
   the bilingual practice. Never render on mobile.
+- **Brand mark** (`components/BrandMark.tsx`): the SOLID vector geometry from the official
+  identity files (Black-mak.svg). Used in the Header (both sites) and inside the SealCTA disc
+  (CV). fill="currentColor" → theme-adaptive. Never swap it for a PNG or a redrawn stroke mark.
+- **Logo reveal** (`Intro.tsx`): construction-grid + clip-path wipe of the solid mark,
+  ~1.25s, once per session. This IS the brand moment — keep it under 1.3s.
+- **ScaleTest** (`components/ScaleTest.tsx`): interactive favicon→facade slider inside the
+  Work section. The studio's promise, made tangible. Keep it pure-CSS-transform.
+- **Theme toggle** is framed as a "surface test" (screen/paper) — identity thinking, not a
+  settings widget.
 - **Favicon** letter is **"M"** (not B).
 - **Language toggle** (EN label) reads **"العربية"**.
 - **Marquee** is the bilingual identity strip (IDENTITY ◆ هوية ◆) — not a service list.
@@ -58,6 +67,11 @@ This file is for AI agents / future sessions. Read it before making changes.
    the Google Fonts CDN `<link>` again — the CSS variables MUST resolve.
 8. **Images** use `next/image` (Work cards, case galleries, About portrait, CaseView cover).
    Local JPGs are auto-optimized to WebP/AVIF by the Next image optimizer.
+9. **Motion hierarchy** (`components/Reveal.tsx`): three tiers — `ambient` (1.4s, hero/finale),
+   `content` (0.8s, default), `feedback` (0.25s, micro). Headlines use `HeadlineReveal`
+   (line-mask rise) — Arabic and reduced-motion render them untouched.
+10. **CTA copy is unified**: "Start Your Project" (EN) / "ابدأ مشروعك" (AR) everywhere.
+    Do not reintroduce per-section CTA variants.
 
 ## Behavior & business notes
 - **Brand logo (nav)** click scrolls smoothly to top (even from the bottom of the page).

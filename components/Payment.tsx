@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
+import HeadlineReveal from "./HeadlineReveal";
 
 const ROWS = [
   { label: "payment.vodafone", value: "+20 100 246 2821" },
@@ -29,7 +30,7 @@ export default function Payment() {
           <div className="mb-10 flex flex-col items-start gap-4 text-left">
             <div>
               <span className="eyebrow mb-4 block text-faint">{t("payment.index")}</span>
-              <h2 className="display text-[clamp(3rem,7vw,7rem)]" dangerouslySetInnerHTML={{ __html: t("payment.title") }} />
+              <HeadlineReveal className="display text-[clamp(3rem,7vw,7rem)]" html={t("payment.title")} />
             </div>
             <p className="lede max-w-[42ch]">{t("payment.note")}</p>
           </div>
@@ -52,7 +53,16 @@ export default function Payment() {
                   <span className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted">{t(r.label)}</span>
                   <strong className="font-mono text-[0.85rem] font-normal" dir="ltr">{r.value}</strong>
                   <span className={`font-mono text-[0.6rem] uppercase tracking-[0.1em] transition-colors ${copied === r.value ? "text-ink" : "text-muted"}`}>
-                    {copied === r.value ? t("payment.copied") : t("payment.copy")}
+                    {copied === r.value ? (
+                      <span className="inline-flex items-center gap-1.5">
+                        <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                        {t("payment.copied")}
+                      </span>
+                    ) : (
+                      t("payment.copy")
+                    )}
                   </span>
                 </button>
               ))}

@@ -16,11 +16,17 @@ export default function Marquee() {
   const cell = `${t("marquee.identity")}${diamond}${arabic.trim()}${diamond}`;
 
   return (
-    <div
-      className="marquee-row overflow-hidden border-b border-line bg-surface py-4"
-      aria-hidden="true"
-    >
-      <div className="marquee-track flex w-max">
+    <div className="marquee-row overflow-hidden border-b border-line bg-surface py-4">
+      {/* screen-reader alternative to the decorative strip */}
+      <ul className="sr-only">
+        <li>{t("marquee.identity")}</li>
+        <li>هوية</li>
+        <li>Logo Design</li>
+        <li>Visual Identity</li>
+        <li>Arabic + Latin Typography</li>
+        <li>Brand Systems</li>
+      </ul>
+      <div className="marquee-track flex w-max" aria-hidden="true">
         {[0, 1].map((n) => (
           <span
             key={n}

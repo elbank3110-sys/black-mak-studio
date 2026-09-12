@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
+import HeadlineReveal from "./HeadlineReveal";
 
 export default function Contact() {
   const { t, lang } = useI18n();
@@ -37,11 +38,10 @@ export default function Contact() {
           <Reveal>
             <div>
               <span className="eyebrow mb-4 block text-faint">{t("contact.index")}</span>
-              <h2 className="display text-[clamp(2.6rem,6vw,6rem)]">
-                {t("contact.title")}
-                <br />
-                <em className="text-[clamp(1.6rem,3.4vw,3rem)]">{t("contact.titleEm")}</em>
-              </h2>
+              <HeadlineReveal
+                className="display text-[clamp(2.6rem,6vw,6rem)]"
+                html={`${t("contact.title")}<br/><em class="text-[clamp(1.6rem,3.4vw,3rem)]">${t("contact.titleEm")}</em>`}
+              />
               <p className="lede mt-8">{t("contact.note")}</p>
               <div className="mt-12 border-t border-line">
                 <a

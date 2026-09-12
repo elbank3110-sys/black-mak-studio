@@ -29,7 +29,8 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label="Toggle theme"
+      title="Surface test — screen / paper"
+      aria-label="Surface test — switch between screen (dark) and paper (light)"
       className="grid h-10 w-10 place-items-center border border-line-strong text-muted transition-colors hover:border-ink hover:text-ink"
     >
       <svg className="icon-moon h-4 w-4" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.7">

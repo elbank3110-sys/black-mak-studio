@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
+import HeadlineReveal from "./HeadlineReveal";
 
 const SERVICES = [
   { no: "S.01", name: "services.s1name", desc: "services.s1desc", inc: "services.s1inc", type: "Logo Design" },
@@ -21,7 +22,7 @@ export default function Services() {
           <div className="mb-[clamp(2.5rem,6vw,5.2rem)] flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <span className="eyebrow mb-4 block text-faint">{t("services.index")}</span>
-              <h2 className="display text-[clamp(3rem,7vw,7rem)]" dangerouslySetInnerHTML={{ __html: t("services.title") }} />
+              <HeadlineReveal className="display text-[clamp(3rem,7vw,7rem)]" html={t("services.title")} />
             </div>
             <p className="lede max-w-[42ch]">{t("services.note")}</p>
           </div>

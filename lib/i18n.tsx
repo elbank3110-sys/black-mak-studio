@@ -24,7 +24,7 @@ const EN: Dict = {
   "hero.lede":
     "Distinctive identities shaped by strategy, typography, and real-world application — with particular expertise in Arabic and Latin visual systems.",
   "hero.work": "View Selected Work",
-  "hero.cta": "Start Your Journey",
+  "hero.cta": "Start Your Project",
   "hero.sideLabel": "The practice",
   "hero.sideTitle": "Strategy, craft & real-world application.",
   "hero.sideText":
@@ -71,13 +71,19 @@ const EN: Dict = {
   "work.archive": "View full archive on Behance",
   "work.viewCase": "View Case ↗",
 
+  "scale.index": "THE SCALE TEST",
+  "scale.note":
+    "Drag the slider — one mark, engineered to stay clear at every size a brand actually lives at: favicon, app icon, interface, stationery, signage.",
+  "scale.slider": "Test the mark at different sizes",
+  "scale.markAlt": "BLACK-MAK monogram",
+
   "statement.index": "THE POINT",
   "statement.title":
     "A logo is not decoration.<br/><em>It is the shortest expression of who you are.</em>",
-  "statement.cta": "Start Your Journey",
+  "statement.cta": "Start Your Project",
 
   "work.cta.line": "Like what you see?<br/><em>Your brand deserves the same level of thinking.</em>",
-  "work.cta.btn": "Start Your Journey",
+  "work.cta.btn": "Start Your Project",
 
   "services.index": "04 / SERVICES",
   "services.incLabel": "WHAT'S INCLUDED —",
@@ -430,7 +436,7 @@ const AR: Dict = {
   "hero.lede":
     "هويات مميزة تتشكّل حول الاستراتيجية والتايبوغرافي والتطبيق الواقعي — مع خبرة خاصة في الأنظمة البصرية العربية واللاتينية.",
   "hero.work": "استعرض الأعمال المختارة",
-  "hero.cta": "ابدأ رحلتك",
+  "hero.cta": "ابدأ مشروعك",
   "hero.sideLabel": "الممارسة",
   "hero.sideTitle": "دقة، مفهوم وشخصية.",
   "hero.sideText":
@@ -476,6 +482,12 @@ const AR: Dict = {
     "سنوات من التصميم للطباعة، والمسافات، والشارع — خبرة تجعل كل علامة تعمل خارج الشاشة أيضًا.",
   "work.archive": "شاهد الأرشيف الكامل على Behance",
   "work.viewCase": "شاهد المشروع ↗",
+
+  "scale.index": "اختبار الحجم",
+  "scale.note":
+    "اسحب المؤشر — علامة واحدة مهندَسة لتبقى واضحة عند كل حجم تعيشه العلامة فعلًا: أيقونة الموقع، أيقونة التطبيق، الواجهة، المطبوعات، اللوحات.",
+  "scale.slider": "اختبر العلامة بأحجام مختلفة",
+  "scale.markAlt": "مونوجرام بلاك-ماك",
 
   "statement.index": "الفكرة",
 "statement.title":
@@ -794,7 +806,7 @@ const AR: Dict = {
     "يجب أن تعمل على 24 بكسل، وعلى التغليف، وعلى اللوحات، وبأحادي اللون، ومن مسافة. سنوات العمل الخارجي والصيغ الكبيرة بنت هذا الحسّ في كل علامة أرسمها.",
 
   "work.cta.line": "أعجبك ما ترى؟<br/><em>علامتك تستحق نفس مستوى التفكير.</em>",
-  "work.cta.btn": "ابدأ رحلتك",
+  "work.cta.btn": "ابدأ مشروعك",
 };
 
 type Lang = "en" | "ar";

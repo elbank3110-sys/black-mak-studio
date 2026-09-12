@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
+import HeadlineReveal from "./HeadlineReveal";
 
 const POINTS = [
   { n: "01", title: "why.p1title", text: "why.p1text", proof: "why.p1proof" },
@@ -19,7 +20,7 @@ export default function Why() {
           <div className="mb-[clamp(2.5rem,6vw,5.2rem)] flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <span className="eyebrow mb-4 block text-faint">{t("why.index")}</span>
-              <h2 className="display text-[clamp(3rem,7vw,7rem)]" dangerouslySetInnerHTML={{ __html: t("why.title") }} />
+              <HeadlineReveal className="display text-[clamp(3rem,7vw,7rem)]" html={t("why.title")} />
             </div>
             <p className="lede max-w-[42ch]">{t("why.note")}</p>
           </div>
