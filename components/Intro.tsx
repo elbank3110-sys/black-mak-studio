@@ -31,13 +31,13 @@ export default function Intro() {
     } catch {}
     sessionStorage.setItem("bm-intro", "seen");
 
-    // 1.25s brand moment: grid 0-450ms, mark wipe 150-950ms, wordmark ~600ms, out 1250ms
+    // 2s brand moment: grid 0-700ms, mark wipe 250-1500ms, wordmark ~1100ms, out 2000ms
     const t = [
-      setTimeout(() => setPhase(1), 80),
-      setTimeout(() => setPhase(2), 320),
-      setTimeout(() => setPhase(3), 620),
-      setTimeout(() => setShow(false), 1250),
-      setTimeout(() => setGone(true), 2000),
+      setTimeout(() => setPhase(1), 100),
+      setTimeout(() => setPhase(2), 500),
+      setTimeout(() => setPhase(3), 1100),
+      setTimeout(() => setShow(false), 2000),
+      setTimeout(() => setGone(true), 2750),
     ];
     return () => t.forEach(clearTimeout);
   }, []);
@@ -75,7 +75,7 @@ export default function Intro() {
           className="block overflow-hidden"
           style={{
             clipPath: phase >= 2 ? "inset(0 0 0 0)" : "inset(100% 0 0 0)",
-            transition: "clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
+            transition: "clip-path 1.1s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
           <svg
@@ -83,7 +83,7 @@ export default function Intro() {
             className="h-24 w-24 text-ink md:h-28 md:w-28"
             style={{
               transform: phase >= 2 ? "scale(1)" : "translateY(14%)",
-              transition: "transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
+              transition: "transform 1.1s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             <MarkPaths />
@@ -96,7 +96,7 @@ export default function Intro() {
           style={{
             opacity: phase >= 3 ? 1 : 0,
             transform: phase >= 3 ? "none" : "translateY(6px)",
-            transition: "opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
+            transition: "opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
           BLACK-MAK
