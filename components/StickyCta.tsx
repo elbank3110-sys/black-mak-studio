@@ -23,7 +23,7 @@ export default function StickyCta() {
     <a
       href="#start-a-project"
       aria-label={t("nav.cta")}
-      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-ink px-6 py-4 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-bg shadow-2xl transition-all duration-500 hover:-translate-y-1 rtl:left-6 rtl:right-auto ${
+      className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-ink px-6 py-4 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-bg shadow-2xl transition-all duration-500 hover:-translate-y-1 max-sm:bottom-24 rtl:left-6 rtl:right-auto ${
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0"
       }`}
     >

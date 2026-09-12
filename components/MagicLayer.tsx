@@ -50,21 +50,48 @@ export default function MagicLayer() {
       });
     }
 
-    // 2 — magnetic
-    const magnets = document.querySelectorAll<HTMLElement>("[data-magnetic]");
+    // 2 — magnetic (with eased release: cursor leaving the range glides the
+    // element home instead of snapping — the difference between a trick
+    // and a material)
+    const magnets = Array.from(document.querySelectorAll<HTMLElement>("[data-magnetic]"));
+    const state = new WeakMap<HTMLElement, { tx: number; ty: number }>();
+    let rafMag = 0;
     const onMagMove = (e: MouseEvent) => {
       magnets.forEach((m) => {
         const r = m.getBoundingClientRect();
         const relX = e.clientX - (r.left + r.width / 2);
         const relY = e.clientY - (r.top + r.height / 2);
         const dist = Math.hypot(relX, relY);
-        const range = Math.max(r.width, r.height);
+        const range = Math.max(r.width, r.height) * 1.2;
         if (dist < range) {
-          m.style.transform = `translate(${relX * 0.18}px, ${relY * 0.18}px)`;
+          state.set(m, { tx: relX * 0.18, ty: relY * 0.18 });
         } else {
-          m.style.transform = "";
+          state.set(m, { tx: 0, ty: 0 });
         }
       });
+      // single rAF loop per event — lerp toward target every frame
+      if (!rafMag) {
+        const tick = () => {
+          let active = false;
+          magnets.forEach((m) => {
+            const s = state.get(m);
+            if (!s) return;
+            const cur = m.style.transform.match(/-?[\d.]+/g)?.map(Number) ?? [0, 0];
+            const cx = cur[0] || 0;
+            const cy = cur[1] || 0;
+            const dx = s.tx - cx;
+            const dy = s.ty - cy;
+            if (Math.abs(dx) > 0.05 || Math.abs(dy) > 0.05) {
+              active = true;
+              m.style.transform = `translate(${cx + dx * 0.16}px, ${cy + dy * 0.16}px)`;
+            } else {
+              m.style.transform = s.tx || s.ty ? `translate(${s.tx}px, ${s.ty}px)` : "";
+            }
+          });
+          rafMag = active ? requestAnimationFrame(tick) : 0;
+        };
+        rafMag = requestAnimationFrame(tick);
+      }
     };
     if (!reduce && magnets.length) {
       window.addEventListener("mousemove", onMagMove, { passive: true });

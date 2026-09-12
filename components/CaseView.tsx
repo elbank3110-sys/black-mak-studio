@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 import { getCase, CASES } from "@/lib/cases";
 import Reveal from "@/components/Reveal";
@@ -8,6 +10,16 @@ import Reveal from "@/components/Reveal";
 export default function CaseView({ slug }: { slug: string }) {
   const c = getCase(slug);
   const { lang, t } = useI18n();
+  const coverRef = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
+
+  // cover parallax — the hero image drifts slower than the page (depth cue)
+  const { scrollYProgress } = useScroll({
+    target: coverRef,
+    offset: ["start end", "end start"],
+  });
+  const coverY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
+  const parallaxY = reduce ? 0 : coverY;
 
   if (!c) {
     return (
@@ -63,15 +75,19 @@ export default function CaseView({ slug }: { slug: string }) {
 
       <Reveal>
         <div className="container mt-10">
-          <Image
-            src={c.cover}
-            alt={d.title}
-            width={1600}
-            height={1000}
-            priority
-            sizes="(max-width: 1380px) 92vw, 1380px"
-            className="aspect-[16/9] w-full border border-line object-cover"
-          />
+          <div ref={coverRef} className="relative aspect-[16/9] overflow-hidden border border-line">
+            <motion.div style={{ y: parallaxY }} className="absolute inset-[-8%]">
+              <Image
+                src={c.cover}
+                alt={d.title}
+                width={1600}
+                height={1000}
+                priority
+                sizes="(max-width: 1380px) 92vw, 1380px"
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
+          </div>
         </div>
       </Reveal>
 

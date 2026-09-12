@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
+import HeroTitle from "./HeroTitle";
 
 export default function Hero() {
   const { t } = useI18n();
@@ -27,16 +28,11 @@ export default function Hero() {
 
         <div className="mt-[clamp(2rem,5vh,4rem)] grid grid-cols-1 gap-[clamp(3rem,8vw,10rem)] lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.5fr)] lg:items-end">
           <div>
-            <Reveal>
-              <h1
-                className="display hero-title"
-                dangerouslySetInnerHTML={{ __html: t("hero.title") }}
-              />
-            </Reveal>
-            <Reveal delay={0.08}>
+            <HeroTitle />
+            <Reveal delay={0.24}>
               <p className="lede mt-[clamp(1.8rem,3vw,2.6rem)]">{t("hero.lede")}</p>
             </Reveal>
-            <Reveal delay={0.16}>
+            <Reveal delay={0.32}>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="#start-a-project" data-magnetic className="btn btn-light">
                   <span>{t("hero.cta")}</span>
@@ -51,7 +47,7 @@ export default function Hero() {
           </div>
 
           <div className="hidden lg:block">
-            <Reveal delay={0.2}>
+            <Reveal delay={0.3}>
               <div className="border-y border-line-strong py-5">
                 <span className="eyebrow mb-6 block text-faint">{t("hero.sideLabel")}</span>
                 <strong className="block text-2xl font-bold leading-tight">{t("hero.sideTitle")}</strong>
@@ -94,7 +90,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <Reveal delay={0.24}>
+        <Reveal delay={0.4}>
           <div className="mt-[clamp(3rem,7vh,6rem)] grid grid-cols-1 gap-6 border-t border-line pt-6 sm:grid-cols-3">
             <div>
               <b className="block text-lg">Muhamed Alaa Elbank</b>

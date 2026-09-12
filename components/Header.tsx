@@ -114,10 +114,15 @@ export default function Header() {
         </div>
       </div>
 
-      {open && (
-        <nav className="container flex flex-col gap-6 py-8 md:hidden" aria-label="Mobile navigation">
+      <div
+        className={`container grid overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
+          open ? "mt-0 grid-rows-[1fr] py-8 opacity-100" : "mt-0 grid-rows-[0fr] py-0 opacity-0"
+        }`}
+        aria-hidden={!open}
+      >
+        <nav className="flex min-h-0 flex-col gap-6 overflow-hidden" aria-label="Mobile navigation">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-2xl font-bold">
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className={`text-2xl font-bold transition-all duration-500 ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
               {t(l.k)}
             </a>
           ))}
@@ -126,7 +131,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="text-2xl font-bold"
+            className={`text-2xl font-bold transition-all duration-500 ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
           >
             {t("nav.cv")}
           </a>
@@ -134,7 +139,7 @@ export default function Header() {
             {t("nav.cta")}
           </a>
         </nav>
-      )}
+      </div>
     </header>
   );
 }

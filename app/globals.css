@@ -31,6 +31,10 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
 }
+/* Lenis owns scrolling when active — CSS smooth fights it */
+html.has-smooth {
+  scroll-behavior: auto;
+}
 
 body {
   background: var(--bg);
