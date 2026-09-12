@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import SignalStrip from "@/components/SignalStrip";
-import Marquee from "@/components/Marquee";
 import Work from "@/components/Work";
 import Proof from "@/components/Proof";
 import Statement from "@/components/Statement";
@@ -21,7 +20,6 @@ export default function Page() {
     <main>
       <Hero />
       <SignalStrip />
-      <Marquee />
       <Work />
       <Proof />
       <Statement />

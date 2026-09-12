@@ -13,9 +13,9 @@ import SmoothScroll from "@/components/SmoothScroll";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "BLACK-MAK — Logo & Visual Identity Designer",
+  title: "BLACK-MAK® — Logo & Visual Identity Designer | Arabic & Latin",
   description:
-    "BLACK-MAK is the design practice of Muhamed Alaa Elbank: logo design, Arabic and Latin typography, and visual identity systems built with precision.",
+    "BLACK-MAK® is an independent logo and visual identity practice by Muhamed Alaa Elbank, specializing in Arabic & Latin typography, calligraphy, identity systems, and real-world brand applications.",
   metadataBase: new URL("https://black-mak-v4.vercel.app/"),
   alternates: {
     canonical: "https://black-mak-v4.vercel.app/",

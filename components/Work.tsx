@@ -70,7 +70,7 @@ function Card({ w, i, eager }: { w: (typeof FEATURED)[number]; i: number; eager?
         href={w.href}
         className="work-card group block"
       >
-        <div className="relative overflow-hidden border border-line bg-surface">
+        <div className="work-img-mask relative overflow-hidden border border-line bg-surface">
           <div className="absolute inset-0 z-[1] bg-gradient-to-br from-transparent to-white/[0.06] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
           <Image
             src={w.img}
@@ -87,14 +87,14 @@ function Card({ w, i, eager }: { w: (typeof FEATURED)[number]; i: number; eager?
             {t(w.hover)}
           </span>
         </div>
-        <div className="flex items-start justify-between gap-4 border-b border-line py-5">
+        <div className="flex items-start justify-between gap-4 border-b border-line py-5 transition-transform duration-300 group-hover:-translate-y-1">
           <div className="flex items-baseline gap-4">
             <span className="font-mono text-[0.6rem] text-faint">{w.n}</span>
             <h3 className="text-[clamp(1.15rem,2vw,1.75rem)] font-bold leading-[1.05] tracking-tight">
               {t(w.titleKey)}
             </h3>
           </div>
-          <span className="text-end font-mono text-[0.6rem] text-muted">{t(w.tagsKey)}</span>
+          <span className="text-end font-mono text-[0.6rem] text-muted opacity-70 transition-opacity duration-300 group-hover:opacity-100">{t(w.tagsKey)}</span>
         </div>
         {w.outKey && (
           <p className="mt-3 max-w-[52ch] font-mono text-[0.62rem] leading-relaxed tracking-[0.04em] text-faint">

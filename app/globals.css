@@ -360,12 +360,16 @@ html[lang="ar"] .eyebrow {
   will-change: transform;
 }
 
-/* 3 — SERVICE rows: number flips to ◆ and slides on hover */
+/* 3 — SERVICE rows: number warms and slides on hover; description lifts */
 .service-row .service-no {
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
 }
 .service-row:hover .service-no {
   transform: translateX(6px);
+  color: var(--ink);
+}
+.service-row p {
+  transition: opacity 0.3s ease;
 }
 
 /* 4 — KICKER shimmer: light sweep across the hero eyebrow once */
@@ -390,6 +394,25 @@ html[lang="ar"] .eyebrow {
 }
 .hairline-draw.is-in {
   transform: scaleX(1);
+}
+
+/* 5b — WORK image reveal: a one-time clip wipe on first render (mounted
+   inside the Reveal wrapper, so it plays exactly when the card enters).
+   The clip starts inset and opens to full — with the image settling from
+   a slight zoom. Keyframes play once, 1.1s. */
+@keyframes work-img-open {
+  from { clip-path: inset(6% 4% 6% 4%); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes work-img-settle {
+  from { transform: scale(1.05); }
+  to { transform: scale(1); }
+}
+.work-img-mask {
+  animation: work-img-open 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.work-img-mask img {
+  animation: work-img-settle 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* 6 — PRICING featured card: living corner brackets */
@@ -499,14 +522,7 @@ details[open] .faq-plus {
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* 17 — IMAGES: slow cinematic zoom on load for work cards */
-.work-card img {
-  animation: img-settle 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-@keyframes img-settle {
-  from { transform: scale(1.06); filter: brightness(0.92); }
-  to { transform: scale(1); filter: brightness(1); }
-}
+/* 17 — superseded by the .work-img-mask reveal (see 5b above) */
 
 /* 18 — BILING diamond: gentle perpetual rotation as a "living mark" */
 @keyframes spin-slow {
@@ -518,22 +534,8 @@ details[open] .faq-plus {
 }
 
 /* ============================================================
-   Marquee — one slow editorial band (translateX -50% on doubled list)
+   Marquee removed — the SignalStrip carries the facts.
    ============================================================ */
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-.marquee-track {
-  animation: marquee-scroll 40s linear infinite;
-}
-.marquee-row:hover .marquee-track {
-  animation-play-state: paused;
-}
-/* RTL: reverse direction so it reads naturally */
-[dir="rtl"] .marquee-track {
-  animation-direction: reverse;
-}
 
 @media (prefers-reduced-motion: reduce) {
   .word-rise > span,
@@ -546,11 +548,13 @@ details[open] .faq-plus {
   .sig-line,
   .faq-plus,
   .press-row,
-  .work-card img,
+  .work-img-mask,
+  .work-img-mask img,
   .biling-diamond,
   .hero-card {
     animation: none !important;
     transition: none !important;
+    clip-path: none !important;
   }
   .kicker-shimmer,
   .word-rise > span,
@@ -558,8 +562,5 @@ details[open] .faq-plus {
     -webkit-text-fill-color: var(--ink);
     background: none;
     transform: none;
-  }
-  .marquee-track {
-    animation: none !important;
   }
 }

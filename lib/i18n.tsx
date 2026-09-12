@@ -42,9 +42,6 @@ const EN: Dict = {
   "signal.3": "03 / BILINGUAL CALLIGRAPHY",
   "signal.4": "04 / WORLDWIDE COLLABORATION",
 
-  "marquee.text": "LOGO DESIGN · VISUAL IDENTITY · ARABIC + LATIN · TYPOGRAPHY · BRAND SYSTEMS · ",
-  "marquee.identity": "IDENTITY",
-
   "work.index": "01 / SELECTED WORK",
   "work.moreIndex": "MORE WORK",
   "work.moreTitle": "More<br/><em>work.</em>",
@@ -105,7 +102,7 @@ const EN: Dict = {
   "services.s5name": "Digital Brand Experiences",
   "services.s5desc":
     "Custom portfolio and brand microsites designed around the identity — not generic templates dressed in a logo. This studio itself is an example of the digital brand experiences I build. Available as an extension of selected branding projects or as a standalone digital identity experience.",
-  "services.s1inc": "Concepts · Refinement rounds · Final files (AI · PDF · PNG · SVG)",
+  "services.s1inc": "Initial Directions · Refinement rounds · Final files (AI · PDF · PNG · SVG)",
   "services.s2inc": "Logo system · Color & type · Guidelines · Applications",
   "services.s3inc": "Freestyle calligraphy · Bilingual lockups · Calligraphic system",
   "services.s4inc": "Signage · Print · Large-format",
@@ -176,7 +173,7 @@ const EN: Dict = {
   "proof.note":
     "Real feedback from people who needed a mark to do more than look good.",
   "proof.clientsTitle": "SELECTED CLIENTS",
-  "proof.clientsNote": "A slice of the 50+ businesses the practice has built marks for.",
+  "proof.clientsNote": "Sectors from 50+ businesses the practice has built marks for — client names shared on request.",
   "proof.c1": "Specialty Coffee Roastery",
   "proof.c2": "Skincare Brand",
   "proof.c3": "Retail Chains",
@@ -213,13 +210,13 @@ const EN: Dict = {
   "pricing.1c2": "Primary Logo",
   "pricing.1c3": "Secondary / Stacked Version",
   "pricing.1c4": "Monochrome Version",
-  "pricing.1c5": "Basic Clear-Space / Usage Guidance",
+  "pricing.1c5": "Basic Logo Usage Notes",
   "pricing.1c6": "Editable Source File",
   "pricing.1d": "Final Production Package",
   "pricing.1e": "1–2 weeks",
   "pricing.1f": "Additional edits are quoted as add-ons based on scope.",
 
-  "pricing.2name": "Typographic / Calligraphic Identity",
+  "pricing.2name": "Custom Typographic / Calligraphic Mark",
   "pricing.2desc": "Custom lettering and wordmarks designed around the character of the brand.",
   "pricing.2a": "2–3 Initial Directions",
   "pricing.2b": "2–3 Refinement Rounds",
@@ -248,7 +245,7 @@ const EN: Dict = {
   "pricing.3b9": "Graphic Language",
   "pricing.3b10": "Supporting Visual Elements",
   "pricing.3b11": "Basic Brand Guidelines",
-  "pricing.3b12": "Selected Brand Applications",
+  "pricing.3b12": "Selected Brand Applications (up to 3 agreed; more scoped separately)",
   "pricing.3b13": "Digital / Social Brand Direction",
   "pricing.3b14": "Editable Source Files",
   "pricing.3c": "Final Production Package",
@@ -258,6 +255,10 @@ const EN: Dict = {
   "pricing.upsellQ": "Need the identity translated into digital?",
   "pricing.upsellA": "Extend the system into a custom digital brand experience.",
   "pricing.upsellCta": "Explore Digital Brand Experiences",
+
+  "pricing.rebrand": "Rebrand projects are custom-scoped from $799.",
+  "pricing.digital": "Digital Brand Experiences are custom-quoted from $450.",
+  "pricing.customNote": "Both are quoted precisely after the brief — scope first, price second.",
   "pricing.ctaQ": "Know what you need? Send the brief. I'll take it from there.",
 
   "pricing.cta1": "Start a Logo Project",
@@ -354,6 +355,7 @@ const EN: Dict = {
   "bts.title": "A strong identity has to survive more than a presentation mockup.",
   "bts.text":
     "It has to work at 24px, on packaging, on signage, in monochrome, and from a distance. Years of outdoor and large-format work built that instinct into every mark I draw.",
+  "bts.testsNote": "Five survival tests every mark passes before it leaves the studio.",
 
   "contact.index": "11 / START A BRAND PROJECT",
   "contact.title": "Have a brand worth building?",
@@ -454,9 +456,6 @@ const AR: Dict = {
   "signal.3": "03 / كاليجرافي ثنائي اللغة",
   "signal.4": "04 / تعاون حول العالم",
 
-  "marquee.text": "تصميم شعار · هوية بصرية · عربي + لاتيني · تايبوغرافي · أنظمة العلامات · ",
-  "marquee.identity": "هُوِيَّة",
-
   "work.index": "01 / أعمال مختارة",
   "work.moreIndex": "أعمال أخرى",
   "work.moreTitle": "أعمال<br/><em>أخرى.</em>",
@@ -508,7 +507,7 @@ const AR: Dict = {
   "services.s4desc": "تطبيقات لهوية قائمة بالفعل — لوحات ومطبوعات وصيغ كبيرة، مبنية للمسافة والوضوح.",
   "services.s5name": "تجارب رقمية للعلامة",
   "services.s5desc": "مواقع بورتفوليو وبراند مايكروسايت مصممة حول الهوية — لا قوالب عامة بملبس شعار. هذا الاستوديو نفسه مثال على التجارب الرقمية التي أبنيها. متاحة كامتداد لمشاريع الهوية المختارة أو كتجربة رقمية مستقلة.",
-  "services.s1inc": "مفاهيم · جولات صقل · ملفات نهائية (AI · PDF · PNG · SVG)",
+  "services.s1inc": "اتجاهات أولية · جولات صقل · ملفات نهائية (AI · PDF · PNG · SVG)",
   "services.s2inc": "نظام الشعار · اللون والخط · الدليل · التطبيقات",
   "services.s3inc": "كاليجرافي حر · قفل ثنائي اللغة · نظام كاليجرافي",
   "services.s4inc": "لوحات · مطبوعات · صيغ كبيرة",
@@ -569,7 +568,7 @@ const AR: Dict = {
   "proof.title": "العمل الجيد<br/><em>يسافر.</em>",
   "proof.note": "تغذية راجعة حقيقية ممن احتاجوا علامة تفعل أكثر من أن تبدو جيدة.",
   "proof.clientsTitle": "عملاء مختارون",
-  "proof.clientsNote": "غيض من فيض أكثر من ٥٠ نشاطًا تجاريًا بُنيت لهم علامات.",
+  "proof.clientsNote": "قطاعات من أكثر من ٥٠ نشاطًا تجاريًا بُنيت لهم علامات — الأسماء تُشارك عند الطلب.",
   "proof.c1": "محمصة قهوة مختصة",
   "proof.c2": "علامة عناية بالبشرة",
   "proof.c3": "سلاسل تجزئة",
@@ -604,13 +603,13 @@ const AR: Dict = {
   "pricing.1c2": "الشعار الأساسي",
   "pricing.1c3": "النسخة الثانوية / المكدّسة",
   "pricing.1c4": "النسخة أحادية اللون",
-  "pricing.1c5": "إرشادات المسافة الفارغة والاستخدام الأساسية",
+  "pricing.1c5": "ملاحظات أساسية لاستخدام الشعار",
   "pricing.1c6": "ملف المصدر القابل للتعديل",
   "pricing.1d": "حزمة الإنتاج النهائية",
   "pricing.1e": "1–2 أسبوع",
   "pricing.1f": "التعديلات الإضافية تُسعَّر كإضافة حسب النطاق.",
 
-  "pricing.2name": "هوية تايبوغرافية / كاليجرافية",
+  "pricing.2name": "مارك تايبوغرافي / كاليجرافي مخصص",
   "pricing.2desc": "حروف وكلمات مصممة مخصصًا حول طبيعة العلامة التجارية.",
   "pricing.2a": "2–3 اتجاهات أولية",
   "pricing.2b": "2–3 جولات تنقيح",
@@ -639,7 +638,7 @@ const AR: Dict = {
   "pricing.3b9": "اللغة البصرية",
   "pricing.3b10": "العناصر البصرية الداعمة",
   "pricing.3b11": "دليل هوية أساسي",
-  "pricing.3b12": "تطبيقات العلامة المختارة",
+  "pricing.3b12": "تطبيقات العلامة المختارة (حتى 3 تطبيقات متفق عليها؛ الإضافي يُسعَّر منفصلًا)",
   "pricing.3b13": "الاتجاه الرقمي / الاجتماعي",
   "pricing.3b14": "ملفات المصدر القابلة للتعديل",
   "pricing.3c": "حزمة الإنتاج النهائية",
@@ -649,6 +648,10 @@ const AR: Dict = {
   "pricing.upsellQ": "تحتاج الهوية مترجمة إلى الرقمي؟",
   "pricing.upsellA": "امتد النظام إلى تجربة رقمية مخصصة للعلامة.",
   "pricing.upsellCta": "استكشف التجارب الرقمية للعلامة",
+
+  "pricing.rebrand": "مشاريع إعادة التصميم تُسعَّر مخصصًا من $799.",
+  "pricing.digital": "التجارب الرقمية للعلامة تُسعَّر مخصصًا من $450.",
+  "pricing.customNote": "كلاهما يُسعَّر بدقة بعد البريف — النطاق أولًا ثم السعر.",
   "pricing.ctaQ": "تعرف ما تحتاجه؟ أرسل البريف وأنا أكمل من هناك.",
 
   "pricing.cta1": "ابدأ مشروع الشعار",
@@ -804,6 +807,7 @@ const AR: Dict = {
   "bts.title": "الهوية القوية يجب أن تنجو من أكثر من موك-أب عرض.",
   "bts.text":
     "يجب أن تعمل على 24 بكسل، وعلى التغليف، وعلى اللوحات، وبأحادي اللون، ومن مسافة. سنوات العمل الخارجي والصيغ الكبيرة بنت هذا الحسّ في كل علامة أرسمها.",
+  "bts.testsNote": "خمسة اختبارات بقاء تجتازها كل علامة قبل أن تغادر الاستوديو.",
 
   "work.cta.line": "أعجبك ما ترى؟<br/><em>علامتك تستحق نفس مستوى التفكير.</em>",
   "work.cta.btn": "ابدأ مشروعك",
