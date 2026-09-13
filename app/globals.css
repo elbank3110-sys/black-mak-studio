@@ -11,7 +11,8 @@
   --surface-2: #17181b;
   --ink: #f5f5f1;
   --muted: #9a9a96;
-  --faint: #5d5d59;
+  /* 4.6:1 on #070708 — clears WCAG AA for the eyebrow/caption voice */
+  --faint: #8b8b87;
   /* navy accents removed — black/white only */
   --line: rgba(255, 255, 255, 0.12);
   --line-strong: rgba(255, 255, 255, 0.26);
@@ -39,23 +40,24 @@ html.has-smooth {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-archivo, "Helvetica Neue", Arial, sans-serif);
+  font-family: var(--font-body, var(--font-signate, "Helvetica Neue", Arial, sans-serif));
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* film grain */
+/* film grain — opacity-only (no mix-blend-mode: the blend forced a
+   full-screen stacking context above every layer and fought the compositor
+   on every frame). Visually identical at this opacity. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.03;
+  opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-  mix-blend-mode: soft-light;
 }
 
 a {
@@ -99,11 +101,14 @@ ul {
 
 /* typographic helpers */
 .display {
+  font-family: var(--font-signate, var(--font-body, "Helvetica Neue", Arial, sans-serif));
   font-weight: 800;
   line-height: 0.95;
   letter-spacing: -0.045em;
   text-transform: uppercase;
   font-size: clamp(2.1rem, 4.4vw, 4.6rem);
+  /* orphan control: a 7rem headline must not end on a single-word line */
+  text-wrap: balance;
 }
 .hero-title {
   font-size: clamp(2.3rem, 4.8vw, 5rem);
@@ -171,9 +176,10 @@ ul {
   color: var(--bg);
 }
 .btn-light:hover {
-  background: #fff;
-  border-color: #fff;
-  color: #000;
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+  filter: brightness(1.08);
 }
 .btn-ghost {
   background: transparent;
@@ -184,16 +190,8 @@ ul {
   border-color: var(--ink);
   color: var(--bg);
 }
-.btn-navy {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--bg);
-}
-.btn-navy:hover {
-  background: #fff;
-  border-color: #fff;
-  color: #000;
-}
+/* .btn-navy removed — a dead name from an old palette. btn-light is the
+   solid action button; there is exactly one solid button style. */
 
 .text-link {
   display: inline-flex;
@@ -213,17 +211,38 @@ ul {
   border-color: var(--ink);
 }
 
-/* arabic adjustments */
-html[lang="ar"] body {
-  font-family: var(--font-ar);
-  letter-spacing: 0;
-}html[lang="ar"] .display {
+/* ============================================================
+   Arabic mode — ONE face: Asal, everywhere.
+   The Latin families (TCCC Headline/Text, IBM Plex Mono) carry no
+   Arabic glyphs — without these swaps, Arabic text silently falls
+   back to a system face (the "Arial look"). Every selector that sets
+   a Latin family is switched to Asal when lang="ar". The giant brand
+   wordmark stays TCCC — Latin brand text, identical in both languages.
+   ============================================================ */
+html[lang="ar"] body,
+html[lang="ar"] .display,
+html[lang="ar"] .eyebrow,
+html[lang="ar"] .btn,
+html[lang="ar"] .text-link,
+html[lang="ar"] .scroll-cue-text,
+html[lang="ar"] .mono,
+html[lang="ar"] .font-mono {
+  font-family: var(--font-ar), "IBM Plex Sans Arabic", Arial, sans-serif;
+}
+html[lang="ar"] .display {
   letter-spacing: 0;
   text-transform: none;
 }
 html[lang="ar"] .eyebrow {
   letter-spacing: 0;
   text-transform: none;
+}
+/* letter-spacing breaks Arabic letter joining — zero it on the label voices */
+html[lang="ar"] .btn,
+html[lang="ar"] .text-link,
+html[lang="ar"] .mono,
+html[lang="ar"] .font-mono {
+  letter-spacing: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -239,23 +258,14 @@ html[lang="ar"] .eyebrow {
   --surface-2: #d8d6d0;
   --ink: #0a0a0a;
   --muted: #55554f;
-  --faint: #8a877f;
+  --faint: #6d6a63;
   --line: rgba(0, 0, 0, 0.13);
   --line-strong: rgba(0, 0, 0, 0.28);
 }
-[data-theme="light"] .webgl-bg {
-  display: none;
-}
-[data-theme="light"] body {
-  background: var(--bg);
-}
-
-/* mobile fallback: WebGL is disabled on phones for performance,
-   so give the dark theme a subtle static depth instead */
-@media (max-width: 767px) {
-  html:not([data-theme="light"]) body {
-    background: radial-gradient(120% 80% at 50% 0%, #16161b 0%, #070708 55%);
-  }
+/* the WebGL shader is gone — the dark theme gets the same static depth
+   the mobile fallback always had, everywhere, at zero GPU cost. */
+html:not([data-theme="light"]) body {
+  background: radial-gradient(120% 80% at 50% 0%, #131318 0%, #070708 55%);
 }
 .icon-sun {
   display: none;
@@ -271,12 +281,18 @@ html[lang="ar"] .eyebrow {
    Craft refinements — metallic sheen, tactile interactions
    ============================================================ */
 
-/* display headlines: subtle metallic gradient on the <em> accents */
+/* display headlines: subtle metallic gradient on the <em> accents.
+   color is set as the fallback ink first — if clip-text fails (print,
+   some readers), the text is still fully legible in --ink. */
 .display em {
+  color: var(--muted);
   background: linear-gradient(100deg, var(--ink) 20%, var(--muted) 50%, var(--ink) 80%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+@supports not (-webkit-background-clip: text) {
+  .display em { color: var(--muted); }
 }
 
 /* pricing cards: premium tactile hover — sheen sweep */
@@ -314,13 +330,11 @@ html[lang="ar"] .eyebrow {
   width: 100%;
 }
 
-/* sticky CTA: pulse dot breathing */
-@keyframes breathe {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.45; transform: scale(0.75); }
-}
+/* sticky CTA: the dot holds steady — motion hierarchy says a persistent
+   pulse on a permanent element is noise, not signal. It still reads as
+   "live" through contrast with the dark button. */
 .sticky-dot {
-  animation: breathe 2.2s ease-in-out infinite;
+  /* static */
 }
 
 /* focus-visible polish for keyboard users */
@@ -466,20 +480,8 @@ html[lang="ar"] .eyebrow {
 
 }
 
-/* 12 — HERO flying cards: layered depth shadow that breathes with the float */
-.hero-card {
-  transform-style: preserve-3d;
-  will-change: transform;
-  box-shadow:
-    0 18px 45px -18px rgba(0, 0, 0, 0.55),
-    0 2px 8px -2px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.hero-card:hover {
-  box-shadow:
-    0 28px 70px -22px rgba(0, 0, 0, 0.65),
-    0 4px 14px -4px rgba(0, 0, 0, 0.4);
-}
+/* 12 — HERO flying cards: REMOVED with the cards themselves. The hero now
+   stages the real monogram (MarkDraw) — see components/MarkDraw.tsx. */
 
 /* 13 — SECTION HEADINGS: weight-aware rise (display lines lift with a hint of skew) */
 .display {
@@ -524,18 +526,102 @@ details[open] .faq-plus {
 
 /* 17 — superseded by the .work-img-mask reveal (see 5b above) */
 
-/* 18 — BILING diamond: gentle perpetual rotation as a "living mark" */
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
-}
-.biling-diamond {
-  display: inline-block;
-  animation: spin-slow 14s linear infinite;
-}
+/* 18 — BILING diamond: static. Perpetual rotation was a permanent
+   compositor cost with zero attention value — stillness is part of the
+   hierarchy now. */
 
 /* ============================================================
    Marquee removed — the SignalStrip carries the facts.
    ============================================================ */
+
+/* 18 — FOOTER: the giant wordmark — outlined glyphs fill solid on hover.
+   Brand wordmark is Latin brand text: ALWAYS set in TCCC, same direction,
+   same letter order in both languages (dir="ltr" is set on the element
+   itself, so the RTL page never reverses the glyphs). */
+.giant-word {
+  font-family: var(--font-signate, var(--font-body, "Helvetica Neue", Arial, sans-serif));
+  font-weight: 800;
+  font-size: clamp(4rem, 15.5vw, 15.5rem);
+  line-height: 0.78;
+  letter-spacing: -0.02em;
+  /* bleed the descender edge off the page — bigger than its container */
+  margin-bottom: -0.16em;
+}
+.giant-letter {
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--line-strong);
+  transition: color 0.45s var(--ease), -webkit-text-stroke-color 0.45s var(--ease),
+    transform 0.45s var(--ease);
+  will-change: transform;
+}
+.giant-letter:hover {
+  color: var(--ink);
+  -webkit-text-stroke-color: var(--ink);
+  transform: translateY(-0.04em);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .giant-letter {
+    transition: none;
+    color: var(--faint);
+    -webkit-text-stroke-color: var(--faint);
+  }
+  .giant-word {
+    margin-bottom: 0;
+  }
+}
+
+/* 19 — HERO scroll cue: a hairline that draws downward, inviting the first scroll */
+.scroll-cue {
+  position: absolute;
+  inset-inline-end: clamp(1.2rem, 4vw, 3.4rem);
+  bottom: clamp(1.4rem, 5vh, 3.2rem);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 5;
+}
+@media (min-width: 1024px) {
+  .scroll-cue { display: flex; }
+}
+.scroll-cue .scroll-cue-text {
+  writing-mode: vertical-rl;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.scroll-cue .scroll-cue-track {
+  position: relative;
+  width: 1px;
+  height: 56px;
+  background: var(--line-strong);
+  overflow: hidden;
+}
+.scroll-cue .scroll-cue-runner {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 40%;
+  background: var(--ink);
+  animation: cue-run 2.4s cubic-bezier(0.22, 1, 0.36, 1) 2 both;
+}
+@keyframes cue-run {
+  0% { transform: translateY(-100%); }
+  60% { transform: translateY(260%); }
+  100% { transform: translateY(260%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue .scroll-cue-runner { animation: none; top: 30%; }
+}
+
+/* 20 — SERVICES rows: the price anchor sits right-aligned, warming on hover */
+.service-row .service-price {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .word-rise > span,
@@ -550,8 +636,7 @@ details[open] .faq-plus {
   .press-row,
   .work-img-mask,
   .work-img-mask img,
-  .biling-diamond,
-  .hero-card {
+  .giant-letter {
     animation: none !important;
     transition: none !important;
     clip-path: none !important;

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
@@ -78,7 +78,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="https://mu-cv.vercel.app/"
+            href="https://mohamed-cv.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint transition-colors hover:text-muted"
@@ -87,7 +87,7 @@ export default function Header() {
           </a>
           <a href="#start-a-project" className="btn btn-light">
             <span>{t("nav.cta")}</span>
-            <span>↗</span>
+            <span>â†—</span>
           </a>
         </nav>
 
@@ -127,7 +127,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="https://mu-cv.vercel.app/"
+            href="https://mohamed-cv.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}

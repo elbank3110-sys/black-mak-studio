@@ -21,7 +21,7 @@ export default function Who() {
           <div className="mb-[clamp(2.5rem,6vw,5.2rem)] flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <span className="eyebrow mb-4 block text-faint">{t("who.index")}</span>
-              <h2 className="display text-[clamp(3rem,7vw,7rem)]" dangerouslySetInnerHTML={{ __html: t("who.title") }} />
+              <h2 className="display text-[clamp(2.2rem,4.6vw,3.8rem)]" dangerouslySetInnerHTML={{ __html: t("who.title") }} />
             </div>
             <p className="lede max-w-[46ch]">{t("who.note")}</p>
           </div>

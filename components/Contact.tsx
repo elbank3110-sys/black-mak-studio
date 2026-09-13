@@ -1,34 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useI18n } from "@/lib/i18n";
+import { submitInquiry } from "@/lib/actions";
 import Reveal from "./Reveal";
 import HeadlineReveal from "./HeadlineReveal";
 
+type State = { kind: "idle" } | { kind: "sending" } | { kind: "done"; waUrl: string } | { kind: "error"; msg: string };
+
 export default function Contact() {
   const { t, lang } = useI18n();
-  const [sent, setSent] = useState(false);
+  const [state, setState] = useState<State>({ kind: "idle" });
+  const [pending, start] = useTransition();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const name = fd.get("name") || "";
-    const email = fd.get("email") || "";
-    const contact = fd.get("contact") || "";
-    const company = fd.get("company") || "";
-    const type = fd.get("type") || "";
-    const budget = fd.get("budget") || "";
-    const msg = fd.get("msg") || "";
-    const lines = [
-      t("wa.msg"),
-      `${name}${company ? ` (${company})` : ""} — ${type}`,
-      email ? `Email: ${email}` : "",
-      contact && contact !== email ? `Channel: ${contact}` : "",
-      budget ? `Investment: ${budget}` : "",
-      msg,
-    ].filter(Boolean);
-    window.open(`https://wa.me/201002462821?text=${encodeURIComponent(lines.join("\n"))}`, "_blank");
-    setSent(true);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    start(async () => {
+      try {
+        const res = await submitInquiry(fd);
+        if (res.ok) {
+          setState({ kind: "done", waUrl: res.waUrl });
+          form.reset();
+        } else {
+          setState({ kind: "error", msg: res.error });
+        }
+      } catch {
+        setState({
+          kind: "error",
+          msg:
+            lang === "ar"
+              ? "تعذّر الإرسال — جرّب مرة أخرى أو راسلني مباشرة على واتساب."
+              : "Couldn't send — please try again or reach me directly on WhatsApp.",
+        });
+      }
+    });
   };
 
   return (
@@ -75,6 +82,21 @@ export default function Contact() {
                 <strong className="block text-[0.95rem] font-bold">{t("contact.qualTitle")}</strong>
                 <p className="mt-3 text-[0.85rem] leading-relaxed text-muted">{t("contact.qual")}</p>
               </div>
+
+              {/* low-commitment path — not every buyer is ready for a 7-field brief */}
+              <div className="mt-4 border border-line-strong bg-bg p-6">
+                <strong className="block text-[0.95rem] font-bold">{t("contact.callTitle")}</strong>
+                <p className="mt-3 max-w-[46ch] text-[0.85rem] leading-relaxed text-muted">{t("contact.callText")}</p>
+                <a
+                  href="https://wa.me/201002462821?text=Hi%20Muhamed%2C%20could%20we%20schedule%20a%2015-minute%20fit%20call%3F%20I%27d%20like%20to%20discuss%20my%20brand."
+                  target="_blank"
+                  rel="noopener"
+                  className="text-link mt-4 inline-flex"
+                >
+                  <span>{t("contact.callCta")}</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
           </Reveal>
 
@@ -84,26 +106,52 @@ export default function Contact() {
                 <span className="font-mono text-[0.62rem] uppercase tracking-[0.13em] text-faint">{t("form.intro")}</span>
                 <p className="max-w-[27ch] text-end text-[0.85rem] text-muted">{t("form.help")}</p>
               </div>
+
+              {state.kind === "done" ? (
+                <div className="mt-10 flex flex-col items-start gap-6" role="status">
+                  <span className="grid h-12 w-12 place-items-center border border-ink">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                  </span>
+                  <p className="text-[clamp(1.2rem,2.4vw,1.7rem)] font-bold leading-snug">{t("form.sentTitle")}</p>
+                  <p className="max-w-[52ch] text-muted">{t("form.sentBody")}</p>
+                  <div className="flex flex-wrap gap-3">
+                    <a href={state.waUrl} rel="noopener" className="btn btn-light">
+                      <span>{t("form.sentCta")}</span>
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setState({ kind: "idle" })}
+                      className="btn btn-ghost"
+                    >
+                      <span>{t("form.again")}</span>
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <>
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <label className="flex flex-col gap-2">
                   <span className="text-[0.62rem] text-muted">{t("form.name")}</span>
-                  <input name="name" required autoComplete="name" placeholder={t("form.namePh")} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
+                  <input name="name" required disabled={pending} autoComplete="name" placeholder={t("form.namePh")} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
                 </label>
                 <label className="flex flex-col gap-2">
                   <span className="text-[0.62rem] text-muted">{t("form.email")}</span>
-                  <input name="email" type="email" required autoComplete="email" placeholder={t("form.emailPh")} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
+                  <input name="email" type="email" required disabled={pending} autoComplete="email" placeholder={t("form.emailPh")} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
                 </label>
                 <label className="flex flex-col gap-2">
                   <span className="text-[0.62rem] text-muted">{t("form.contact")}</span>
-                  <input name="contact" required placeholder={t("form.contactPh")} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
+                  <input name="contact" required disabled={pending} placeholder={t("form.contactPh")} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
                 </label>
                 <label className="flex flex-col gap-2">
                   <span className="text-[0.62rem] text-muted">{t("form.company")}</span>
-                  <input name="company" placeholder={t("form.companyPh")} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
+                  <input name="company" disabled={pending} placeholder={t("form.companyPh")} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
                 </label>
                 <label className="flex flex-col gap-2 sm:col-span-2">
                   <span className="text-[0.62rem] text-muted">{t("form.type")}</span>
-                  <select name="type" required className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink">
+                  <select name="type" required disabled={pending} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink">
                     <option value="Logo">{t("form.opt1")}</option>
                     <option value="Visual Identity">{t("form.opt2")}</option>
                     <option value="Arabic / Latin Calligraphy">{t("form.opt3")}</option>
@@ -114,10 +162,8 @@ export default function Contact() {
                 </label>
                 <label className="flex flex-col gap-2 sm:col-span-2">
                   <span className="text-[0.62rem] text-muted">{t("form.budget")}</span>
-                  <select name="budget" className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink">
+                  <select name="budget" disabled={pending} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink">
                     <option value="Not sure yet">{t("form.budgetOpt5")}</option>
-                    <option value="I'm ready to invest in a professional identity">{t("form.budgetLead")}</option>
-                    <option value="Under $300">{t("form.budgetOpt1")}</option>
                     <option value="$300–$600">{t("form.budgetOpt2")}</option>
                     <option value="$600–$1,500">{t("form.budgetOpt3")}</option>
                     <option value="$1,500+">{t("form.budgetOpt4")}</option>
@@ -125,7 +171,7 @@ export default function Contact() {
                 </label>
                 <label className="flex flex-col gap-2 sm:col-span-2">
                   <span className="text-[0.62rem] text-muted">{t("form.msg")}</span>
-                  <textarea name="msg" required placeholder={t("form.msgPh")} className="min-h-[130px] resize-y border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
+                  <textarea name="msg" required disabled={pending} placeholder={t("form.msgPh")} className="min-h-[130px] resize-y border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink" />
                 </label>
               </div>
 
@@ -140,10 +186,18 @@ export default function Contact() {
                 <p className="mt-4 text-[0.75rem] text-faint">{t("contact.notFit")}</p>
               </div>
 
-              <button type="submit" className="btn btn-navy mt-6 w-full">
-                {t("form.submit")} <span>↗</span>
+              <button type="submit" disabled={pending} className="btn btn-light mt-6 w-full">
+                {pending ? <span>{t("form.sending")}</span> : <span>{t("form.submit")}</span>}
+                <span aria-hidden="true">↗</span>
               </button>
-              {sent && <p className="mt-4 font-mono text-[0.7rem] text-ink">{t("form.sent")}</p>}
+
+              {state.kind === "error" && (
+                <p role="alert" className="mt-4 font-mono text-[0.72rem] text-ink">
+                  {state.msg}
+                </p>
+              )}
+                </>
+              )}
             </form>
           </Reveal>
         </div>

@@ -1,16 +1,18 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
 import HeroTitle from "./HeroTitle";
+import MarkDraw from "./MarkDraw";
 
+// ============================================================================
+// Hero — the first 100vh is the WORK, not words about work. The monogram
+// draws itself like a pen stroke (the calligrapher's proof), flanked by the
+// two real differentiators promoted from section 03: bilingual calligraphy
+// and outdoor/large-format survival. The CSS business cards are gone.
+// ============================================================================
 export default function Hero() {
   const { t } = useI18n();
-  const { scrollY } = useScroll();
-  // parallax depths — dark card sinks slower, light card lifts (counter-scroll)
-  const parallaxA = useTransform(scrollY, [0, 600], [0, 70]);
-  const parallaxB = useTransform(scrollY, [0, 600], [0, -60]);
 
   return (
     <section
@@ -18,6 +20,13 @@ export default function Hero() {
       className="relative flex min-h-[100svh] items-end overflow-hidden px-0 pb-[clamp(3rem,7vh,6rem)] pt-[clamp(8rem,16vh,12rem)]"
     >
       <div className="hero-grid absolute inset-0 opacity-30" aria-hidden="true" />
+      {/* the scroll invitation — a hairline that draws itself, right rail */}
+      <div className="scroll-cue" aria-hidden="true">
+        <span className="scroll-cue-text">{t("hero.scroll")}</span>
+        <span className="scroll-cue-track">
+          <span className="scroll-cue-runner" />
+        </span>
+      </div>
       <div className="container relative">
         <Reveal>
           <div className="flex items-center gap-4 text-muted">
@@ -26,65 +35,48 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <div className="mt-[clamp(2rem,5vh,4rem)] grid grid-cols-1 gap-[clamp(3rem,8vw,10rem)] lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.5fr)] lg:items-end">
+        <div className="mt-[clamp(2rem,5vh,4rem)] grid grid-cols-1 gap-[clamp(3rem,8vw,10rem)] lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.6fr)] lg:items-end">
           <div>
             <HeroTitle />
             <Reveal delay={0.24}>
               <p className="lede mt-[clamp(1.8rem,3vw,2.6rem)]">{t("hero.lede")}</p>
             </Reveal>
-            <Reveal delay={0.32}>
+            {/* the two differentiators promoted to the first screen —
+                the things a Berlin designer can't imitate */}
+            <Reveal delay={0.3}>
+              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
+                <span className="flex items-center gap-2 text-muted">
+                  <span className="text-ink" aria-hidden="true">◆</span>
+                  {t("hero.usp1")}
+                </span>
+                <span className="flex items-center gap-2 text-muted">
+                  <span className="text-ink" aria-hidden="true">◆</span>
+                  {t("hero.usp2")}
+                </span>
+              </div>
+            </Reveal>
+            <Reveal delay={0.34}>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="#start-a-project" data-magnetic className="btn btn-light">
                   <span>{t("hero.cta")}</span>
-                  <span>↗</span>
+                  <span aria-hidden="true">↗</span>
                 </a>
                 <a href="#work" data-magnetic className="btn btn-ghost">
                   <span>{t("hero.work")}</span>
-                  <span>↓</span>
+                  <span aria-hidden="true">↓</span>
                 </a>
               </div>
             </Reveal>
           </div>
 
+          {/* the mark, drawing itself — one real piece of work in the
+              hero instead of a generated mockup */}
           <div className="hidden lg:block">
             <Reveal delay={0.3}>
-              <div className="border-y border-line-strong py-5">
-                <span className="eyebrow mb-6 block text-faint">{t("hero.sideLabel")}</span>
-                <strong className="block text-2xl font-bold leading-tight">{t("hero.sideTitle")}</strong>
-                <p className="mt-4 text-muted">{t("hero.sideText")}</p>
-              </div>
-              <div className="relative mt-6 flex items-end justify-center" style={{ minHeight: 200 }} aria-hidden="true">
-                {/* Lissajous organic float + scroll parallax — the veteran move:
-                    each card drifts on its own elliptical path (x/y desynced),
-                    and both cards counter-scroll at different depths.
-                    Latin card (dark) + Arabic card (light) — the bilingual
-                    practice shown as two faces of one studio. */}
-                <motion.div
-                  initial={{ rotate: -7, x: "-8%", y: 12 }}
-                  animate={{ rotate: [-7, -5.2, -7], x: ["-8%", "2%", "-8%"], y: [12, -6, 12] }}
-                  transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", times: [0, 0.5, 1] }}
-                  whileHover={{ scale: 1.04, rotate: -3, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } }}
-                  style={{ y: parallaxA }}
-                  className="hero-card absolute left-0 top-2 w-[280px] rounded-md border border-line-strong bg-gradient-to-br from-[#19191b] to-[#080809] p-5 text-white shadow-2xl"
-                >
-                  <span className="eyebrow text-white/60">{t("hero.cardLabel")}</span>
-                  <strong className="mt-3 block text-xl text-white">BLACK-MAK</strong>
-                  <span className="text-sm text-white/70">Muhamed Alaa Elbank</span>
-                  <span className="mt-2 block font-mono text-xs" dir="ltr">+20 100 246 2821</span>
-                </motion.div>
-                <motion.div
-                  initial={{ rotate: 5, x: "8%", y: -8 }}
-                  animate={{ rotate: [5, 6.8, 5], x: ["8%", "-2%", "8%"], y: [-8, 8, -8] }}
-                  transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", times: [0, 0.5, 1], delay: 0.9 }}
-                  whileHover={{ scale: 1.04, rotate: 2, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } }}
-                  style={{ y: parallaxB }}
-                  className="hero-card absolute bottom-0 right-0 z-10 w-[280px] rounded-md border border-line-strong bg-gradient-to-br from-[#faf9f4] to-[#deddd8] p-5 text-[#090909] shadow-2xl"
-                >
-                  <span className="eyebrow text-[#62615c]">{t("hero.cardLabelAr")}</span>
-                  <strong className="mt-3 block text-xl">محمد علاء البنك</strong>
-                  <span className="text-sm text-[#575650]">بلاك ماك — شعارات وهوية بصرية</span>
-                  <span className="mt-2 block font-mono text-xs" dir="ltr">+20 100 246 2821</span>
-                </motion.div>
+              <div className="relative aspect-square w-full max-w-[420px] justify-self-end border border-line bg-surface/40 p-[clamp(1.5rem,3vw,2.5rem)]">
+                <span className="absolute -left-[1px] -top-[1px] h-4 w-4 border-l border-t border-ink" aria-hidden="true" />
+                <span className="absolute -bottom-[1px] -right-[1px] h-4 w-4 border-b border-r border-ink" aria-hidden="true" />
+                <MarkDraw />
               </div>
             </Reveal>
           </div>

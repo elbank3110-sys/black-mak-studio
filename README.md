@@ -1,18 +1,18 @@
-# BLACK-MAK — Portfolio Site
+﻿# BLACK-MAK â€” Portfolio Site
 
 Premium logo & visual identity designer portfolio for **Muhamed Alaa Elbank (BLACK-MAK)**.
 Built as a single-page Next.js site with a bilingual (EN/AR) experience, dark-first theme,
 and a custom WebGL background.
 
-Live: https://black-mak-v4.vercel.app
+Live: https://black-mak.vercel.app
 Behance (original profile): https://www.behance.net/Muhmed-alaa-el-bank
 
 ## Stack
 - Next.js 15.5.24 (App Router) + React 19 + TypeScript
-- Tailwind CSS v3 (colors mapped to CSS variables — see note below)
+- Tailwind CSS v3 (colors mapped to CSS variables â€” see note below)
 - Framer Motion (animations / scroll reveals / timeline)
 - Custom WebGL fragment-shader background (`components/WebGLBackground.tsx`)
-- Deployed on Vercel (project name **must be lowercase**: `black-mak-v4`)
+- Deployed on Vercel (project name **must be lowercase**: `black-mak`)
 
 ## Getting started
 ```bash
@@ -26,9 +26,9 @@ npm run start    # serve the build
 
 ## Deploy (Vercel)
 ```bash
-vercel deploy --prod --yes --name "black-mak-v4" --token "<YOUR_VERCEL_TOKEN>" --cwd .
+vercel deploy --prod --yes --name "black-mak" --token "<YOUR_VERCEL_TOKEN>" --cwd .
 ```
-- Project name is **lowercase** (`black-mak-v4`); uppercase names are rejected.
+- Project name is **lowercase** (`black-mak`); uppercase names are rejected.
 - Use a fresh/rotated Vercel token; never commit the token.
 
 ## Project structure
@@ -50,15 +50,15 @@ lib/
 public/images/work/     # project images (vol1, vol2, banners, makeen, calligraphi)
 ```
 
-## Key行为 / features
+## Keyè¡Œä¸º / features
 - **Bilingual**: EN + AR. Language persisted in `localStorage["bm-lang"]`;
-  on first visit it auto-detects `navigator.language` (ar → Arabic).
+  on first visit it auto-detects `navigator.language` (ar â†’ Arabic).
 - **Palette**: black dominant (~85% black surfaces), rest white/light-gray accents. No navy.
 - **Theme**: dark-first; light theme persisted in `localStorage["bm-theme"]`.
 - **Intro**: 1.3s centered BLACK-MAK logo on load (`components/Intro.tsx`).
 - **Work cards** link directly to their **Behance** projects (not internal case studies).
   Outdoor Advertising uses its own Behance project link
-  (`…/gallery/37676905/OUTDOOR-ADVERTISING-WORKS-BANNERS`).
+  (`â€¦/gallery/37676905/OUTDOOR-ADVERTISING-WORKS-BANNERS`).
   Case-study pages at `/work/[slug]` still exist and are linked via prev/next navigation.
 - **Active nav** highlights the current section on scroll (IntersectionObserver in `Header.tsx`).
 - **Timeline animation** on the Journey section (scroll-linked fill line).
@@ -67,18 +67,18 @@ public/images/work/     # project images (vol1, vol2, banners, makeen, calligrap
 - **SEO**: `sitemap.xml` (home + all case slugs with hreflang), `robots.txt`, canonical +
   hreflang (en/ar) in `layout.tsx`, and per-case OpenGraph via `generateMetadata` in
   `work/[slug]/page.tsx` (SSG via `generateStaticParams`).
-- **Download portfolio (PDF)**: Contact has a "Download portfolio (PDF)" button →
-  `public/portfolio.pdf` (placeholder — replace with a designed PDF).
+- **Download portfolio (PDF)**: Contact has a "Download portfolio (PDF)" button â†’
+  `public/portfolio.pdf` (placeholder â€” replace with a designed PDF).
 - **a11y**: "Skip to content" link, `Intro` respects `prefers-reduced-motion`, icon buttons
   carry `aria-label`s.
-- **Journey tools**: Adobe Illustrator · Adobe Photoshop · AI-assisted (Figma deliberately
-  removed — the designer does not work in Figma).
+- **Journey tools**: Adobe Illustrator Â· Adobe Photoshop Â· AI-assisted (Figma deliberately
+  removed â€” the designer does not work in Figma).
 - Origin: merged/upgraded from 3 earlier Vercel portfolios.
 
 ## Notes / gotchas
 - The two Hero brand cards (black/white with phone + BLACK-MAK) show **only on desktop**
   (`hidden lg:block`). They are intentionally removed on mobile.
 - Favicon letter is **"M"** (not B).
-- "meaning" / "معنى" in the hero is rendered as an **outline** (`stroke-text`), not italic.
-- Language toggle label in EN reads **"العربية"** (was "ع"). The header is forced `dir="ltr"`
+- "meaning" / "Ù…Ø¹Ù†Ù‰" in the hero is rendered as an **outline** (`stroke-text`), not italic.
+- Language toggle label in EN reads **"Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©"** (was "Ø¹"). The header is forced `dir="ltr"`
   so the toggle never jumps sides when switching languages.

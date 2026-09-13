@@ -15,7 +15,7 @@ import HeadlineReveal from "./HeadlineReveal";
 const TESTS_EN = ["24px", "PACKAGING", "SIGNAGE", "MONOCHROME", "DISTANCE"];
 
 export default function Biling() {
-  const { t, lang } = useI18n();
+  const { t } = useI18n();
   const reduce = useReducedMotion();
   const testsRef = useRef<HTMLDivElement>(null);
 
@@ -60,7 +60,7 @@ export default function Biling() {
           </Reveal>
 
           {/* the five survival tests — revealed by scroll position */}
-          <div className="mt-10 flex flex-wrap items-baseline gap-x-[clamp(1.2rem,4vw,3rem)] gap-y-4" aria-hidden={!reduce ? undefined : undefined}>
+          <div className="mt-10 flex flex-wrap items-baseline gap-x-[clamp(1.2rem,4vw,3rem)] gap-y-4">
             {TESTS_EN.map((label, i) => (
               <BeyondItem
                 key={label}
@@ -68,7 +68,6 @@ export default function Biling() {
                 index={i}
                 progress={scrollYProgress}
                 reduce={!!reduce}
-                lang={lang}
               />
             ))}
           </div>
@@ -86,13 +85,11 @@ function BeyondItem({
   index,
   progress,
   reduce,
-  lang,
 }: {
   label: string;
   index: number;
   progress: ReturnType<typeof useScroll>["scrollYProgress"];
   reduce: boolean;
-  lang: string;
 }) {
   // each item owns a narrow band of the scroll progress
   const start = 0.08 + index * 0.16;
@@ -100,7 +97,7 @@ function BeyondItem({
   const opacity = useTransform(progress, [start, end], [0.12, 1]);
   const y = useTransform(progress, [start, end], [14, 0]);
 
-  if (reduce || lang === "ar") {
+  if (reduce) {
     return (
       <span className="display text-[clamp(1.3rem,3vw,2.2rem)] tracking-tight text-ink">
         {label}

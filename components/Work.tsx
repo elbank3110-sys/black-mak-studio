@@ -124,7 +124,7 @@ export default function Work() {
 
         <div className="grid grid-cols-1 gap-x-[clamp(1.5rem,3vw,3rem)] gap-y-[clamp(2.5rem,6vw,6rem)] lg:grid-cols-[1.45fr_1fr]">
           {FEATURED.map((w, i) => (
-            <Card key={w.n} w={w} i={i} eager={i < 2} />
+            <Card key={w.n} w={w} i={i} eager={i < 1} />
           ))}
         </div>
 

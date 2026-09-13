@@ -20,7 +20,7 @@ export default function Faq() {
         <Reveal>
           <div className="mb-10">
             <span className="eyebrow mb-4 block text-faint">{t("faq.index")}</span>
-            <h2 className="display text-[clamp(3rem,7vw,7rem)]" dangerouslySetInnerHTML={{ __html: t("faq.title") }} />
+            <h2 className="display text-[clamp(2.2rem,4.6vw,3.8rem)]" dangerouslySetInnerHTML={{ __html: t("faq.title") }} />
           </div>
         </Reveal>
 

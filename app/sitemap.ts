@@ -1,7 +1,7 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import { CASES } from "@/lib/cases";
 
-const BASE = "https://black-mak-v4.vercel.app";
+const BASE = "https://black-mak.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const home: MetadataRoute.Sitemap[number] = {
@@ -18,5 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [home, ...cases];
+  // SEO landing pages â€” the practice's differentiators meet actual search demand
+  const seo: MetadataRoute.Sitemap = [
+    { url: BASE + "/arabic-logo-design", priority: 0.9, changeFrequency: "monthly" as const },
+    { url: BASE + "/calligraphic-wordmark", priority: 0.9, changeFrequency: "monthly" as const },
+    { url: BASE + "/bilingual-brand-identity", priority: 0.9, changeFrequency: "monthly" as const },
+  ].map((p) => ({ ...p, lastModified: new Date() }));
+
+  return [home, ...seo, ...cases];
 }

@@ -1,13 +1,23 @@
 import { ImageResponse } from "next/og";
+import { TCCC_BLACK_B64 } from "@/lib/og-font";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "BLACK-MAK — Logo & Visual Identity Design";
 
-// The solid identity mark (exact geometry from the official identity files)
-// rendered inline as SVG polygons — satori supports inline SVG shapes.
-const MARK_POLYGON =
-  "216.61 53.74 216.61 116.95 208.15 116.95 208.15 53.74 154.4 0 154.4 28.53 154.4 35.91 154.4 37.15 154.4 37.16 155.3 38.06 155.3 38.06 160.51 43.26 166.46 49.21 182.39 65.14 182.39 116.94 160.51 116.94 160.51 51.73 154.4 45.62 154.4 123.06 188.49 123.06 188.49 62.62 170.78 44.91 170.78 44.9 168.08 42.21 160.51 34.64 160.51 14.73 202.04 56.27 202.04 123.06 203.39 123.06 208.15 123.06 216.61 123.06 219.74 123.06 222.72 123.06 222.72 56.27 264.25 14.73 264.25 34.64 264.25 34.64 264.24 34.65 264.25 34.64 256.68 42.21 253.98 44.9 236.27 62.61 236.27 123.05 270.36 123.05 270.36 45.62 264.25 51.73 264.25 116.95 242.37 116.95 242.37 65.15 258.3 49.22 264.25 43.27 269.45 38.06 269.45 38.05 269.46 38.06 270.36 37.16 270.36 35.91 270.36 28.53 270.36 0 216.61 53.74";
+// The V2 identity mark — exact geometry traced 1:1 from the official BLACK-MAK-V2
+// logo files (verified lossless, IoU 1.000). Rendered inline as SVG polygons —
+// satori supports inline SVG shapes.
+const MARK_VIEWBOX = "0 0 155 165";const MARK_POLYGON_A =
+  "94,149.5 58,149.5 57.5,149 57.5,68 8,18.5 7.5,19 7.5,41 41.5,75 41.5,149 41,149.5 0,149.5 -0.5,149 -0.5,56 0,55.5 1,55.5 7.5,62 7.5,141 8,141.5 33,141.5 33.5,141 33.5,78 -0.5,44 -0.5,0 0,-0.5 65.5,65 65.5,141 66,141.5 87,141.5 87.5,141 87.5,65 153,-0.5 153.5,0 153.5,43 120.5,76 120.5,138 121,138.5 146,138.5 146.5,138 146.5,60 154,52.5 154.5,53 154.5,146 154,146.5 113,146.5 112.5,146 112.5,73 145.5,40 145.5,19 145,18.5 95.5,68 95.5,148";
+const MARK_POLYGON_B =
+  "25,123.5 17,123.5 15.5,122 15.5,112 16,111.5 25,111.5 25.5,112 25.5,123";
+const MARK_POLYGON_C =
+  "94,164.5 58,164.5 57.5,164 57.5,157 58,156.5 95,156.5 95.5,157 95.5,163";
+
+// The brand's own Latin face — TCCC Unity Headline Black, decoded from the
+// embedded base64 TTF so the OG card carries the site's exact typography.
+const tcccBlack = Buffer.from(TCCC_BLACK_B64, "base64");
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -22,7 +32,7 @@ export default function OpengraphImage() {
           backgroundColor: "#070708",
           color: "#f5f5f1",
           padding: "80px",
-          fontFamily: "sans-serif",
+          fontFamily: "TCCC",
           position: "relative",
         }}
       >
@@ -42,10 +52,12 @@ export default function OpengraphImage() {
           <svg
             width="210"
             height="223"
-            viewBox="154.4 0 115.96 123.06"
+            viewBox={MARK_VIEWBOX}
             xmlns="http://www.w3.org/2000/svg"
           >
-            <polygon points={MARK_POLYGON} fill="#f5f5f1" />
+            <polygon points={MARK_POLYGON_A} fill="#f5f5f1" />
+            <polygon points={MARK_POLYGON_B} fill="#f5f5f1" />
+            <polygon points={MARK_POLYGON_C} fill="#f5f5f1" />
           </svg>
         </div>
 
@@ -99,6 +111,16 @@ export default function OpengraphImage() {
         </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [
+        {
+          name: "TCCC",
+          data: tcccBlack,
+          weight: 800,
+          style: "normal",
+        },
+      ],
+    }
   );
 }

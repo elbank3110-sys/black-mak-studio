@@ -11,10 +11,13 @@ import Process from "@/components/Process";
 import Who from "@/components/Who";
 import Pricing from "@/components/Pricing";
 import Faq from "@/components/Faq";
-import Payment from "@/components/Payment";
 import Contact from "@/components/Contact";
 import StickyCta from "@/components/StickyCta";
 
+// Page rhythm: hero (climax) → proof of craft → argument → services →
+// person → process → qualification → investment → FAQ → contact.
+// Payment moved to /pay — payment rails belong behind a proposal,
+// not on the storefront.
 export default function Page() {
   return (
     <main>
@@ -31,7 +34,6 @@ export default function Page() {
       <Who />
       <Pricing />
       <Faq />
-      <Payment />
       <Contact />
       <StickyCta />
     </main>

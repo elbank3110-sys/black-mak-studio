@@ -18,7 +18,7 @@ export default {
         "line-strong": "var(--line-strong)",
       },
       fontFamily: {
-        sans: ["var(--font-archivo)", "Helvetica Neue", "Arial", "sans-serif"],
+        sans: ["var(--font-signate)", "Helvetica Neue", "Arial", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
         ar: ["var(--font-ar)", "IBM Plex Sans Arabic", "Arial", "sans-serif"],
       },

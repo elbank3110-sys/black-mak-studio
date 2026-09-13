@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 import { getCase, CASES } from "@/lib/cases";
 import Reveal from "@/components/Reveal";
+import SurvivalStage from "./SurvivalStage";
 
 export default function CaseView({ slug }: { slug: string }) {
   const c = getCase(slug);
@@ -108,6 +109,15 @@ export default function CaseView({ slug }: { slug: string }) {
         </div>
       </section>
 
+      {/* ============================================================
+          THE FIVE SURVIVAL TESTS — pinned, scrubbed by the scroll.
+          The promise the homepage makes ("24px, packaging, signage,
+          monochrome, distance") becomes something the visitor TOUCHES.
+          Desktop only (pinned scenes are a pointer-fine experience);
+          mobile renders a compact static rail instead.
+          ============================================================ */}
+      <SurvivalStage />
+
       <section className="section border-t border-line py-[var(--section)]">
         <div className="container">
           <Reveal>
@@ -119,7 +129,7 @@ export default function CaseView({ slug }: { slug: string }) {
                 <figure className="overflow-hidden border border-line bg-surface">
                   <Image
                     src={src}
-                    alt={`${d.title} — ${i + 1}`}
+                    alt={`${d.title} — ${lang === "ar" ? "عمل" : "work"} ${i + 1}`}
                     width={1280}
                     height={800}
                     loading="lazy"
@@ -143,12 +153,12 @@ export default function CaseView({ slug }: { slug: string }) {
             {c.behance && (
               <a href={c.behance} target="_blank" rel="noopener" className="btn btn-ghost">
                 <span>{t("case.behance")}</span>
-                <span>↗</span>
+                <span aria-hidden="true">↗</span>
               </a>
             )}
             <a href="/#start-a-project" className="btn btn-light">
               <span>{t("case.startCta")}</span>
-              <span>↗</span>
+              <span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>

@@ -1,20 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MarkPaths } from "./BrandMark";
+import { MarkPaths, MARK_VIEWBOX } from "./BrandMark";
 
 // ============================================================================
-// Logo Reveal — the brand experience opens the site.
-// Creative direction: a mark is BUILT, not drawn. The construction grid
-// (vertical hairlines + baseline) appears first, the solid monogram rises
-// into place through a clip-path wipe (like ink meeting paper), the grid
-// retreats, then the whole thing settles as the page fades in beneath.
-// ~1.25s total, once per session, skipped for reduced-motion users.
+// Logo Reveal — the brand moment that OPENS the site, not a gate that
+// blocks it. Budget: ≤900ms total, once per session, skipped entirely for
+// reduced-motion users. The construction grid + the monogram wipe read as
+// "engineered, then exists" — the mark is BUILT. The overlay never covers
+// the page for more than a beat: the content is already beneath it, and
+// the overlay itself starts fading at 550ms.
 // ============================================================================
 export default function Intro() {
   const [show, setShow] = useState(true);
   const [gone, setGone] = useState(false);
-  const [phase, setPhase] = useState<0 | 1 | 2 | 3>(0); // grid → mark → wordmark → out
+  const [phase, setPhase] = useState<0 | 1 | 2 | 3>(0); // grid → mark → confirm → out
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -31,13 +31,14 @@ export default function Intro() {
     } catch {}
     sessionStorage.setItem("bm-intro", "seen");
 
-    // 2s brand moment: grid 0-700ms, mark wipe 250-1500ms, wordmark ~1100ms, out 2000ms
+    // ≤900ms brand beat: grid 0–250ms, mark wipe 250–650ms, confirm 550ms,
+    // overlay fades from 550ms and is gone by 900ms.
     const t = [
-      setTimeout(() => setPhase(1), 100),
-      setTimeout(() => setPhase(2), 500),
-      setTimeout(() => setPhase(3), 1100),
-      setTimeout(() => setShow(false), 2000),
-      setTimeout(() => setGone(true), 2750),
+      setTimeout(() => setPhase(1), 60),
+      setTimeout(() => setPhase(2), 250),
+      setTimeout(() => setPhase(3), 550),
+      setTimeout(() => setShow(false), 620),
+      setTimeout(() => setGone(true), 920),
     ];
     return () => t.forEach(clearTimeout);
   }, []);
@@ -47,14 +48,14 @@ export default function Intro() {
   return (
     <div
       aria-hidden="true"
-      className={`fixed inset-0 z-[200] flex items-center justify-center bg-bg transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[200] flex items-center justify-center bg-bg transition-opacity duration-300 ${
         show ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
       {/* construction grid — the mark is engineered, then it exists */}
       <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-500"
-        style={{ opacity: phase >= 1 && phase < 3 ? 0.6 : 0 }}
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+        style={{ opacity: phase >= 1 && phase < 3 ? 0.5 : 0 }}
       >
         <div className="absolute left-1/2 top-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 md:h-[440px] md:w-[440px]">
           {[14, 38, 50, 62, 86].map((x) => (
@@ -69,39 +70,36 @@ export default function Intro() {
         </div>
       </div>
 
-      <div className="relative flex flex-col items-center gap-6">
-        {/* the solid mark — rises into place through a clip wipe */}
-        <span
-          className="block overflow-hidden"
+      {/* the monogram — rises into place through a clip wipe */}
+      <span
+        className="block overflow-hidden"
+        style={{
+          clipPath: phase >= 2 ? "inset(0 0 0 0)" : "inset(100% 0 0 0)",
+          transition: "clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
+        }}
+      >
+        <svg
+          viewBox={MARK_VIEWBOX}
+          className="h-20 w-auto text-ink md:h-24"
           style={{
-            clipPath: phase >= 2 ? "inset(0 0 0 0)" : "inset(100% 0 0 0)",
-            transition: "clip-path 1.1s cubic-bezier(0.22, 1, 0.36, 1)",
+            transform: phase >= 2 ? "scale(1)" : "translateY(14%)",
+            transition: "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         >
-          <svg
-            viewBox="154.4 0 115.96 123.06"
-            className="h-24 w-24 text-ink md:h-28 md:w-28"
-            style={{
-              transform: phase >= 2 ? "scale(1)" : "translateY(14%)",
-              transition: "transform 1.1s cubic-bezier(0.22, 1, 0.36, 1)",
-            }}
-          >
-            <MarkPaths />
-          </svg>
-        </span>
+          <MarkPaths />
+        </svg>
+      </span>
 
-        {/* wordmark — a quiet confirmation */}
-        <span
-          className="font-mono text-[0.62rem] uppercase tracking-[0.35em] text-muted"
-          style={{
-            opacity: phase >= 3 ? 1 : 0,
-            transform: phase >= 3 ? "none" : "translateY(6px)",
-            transition: "opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
-          }}
-        >
-          BLACK-MAK
-        </span>
-      </div>
+      {/* confirmation — a quiet word under the mark */}
+      <span
+        className="absolute bottom-[38%] font-mono text-[0.6rem] uppercase tracking-[0.35em] text-muted"
+        style={{
+          opacity: phase >= 3 ? 1 : 0,
+          transition: "opacity 0.25s ease",
+        }}
+      >
+        BLACK-MAK
+      </span>
     </div>
   );
 }

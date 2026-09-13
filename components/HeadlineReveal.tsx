@@ -7,7 +7,9 @@ import { useI18n } from "@/lib/i18n";
 // HeadlineReveal — display headlines rise line-by-line through overflow
 // masks instead of the uniform fade. The HTML (from i18n, with <br/>/<em>)
 // is split into lines at the <br/> boundaries; each line gets its own mask.
-// Arabic and reduced-motion render untouched.
+// Splitting at LINE boundaries (never word boundaries) is safe for Arabic:
+// the joining inside each line is untouched, so Arabic gets the same rise
+// as Latin. Reduced-motion renders untouched.
 // ============================================================================
 export default function HeadlineReveal({
   html,
@@ -22,7 +24,7 @@ export default function HeadlineReveal({
   const reduce = useReducedMotion();
   const lines = html.split(/<br\s*\/?>/i);
 
-  if (reduce || lang === "ar") {
+  if (reduce) {
     return (
       <h2
         className={className}
@@ -32,7 +34,7 @@ export default function HeadlineReveal({
   }
 
   return (
-    <h2 className={className}>
+    <h2 className={className} dir={lang === "ar" ? "rtl" : undefined}>
       {lines.map((line, i) => (
         <span key={i} className="block overflow-hidden">
           <motion.span

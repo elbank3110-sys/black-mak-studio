@@ -1,8 +1,7 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
-import { archivo, plexMono, asalArabic } from "@/lib/fonts";
-import WebGLBackground from "@/components/WebGLBackground";
+import { unityHeadline, unityText, plexMono, asalArabic } from "@/lib/fonts";
 import UIEffects from "@/components/UIEffects";
 import MagicLayer from "@/components/MagicLayer";
 import Header from "@/components/Header";
@@ -11,28 +10,29 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Intro from "@/components/Intro";
 import SmoothScroll from "@/components/SmoothScroll";
 import { Analytics } from "@vercel/analytics/react";
+import { SERVICE_TIERS, fmtPrice } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "BLACK-MAK® — Logo & Visual Identity Designer | Arabic & Latin",
+  title: "BLACK-MAKÂ® â€” Logo & Visual Identity Designer | Arabic & Latin",
   description:
-    "BLACK-MAK® is an independent logo and visual identity practice by Muhamed Alaa Elbank, specializing in Arabic & Latin typography, calligraphy, identity systems, and real-world brand applications.",
-  metadataBase: new URL("https://black-mak-v4.vercel.app/"),
+    "BLACK-MAKÂ® is an independent logo and visual identity practice by Muhamed Alaa Elbank, specializing in Arabic & Latin typography, calligraphy, identity systems, and real-world brand applications.",
+  metadataBase: new URL("https://black-mak.vercel.app/"),
   alternates: {
-    canonical: "https://black-mak-v4.vercel.app/",
+    canonical: "https://black-mak.vercel.app/",
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "BLACK-MAK — Logo & Visual Identity Design",
+    title: "BLACK-MAK â€” Logo & Visual Identity Design",
     description:
       "Marks with meaning. Identity systems built for real-world scale, clarity, and character.",
     type: "website",
-    url: "https://black-mak-v4.vercel.app/",
+    url: "https://black-mak.vercel.app/",
     locale: "en_US",
     siteName: "BLACK-MAK",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BLACK-MAK — Logo & Visual Identity Design",
+    title: "BLACK-MAK â€” Logo & Visual Identity Design",
     description:
       "Marks with meaning. Identity systems built for real-world scale, clarity, and character.",
   },
@@ -49,8 +49,8 @@ const jsonLd = {
   "@type": "Person",
   name: "Muhamed Alaa Elbank",
   alternateName: "BLACK-MAK",
-  url: "https://black-mak-v4.vercel.app/",
-  image: "https://black-mak-v4.vercel.app/profile.webp",
+  url: "https://black-mak.vercel.app/",
+  image: "https://black-mak.vercel.app/profile.webp",
   jobTitle: "Logo & Visual Identity Designer",
   email: "makeenmuhamed31@gmail.com",
   telephone: "+201002462821",
@@ -59,7 +59,7 @@ const jsonLd = {
     "https://www.behance.net/Muhmed-alaa-el-bank",
     "https://www.instagram.com/muhamedalaaelbank/",
 
-    "https://mu-cv.vercel.app/",
+    "https://mohamed-cv.vercel.app/",
   ],
   knowsAbout: ["Logo Design", "Brand Identity", "Typography", "Arabic Calligraphy", "Visual Identity"],
   knowsLanguage: ["ar", "en"],
@@ -69,26 +69,12 @@ const servicesLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "BLACK-MAK Services",
-  itemListElement: [
-    {
-      "@type": "Offer",
-      itemOffered: { "@type": "Service", name: "Focused Logo Project", description: "Distinctive marks built to be recognized, remembered, and used everywhere. 2–3 initial directions, three structured concepts, editable final files." },
-      priceCurrency: "USD",
-      price: "159",
-    },
-    {
-      "@type": "Offer",
-      itemOffered: { "@type": "Service", name: "Calligraphic Identity", description: "Custom wordmarks and calligraphy-led identities built around free-drawn letterforms. Four structured concepts." },
-      priceCurrency: "USD",
-      price: "249",
-    },
-    {
-      "@type": "Offer",
-      itemOffered: { "@type": "Service", name: "Full Visual Identity", description: "A complete visual system: logo, typography, color, guidelines, and essential brand applications. Six structured concepts." },
-      priceCurrency: "USD",
-      price: "549",
-    },
-  ],
+  itemListElement: SERVICE_TIERS.filter((s) => s.from !== null).map((s) => ({
+    "@type": "Offer",
+    itemOffered: { "@type": "Service", name: s.id },
+    priceCurrency: "USD",
+    price: String(s.from),
+  })),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -97,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       dir="ltr"
       suppressHydrationWarning
-      className={`${archivo.variable} ${plexMono.variable} ${asalArabic.variable}`}
+      className={`${unityHeadline.variable} ${unityText.variable} ${plexMono.variable} ${asalArabic.variable}`}
     >
       <head>
         <script
@@ -119,7 +105,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <I18nProvider>
           <Intro />
           <SmoothScroll />
-          <WebGLBackground />
           <UIEffects />
           <MagicLayer />
           <Header />

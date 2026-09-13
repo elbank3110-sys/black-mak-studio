@@ -15,21 +15,32 @@ export default function About() {
   useEffect(() => {
     const el = statsRef.current;
     if (!el) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const nums = el.querySelectorAll<HTMLElement>("b[data-count]");
+    if (reduce) {
+      // final values are already in the HTML — nothing to animate
+      return;
+    }
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (!e.isIntersecting) return;
           nums.forEach((b) => {
             const target = Number(b.dataset.count);
+            // SSR already renders the final value — the count-up starts
+            // NEAR the target and settles onto it, so crawlers, previews
+            // and no-JS visitors never see "0+ years".
+            const startVal = Math.max(0, target - Math.ceil(target * 0.72));
             const suffix = b.dataset.suffix || "";
-            const dur = 1400;
-            const start = performance.now();
+            const dur = 1300;
+            const t0 = performance.now();
             const step = (now: number) => {
-              const p = Math.min((now - start) / dur, 1);
-              const val = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+              const p = Math.min((now - t0) / dur, 1);
+              const eased = 1 - Math.pow(1 - p, 3);
+              const val = Math.round(startVal + (target - startVal) * eased);
               b.textContent = val + suffix;
               if (p < 1) requestAnimationFrame(step);
+              else b.textContent = target + suffix;
             };
             requestAnimationFrame(step);
           });
@@ -99,7 +110,7 @@ export default function About() {
                 <button
                   type="button"
                   onClick={() => setCvOpen(true)}
-                  className="btn btn-navy group"
+                  className="btn btn-light group"
                 >
                   <svg className="relative z-10" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

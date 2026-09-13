@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/lib/i18n";
-import { MarkPaths } from "./BrandMark";
+import { MarkPaths, MARK_VIEWBOX, MARK_ASPECT } from "./BrandMark";
 import Reveal from "./Reveal";
 
 // ============================================================================
@@ -67,12 +67,12 @@ export default function ScaleTest() {
             className="grid place-items-center transition-[width,height] duration-700"
             style={{
               width: clampedRender,
-              height: clampedRender * (123.06 / 115.96),
+              height: clampedRender * MARK_ASPECT,
               transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             <svg
-              viewBox="154.4 0 115.96 123.06"
+              viewBox={MARK_VIEWBOX}
               className="h-full w-full text-ink"
               aria-label={t("scale.markAlt")}
               role="img"
@@ -93,6 +93,7 @@ export default function ScaleTest() {
             value={i}
             onChange={(e) => setI(Number(e.target.value))}
             aria-label={t("scale.slider")}
+            aria-valuetext={stop.label}
             className="h-1 w-full cursor-pointer appearance-none rounded-none bg-line-strong accent-ink"
           />
           <span className="font-mono text-[0.58rem] text-faint">320</span>

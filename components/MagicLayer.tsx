@@ -14,8 +14,11 @@ export default function MagicLayer() {
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // 1 — word rise
-    if (!reduce) {
+    // 1 — word rise (Latin only: per-word splitting breaks Arabic joining;
+    // Arabic keeps the plain text — the rise lives in the headline masks)
+    const isArabic = () =>
+      (document.documentElement.lang || "").toLowerCase().indexOf("ar") === 0;
+    if (!reduce && !isArabic()) {
       document.querySelectorAll<HTMLElement>("[data-words]").forEach((el) => {
         if (el.dataset.split === "done") return;
         const walk = (node: Node) => {
@@ -52,21 +55,37 @@ export default function MagicLayer() {
 
     // 2 — magnetic (with eased release: cursor leaving the range glides the
     // element home instead of snapping — the difference between a trick
-    // and a material)
+    // and a material). Centers are cached and only re-measured on resize —
+    // no getBoundingClientRect inside the mousemove hot path, and the
+    // current position lives in a WeakMap, never parsed from style strings.
     const magnets = Array.from(document.querySelectorAll<HTMLElement>("[data-magnetic]"));
-    const state = new WeakMap<HTMLElement, { tx: number; ty: number }>();
+    const centers = new WeakMap<HTMLElement, { x: number; y: number; w: number; h: number }>();
+    const pos = new WeakMap<HTMLElement, { x: number; y: number }>();
+    const measure = () => {
+      magnets.forEach((m) => {
+        const r = m.getBoundingClientRect();
+        centers.set(m, { x: r.left + r.width / 2, y: r.top + r.height / 2, w: r.width, h: r.height });
+        if (!pos.has(m)) pos.set(m, { x: 0, y: 0 });
+      });
+    };
+    measure();
+    const onResize = () => measure();
+    window.addEventListener("resize", onResize, { passive: true });
+
+    const targets = new WeakMap<HTMLElement, { tx: number; ty: number }>();
     let rafMag = 0;
     const onMagMove = (e: MouseEvent) => {
       magnets.forEach((m) => {
-        const r = m.getBoundingClientRect();
-        const relX = e.clientX - (r.left + r.width / 2);
-        const relY = e.clientY - (r.top + r.height / 2);
+        const c = centers.get(m);
+        if (!c) return;
+        const relX = e.clientX - c.x;
+        const relY = e.clientY - c.y;
         const dist = Math.hypot(relX, relY);
-        const range = Math.max(r.width, r.height) * 1.2;
+        const range = Math.max(c.w, c.h) * 1.2;
         if (dist < range) {
-          state.set(m, { tx: relX * 0.18, ty: relY * 0.18 });
+          targets.set(m, { tx: relX * 0.18, ty: relY * 0.18 });
         } else {
-          state.set(m, { tx: 0, ty: 0 });
+          targets.set(m, { tx: 0, ty: 0 });
         }
       });
       // single rAF loop per event — lerp toward target every frame
@@ -74,18 +93,24 @@ export default function MagicLayer() {
         const tick = () => {
           let active = false;
           magnets.forEach((m) => {
-            const s = state.get(m);
-            if (!s) return;
-            const cur = m.style.transform.match(/-?[\d.]+/g)?.map(Number) ?? [0, 0];
-            const cx = cur[0] || 0;
-            const cy = cur[1] || 0;
-            const dx = s.tx - cx;
-            const dy = s.ty - cy;
+            const tg = targets.get(m);
+            const cur = pos.get(m);
+            if (!tg || !cur) return;
+            const dx = tg.tx - cur.x;
+            const dy = tg.ty - cur.y;
             if (Math.abs(dx) > 0.05 || Math.abs(dy) > 0.05) {
               active = true;
-              m.style.transform = `translate(${cx + dx * 0.16}px, ${cy + dy * 0.16}px)`;
-            } else {
-              m.style.transform = s.tx || s.ty ? `translate(${s.tx}px, ${s.ty}px)` : "";
+              cur.x += dx * 0.16;
+              cur.y += dy * 0.16;
+              m.style.transform = `translate(${cur.x}px, ${cur.y}px)`;
+            } else if (tg.tx || tg.ty) {
+              cur.x = tg.tx;
+              cur.y = tg.ty;
+              m.style.transform = `translate(${tg.tx}px, ${tg.ty}px)`;
+            } else if (m.style.transform) {
+              cur.x = 0;
+              cur.y = 0;
+              m.style.transform = "";
             }
           });
           rafMag = active ? requestAnimationFrame(tick) : 0;
@@ -113,6 +138,7 @@ export default function MagicLayer() {
 
     return () => {
       window.removeEventListener("mousemove", onMagMove);
+      window.removeEventListener("resize", onResize);
       lineObs.disconnect();
     };
   }, []);

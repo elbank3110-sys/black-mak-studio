@@ -20,18 +20,14 @@ const EN: Dict = {
   "lang.toggle": "العربية",
 
   "hero.kicker": "BLACK-MAK® / LOGO & VISUAL IDENTITY",
+  "hero.usp1": "Arabic + Latin — One System",
+  "hero.usp2": "Outdoor & Large-Format Ready",
   "hero.title": "Logo & Visual Identity Design<br/><em>for brands that want to be recognized.</em>",
   "hero.lede":
     "Distinctive identities shaped by strategy, typography, and real-world application — with particular expertise in Arabic and Latin visual systems.",
   "hero.work": "View Selected Work",
   "hero.cta": "Start Your Project",
-  "hero.sideLabel": "The practice",
-  "hero.sideTitle": "Strategy, craft & real-world application.",
-  "hero.sideText":
-    "Typography, freestyle calligraphy, identity systems, and applied design — built to survive the street, not just the screen.",
   "hero.scroll": "Scroll to explore",
-  "hero.cardLabel": "BLACK-MAK / DIRECT CONTACT",
-  "hero.cardLabelAr": "BLACK-MAK / ARABIC FACE",
   "hero.role": "Logo & Visual Identity Designer",
   "hero.location": "Egypt",
   "hero.world": "Working worldwide",
@@ -108,10 +104,6 @@ const EN: Dict = {
   "services.s4inc": "Signage · Print · Large-format",
   "services.s5inc": "Custom microsite · Visual direction · Interactive sections · Conversion content",
   "services.s6inc": "Identity audit · New direction · Transition system",
-  "services.portTitle": "NEED A PORTFOLIO LIKE THIS FOR YOUR OWN WORK?",
-  "services.portText":
-    "I also build custom portfolio microsites for designers, photographers, creative professionals, and brands.",
-  "services.portCta": "Request a Digital Project",
   "services.built": "Built by BLACK-MAK — Art Direction · Interface Design · Interaction · Conversion Architecture",
   "services.s6name": "Rebrand",
   "services.s6desc":
@@ -197,6 +189,7 @@ const EN: Dict = {
   "pricing.notEvery":
     "Not every project needs a full identity. I'll recommend the scope your brand actually needs before we begin.",
   "pricing.starting": "From",
+  "pricing.custom": "Custom-scoped",
   "pricing.featured": "MOST COMPLETE",
   "pricing.offer": "LIMITED PROJECT CAPACITY",
   "pricing.project": "project",
@@ -256,8 +249,8 @@ const EN: Dict = {
   "pricing.upsellA": "Extend the system into a custom digital brand experience.",
   "pricing.upsellCta": "Explore Digital Brand Experiences",
 
-  "pricing.rebrand": "Rebrand projects are custom-scoped from $799.",
-  "pricing.digital": "Digital Brand Experiences are custom-quoted from $450.",
+  "pricing.rebrand": "Rebrand projects are custom-scoped from $1,290.",
+  "pricing.digital": "Digital Brand Experiences are custom-quoted from $690.",
   "pricing.customNote": "Both are quoted precisely after the brief — scope first, price second.",
   "pricing.ctaQ": "Know what you need? Send the brief. I'll take it from there.",
 
@@ -277,6 +270,8 @@ const EN: Dict = {
   "payment.copied": "Copied",
   "payment.footnote":
     "Tap any value to copy it, transfer via the method that suits you, then send the transfer confirmation on WhatsApp. Once payment is confirmed, your project is officially scheduled and the first step is set in motion.",
+  "payment.backQ": "Not ready yet? Go back to the brief.",
+  "payment.backCta": "Back to the project form",
 
   "faq.index": "09 / FAQ",
   "faq.title": "Before<br/><em>we begin.</em>",
@@ -365,6 +360,10 @@ const EN: Dict = {
   "contact.pricingCta": "Know what you need? Send the brief. I'll take it from there.",
   "contact.qual": "BLACK-MAK is built for focused, collaborative projects and clients who value thoughtful design.",
   "contact.qualTitle": "A note on project fit",
+  "contact.callTitle": "Not ready for a full brief?",
+  "contact.callText":
+    "Book a 15-minute fit call. One quick conversation about your brand, and you'll know whether an identity project makes sense right now — no forms, no commitment.",
+  "contact.callCta": "Book a 15-minute fit call",
   "contact.fitTitle": "A good fit if you:",
   "contact.fit1": "Have a real business or serious project",
   "contact.fit2": "Value distinctive design",
@@ -394,7 +393,6 @@ const EN: Dict = {
   "form.opt6": "Other",
   "form.budget": "Estimated Investment",
   "form.budgetLead": "I'm ready to invest in a professional identity",
-  "form.budgetOpt1": "Under $300",
   "form.budgetOpt2": "$300–$600",
   "form.budgetOpt3": "$600–$1,500",
   "form.budgetOpt4": "$1,500+",
@@ -402,7 +400,13 @@ const EN: Dict = {
   "form.msg": "Brief *",
   "form.msgPh": "A sentence or two about the brand, the goal, and why now.",
   "form.submit": "Send inquiry",
+  "form.sending": "Sending…",
   "form.sent": "Thanks — opening WhatsApp with your brief.",
+  "form.sentTitle": "Brief received.",
+  "form.sentBody":
+    "Your inquiry has been recorded. Want a faster reply? Continue the conversation on WhatsApp with your brief prefilled — or just wait, I'll get back to you by email.",
+  "form.sentCta": "Continue on WhatsApp",
+  "form.again": "Send another inquiry",
 
   "footer.tagline": "A premium logo & visual identity practice by Muhamed Alaa Elbank.",
   "footer.sig": "Marks with meaning. Identities with character.",
@@ -419,9 +423,25 @@ const EN: Dict = {
   "case.more": "More work",
   "case.prev": "Previous",
   "case.next": "Next",
+  "case.survival": "The five survival tests",
+  "case.survivalIndex": "DESIGNED BEYOND THE SCREEN — FIVE TESTS",
+  "case.survivalNote":
+    "Every mark is tested at 24px, in monochrome, on packaging, on signage, and from a distance — before it leaves the studio.",
+  "case.t1": "24px — Favicon",
+  "case.t2": "Monochrome",
+  "case.t3": "Packaging",
+  "case.t4": "Signage",
+  "case.t5": "Distance",
 
   "wa.msg":
     "Hello BLACK-MAK, I'd like to start a project. Here's a short brief: ",
+
+  "seo.eyebrow": "THE STUDIO",
+  "seo.title": "See the system<br/><em>at work.</em>",
+  "seo.text":
+    "Selected projects, the five survival tests, and the full scope of what a bilingual identity covers.",
+  "seo.work": "View selected work",
+  "seo.cta": "Start Your Project",
 };
 
 const AR: Dict = {
@@ -434,18 +454,14 @@ const AR: Dict = {
   "lang.toggle": "EN",
 
   "hero.kicker": "BLACK-MAK® / شعارات وهوية بصرية",
+  "hero.usp1": "عربي + لاتيني — نظام واحد",
+  "hero.usp2": "جاهز للوحات والصيغ الكبيرة",
   "hero.title": "تصميم شعارات وهوية بصرية<br/><em>للعلامات التي تريد أن تُعرَف.</em>",
   "hero.lede":
     "هويات مميزة تتشكّل حول الاستراتيجية والتايبوغرافي والتطبيق الواقعي — مع خبرة خاصة في الأنظمة البصرية العربية واللاتينية.",
   "hero.work": "استعرض الأعمال المختارة",
   "hero.cta": "ابدأ مشروعك",
-  "hero.sideLabel": "الممارسة",
-  "hero.sideTitle": "دقة، مفهوم وشخصية.",
-  "hero.sideText":
-    "التايبوغرافي، الكاليجرافي الحر، وأنظمة الهوية، وتصميم تطبيقي تشكّله أكثر من 12 سنة في العالم الحقيقي.",
   "hero.scroll": "مرّر للاستكشاف",
-  "hero.cardLabel": "BLACK-MAK / تواصل مباشر",
-  "hero.cardLabelAr": "BLACK-MAK / الوجه العربي",
   "hero.role": "مصمم شعارات وهوية بصرية",
   "hero.location": "مصر",
   "hero.world": "أعمل مع عملاء حول العالم",
@@ -513,9 +529,6 @@ const AR: Dict = {
   "services.s4inc": "لوحات · مطبوعات · صيغ كبيرة",
   "services.s5inc": "مايكروسايت مخصص · اتجاه بصري · أقسام تفاعلية · محتوى تحويلي",
   "services.s6inc": "تدقيق الهوية · اتجاه جديد · نظام انتقال",
-  "services.portTitle": "تحتاج بورتفوليو مثل هذا لعملك أنت؟",
-  "services.portText": "أبني أيضًا مواقع بورتفوليو مخصصة للمصممين والمصورين والمهنيين الإبداعيين والعلامات.",
-  "services.portCta": "اطلب مشروعًا رقميًا",
   "services.built": "بُني بواسطة BLACK-MAK — إدارة فنية · تصميم واجهات · تفاعل · هندسة تحويل",
   "services.s6name": "إعادة تصميم الهوية",
   "services.s6desc": "للأعمال التي تجاوزت هويتها الحالية وتحتاج اتجاهًا بصريًا أوضح وأكثر تميزًا.",
@@ -590,6 +603,7 @@ const AR: Dict = {
   "pricing.note": "أسعار البداية مبنية على نطاقات مشاريع مركّزة. كل مشروع يُحدد فرديًا حسب التعقيد والمخرجات والجدول الزمني ومستوى المشاركة الاستراتيجية المطلوبة.",
   "pricing.notEvery": "ليس كل مشروع يحتاج هوية كاملة. سأوصي بالنطاق الذي يحتاجه مشروعك فعلاً قبل أن نبدأ.",
   "pricing.starting": "من",
+  "pricing.custom": "يُسعَّر مخصصًا",
   "pricing.featured": "الأكثر اكتمالًا",
   "pricing.offer": "سعة مشاريع محدودة",
   "pricing.project": "مشروع",
@@ -649,8 +663,8 @@ const AR: Dict = {
   "pricing.upsellA": "امتد النظام إلى تجربة رقمية مخصصة للعلامة.",
   "pricing.upsellCta": "استكشف التجارب الرقمية للعلامة",
 
-  "pricing.rebrand": "مشاريع إعادة التصميم تُسعَّر مخصصًا من $799.",
-  "pricing.digital": "التجارب الرقمية للعلامة تُسعَّر مخصصًا من $450.",
+  "pricing.rebrand": "مشاريع إعادة التصميم تُسعَّر مخصصًا من $1,290.",
+  "pricing.digital": "التجارب الرقمية للعلامة تُسعَّر مخصصًا من $690.",
   "pricing.customNote": "كلاهما يُسعَّر بدقة بعد البريف — النطاق أولًا ثم السعر.",
   "pricing.ctaQ": "تعرف ما تحتاجه؟ أرسل البريف وأنا أكمل من هناك.",
 
@@ -669,6 +683,8 @@ const AR: Dict = {
   "payment.copied": "تم النسخ",
   "payment.footnote":
     "اضغط أي قيمة لنسخها، حوّل عبر الوسيلة الأنسب لك، ثم أرسل إيصال التحويل على واتساب. بمجرد تأكيد الدفع، يُجدول مشروعك رسميًا وتبدأ الخطوة الأولى.",
+  "payment.backQ": "غير جاهز بعد؟ ارجع إلى البريف.",
+  "payment.backCta": "العودة لنموذج المشروع",
 
   "faq.index": "09 / أسئلة",
   "faq.title": "قبل<br/><em>أن نبدأ.</em>",
@@ -730,6 +746,10 @@ const AR: Dict = {
   "form.type": "نوع المشروع *",
   "contact.qualTitle": "ملاحظة عن ملاءمة المشروع",
   "contact.qual": "BLACK-MAK مبني لمشاريع مركزة وتعاونية، ولعملاء يقدّرون التصميم المدروس.",
+  "contact.callTitle": "غير مستعد لبريف كامل؟",
+  "contact.callText":
+    "احجز مكالمة تعارف 15 دقيقة. محادثة سريعة عن علامتك، وستعرف إن كان مشروع هوية منطقيًا الآن — بلا نماذج وبلا التزام.",
+  "contact.callCta": "احجز مكالمة 15 دقيقة",
   "contact.fitTitle": "مناسب لك إذا:",
   "contact.fit1": "لديك نشاط حقيقي أو مشروع جاد",
   "contact.fit2": "تقدّر التصميم المميز",
@@ -748,7 +768,6 @@ const AR: Dict = {
   "form.budget": "الاستثمار المتوقع",
   "form.budgetLead": "أنا مستعد للاستثمار في هوية احترافية",
   "form.budgetPh": "مثلاً $500–$1,000",
-  "form.budgetOpt1": "أقل من $300",
   "form.budgetOpt2": "$300–$600",
   "form.budgetOpt3": "$600–$1,500",
   "form.budgetOpt4": "$1,500+",
@@ -756,7 +775,13 @@ const AR: Dict = {
   "form.msg": "ملخّص المشروع *",
   "form.msgPh": "جملة أو اثنتان عن العلامة والهدف ولماذا الآن.",
   "form.submit": "أرسل الاستفسار",
+  "form.sending": "جارٍ الإرسال…",
   "form.sent": "شكرًا — نفتح واتساب مع ملخّصك.",
+  "form.sentTitle": "تم استلام البريف.",
+  "form.sentBody":
+    "تم تسجيل استفسارك. تريد ردًا أسرع؟ أكمل المحادثة على واتساب مع ملخّصك جاهزًا — أو انتظر، سأرد عليك عبر البريد.",
+  "form.sentCta": "أكمل على واتساب",
+  "form.again": "أرسل استفسارًا آخر",
 
   "footer.tagline": "ممارسة شعارات وهوية بصرية متميّزة بقيادة محمد علاء البنك.",
   "footer.sig": "علامات تحمل معنى. هويات لها شخصية.",
@@ -773,8 +798,23 @@ const AR: Dict = {
   "case.more": "مشاريع أخرى",
   "case.prev": "السابق",
   "case.next": "التالي",
+  "case.survival": "اختبارات البقاء الخمسة",
+  "case.survivalIndex": "مصمَّم ما وراء الشاشة — خمسة اختبارات",
+  "case.survivalNote":
+    "كل علامة تُختبر عند 24 بكسل، وبأحادي اللون، وعلى التغليف، وعلى اللوحات، ومن مسافة — قبل أن تغادر الاستوديو.",
+  "case.t1": "24 بكسل — أيقونة",
+  "case.t2": "أحادي اللون",
+  "case.t3": "التغليف",
+  "case.t4": "اللوحات",
+  "case.t5": "المسافة",
 
   "wa.msg": "مرحبًا محمد، وجدت BLACK-MAK وأود مناقشة مشروع علامة. إليك ملخص موجز: ",
+
+  "seo.eyebrow": "الاستوديو",
+  "seo.title": "شاهد النظام<br/><em>وهو يعمل.</em>",
+  "seo.text": "مشاريع مختارة، واختبارات البقاء الخمسة، والنطاق الكامل لما تغطيه الهوية ثنائية اللغة.",
+  "seo.work": "استعرض الأعمال المختارة",
+  "seo.cta": "ابدأ مشروعك",
 
   "why.index": "03 / لماذا BLACK-MAK",
   "why.title": "ما يجعل<br/><em>BLACK-MAK مختلفًا.</em>",

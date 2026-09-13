@@ -1,9 +1,9 @@
-import { notFound } from "next/navigation";
+﻿import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import CaseView from "@/components/CaseView";
 import { getCase, CASES } from "@/lib/cases";
 
-const BASE = "https://black-mak-v4.vercel.app";
+const BASE = "https://black-mak.vercel.app";
 
 export const dynamicParams = false;
 
@@ -19,7 +19,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = getCase(slug);
   if (!c) return {};
-  const title = `${c.en.title} — BLACK-MAK`;
+  const title = `${c.en.title} â€” BLACK-MAK`;
   const description = c.en.summary;
   const url = `${BASE}/work/${c.slug}`;
   const image = `${BASE}${c.cover}`;

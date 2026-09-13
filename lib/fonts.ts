@@ -1,17 +1,35 @@
 import localFont from "next/font/local";
-import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 
 // One font system, self-hosted via next/font — zero CDN, zero render-blocking
-// Google Fonts <link>, and the CSS variables actually resolve (the old CDN setup
-// loaded Archivo + IBM Plex Mono but nothing consumed them).
-// The CV site (mu-cv) uses the exact same families/variables — one visual DNA.
-export const archivo = Archivo({
-  subsets: ["latin"],
-  weight: ["400", "500", "700", "800", "900"],
-  variable: "--font-archivo",
+// Google Fonts <link>. The Latin face is TCCC Unity (official identity
+// files, converted to woff2 from the source TTFs). Only the weights the
+// UI actually uses are loaded:
+//   Headline: 400 (light running text in display contexts) / 700 / 800
+//   Text:     400 / 700
+// Light(300) and Medium(600) headline cuts were never referenced — dropped
+// (11 fewer preloads competing with the LCP image). The CV site loads the
+// same families/variables — one visual DNA.
+export const unityHeadline = localFont({
+  src: [
+    { path: "../public/fonts/tccc-unity-regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/tccc-unity-bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/tccc-unity-black.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-signate",
   display: "swap",
 });
 
+export const unityText = localFont({
+  src: [
+    { path: "../public/fonts/tccc-unity-text-regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/tccc-unity-text-bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-body",
+  display: "swap",
+});
+
+// Latin subset only — cyrillic/vietnamese subsets were dead weight.
 export const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
@@ -19,12 +37,11 @@ export const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-// Self-hosted Arabic face (Asal) — matches the CV's Arabic typography.
+// Self-hosted Arabic face (Asal). The .woff fallback is dropped — every
+// browser since 2016 speaks woff2, and the duplicate file was preloaded
+// alongside the woff2 on every first visit.
 export const asalArabic = localFont({
-  src: [
-    { path: "../public/asal-arabic.woff2", weight: "500", style: "normal" },
-    { path: "../public/asal-arabic.woff", weight: "500", style: "normal" },
-  ],
+  src: [{ path: "../public/fonts/asal-arabic.woff2", weight: "500", style: "normal" }],
   variable: "--font-ar",
   display: "swap",
 });
