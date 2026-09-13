@@ -78,7 +78,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="https://mohamed-cv.vercel.app/"
+            href="https://muhamed-cv.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint transition-colors hover:text-muted"
@@ -127,7 +127,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="https://mohamed-cv.vercel.app/"
+            href="https://muhamed-cv.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}

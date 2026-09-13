@@ -59,7 +59,7 @@ const jsonLd = {
     "https://www.behance.net/Muhmed-alaa-el-bank",
     "https://www.instagram.com/muhamedalaaelbank/",
 
-    "https://mohamed-cv.vercel.app/",
+    "https://muhamed-cv.vercel.app/",
   ],
   knowsAbout: ["Logo Design", "Brand Identity", "Typography", "Arabic Calligraphy", "Visual Identity"],
   knowsLanguage: ["ar", "en"],

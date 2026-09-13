@@ -55,7 +55,7 @@ export default function Footer() {
               <a href="#about" className="transition-colors hover:text-ink">{t("nav.about")}</a>
               <a href="#pricing" className="transition-colors hover:text-ink">{t("nav.pricing")}</a>
               <a
-                href="https://mohamed-cv.vercel.app"
+                href="https://muhamed-cv.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 transition-colors hover:text-ink"

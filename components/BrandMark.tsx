@@ -3,7 +3,7 @@
 // squares) from the official V2 logo files (BLACK-MAK-V2 / A4 master export).
 // Verified lossless: IoU 1.000 (mark) / 0.997 (lockup) against the source raster.
 // fill="currentColor" â†’ adapts to theme (black on paper / white on screen).
-// The CV site (mohamed-cv) uses the exact same component â€” one visual DNA.
+// The CV site (muhamed-cv) uses the exact same component â€” one visual DNA.
 // ============================================================================
 
 // The V2 monogram alone â€” mark-only contexts (headers, seals, favicons, OG).

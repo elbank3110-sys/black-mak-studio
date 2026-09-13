@@ -97,7 +97,7 @@ export default function CvViewer({
           <p className="max-w-[52ch] text-[0.8rem] text-muted">{meta[fmt].desc}</p>
           <div className="flex items-center gap-2">
             <a
-              href="https://mohamed-cv.vercel.app"
+              href="https://muhamed-cv.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-ghost !px-4 !py-2"
@@ -156,7 +156,7 @@ export default function CvViewer({
 
         {/* live-CV bridge â€” the seamless jump to the interactive online CV */}
         <a
-          href="https://mohamed-cv.vercel.app"
+          href="https://muhamed-cv.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center justify-between gap-4 border-t border-line-strong bg-bg px-5 py-3 transition-colors hover:bg-surface"
