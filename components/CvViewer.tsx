@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
@@ -11,7 +11,7 @@ const FILES: Record<Fmt, { href: string; download: string }> = {
   jpg: { href: "/cv/muhamed-alaa-cv.jpg", download: "Muhamed-Alaa-CV.jpg" },
 };
 
-// Order is deliberate: PDF (visual) â†’ ATS (recruiter-friendly) â†’ JPG (quick look).
+// Order is deliberate: PDF (visual) → ATS (recruiter-friendly) → JPG (quick look).
 const ORDER: Fmt[] = ["pdf", "ats", "jpg"];
 
 export default function CvViewer({
@@ -87,7 +87,7 @@ export default function CvViewer({
               aria-label={t("cv.close")}
               className="ms-1 grid h-9 w-9 shrink-0 place-items-center border border-line-strong text-lg transition-colors hover:border-ink hover:text-ink"
             >
-              Ã—
+              ×
             </button>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function CvViewer({
               title={t("cv.liveDesc")}
             >
               <span>{t("cv.live")}</span>
-              <span>â†—</span>
+              <span>↗</span>
             </a>
             <a
               href={current.href}
@@ -113,10 +113,10 @@ export default function CvViewer({
               className="btn btn-ghost !px-4 !py-2"
             >
               <span>{t("cv.openTab")}</span>
-              <span>â†—</span>
+              <span>↗</span>
             </a>
             <a href={current.href} download={current.download} className="btn btn-light !px-4 !py-2">
-              <span>â†“</span>
+              <span>↓</span>
               <span>{t("cv.download")}</span>
             </a>
           </div>
@@ -143,10 +143,10 @@ export default function CvViewer({
               <div className="grid h-full place-items-center p-8 text-center">
                 <p className="text-muted">
                   {lang === "ar"
-                    ? "Ø§Ù„Ù…Ø¹Ø§ÙŠÙ†Ø© ØºÙŠØ± Ù…Ø¯Ø¹ÙˆÙ…Ø© Ø¹Ù„Ù‰ Ù‡Ø°Ø§ Ø§Ù„Ù…ØªØµÙØ­."
+                    ? "المعاينة غير مدعومة على هذا المتصفح."
                     : "Inline preview isn't supported on this browser."}{" "}
                   <a className="text-link" href={current.href} target="_blank" rel="noopener noreferrer">
-                    {t("cv.openTab")} â†—
+                    {t("cv.openTab")} ↗
                   </a>
                 </p>
               </div>
@@ -154,7 +154,7 @@ export default function CvViewer({
           )}
         </div>
 
-        {/* live-CV bridge â€” the seamless jump to the interactive online CV */}
+        {/* live-CV bridge — the seamless jump to the interactive online CV */}
         <a
           href="https://muhamed-cv.vercel.app"
           target="_blank"
@@ -172,7 +172,7 @@ export default function CvViewer({
           </span>
           <span className="flex shrink-0 items-center gap-2 font-mono text-[0.66rem] uppercase tracking-[0.13em] text-ink">
             {t("cv.liveCta")}
-            <span className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">â†—</span>
+            <span className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
           </span>
         </a>
       </div>

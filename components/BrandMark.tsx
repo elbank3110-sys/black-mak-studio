@@ -1,19 +1,19 @@
-﻿// ============================================================================
-// BLACK-MAK V2 identity â€” exact vector geometry, traced 1:1 (sub-pixel, marching
+// ============================================================================
+// BLACK-MAK V2 identity — exact vector geometry, traced 1:1 (sub-pixel, marching
 // squares) from the official V2 logo files (BLACK-MAK-V2 / A4 master export).
 // Verified lossless: IoU 1.000 (mark) / 0.997 (lockup) against the source raster.
-// fill="currentColor" â†’ adapts to theme (black on paper / white on screen).
-// The CV site (muhamed-cv) uses the exact same component â€” one visual DNA.
+// fill="currentColor" → adapts to theme (black on paper / white on screen).
+// The CV site (muhamed-cv) uses the exact same component — one visual DNA.
 // ============================================================================
 
-// The V2 monogram alone â€” mark-only contexts (headers, seals, favicons, OG).
+// The V2 monogram alone — mark-only contexts (headers, seals, favicons, OG).
 export const MARK_VIEWBOX = "0 0 155 165";
 export const MARK_ASPECT = 1.062112; // height / width
 
 export const MARK_D =
   "M94.00 149.50L58.00 149.50L57.50 149.00L57.50 68.00L8.00 18.50L7.50 19.00L7.50 41.00L41.50 75.00L41.50 149.00L41.00 149.50L0.00 149.50L-0.50 149.00L-0.50 56.00L0.00 55.50L1.00 55.50L7.50 62.00L7.50 141.00L8.00 141.50L33.00 141.50L33.50 141.00L33.50 78.00L-0.50 44.00L-0.50 0.00L0.00 -0.50L65.50 65.00L65.50 141.00L66.00 141.50L87.00 141.50L87.50 141.00L87.50 65.00L153.00 -0.50L153.50 0.00L153.50 43.00L120.50 76.00L120.50 138.00L121.00 138.50L146.00 138.50L146.50 138.00L146.50 60.00L154.00 52.50L154.50 53.00L154.50 146.00L154.00 146.50L113.00 146.50L112.50 146.00L112.50 73.00L145.50 40.00L145.50 19.00L145.00 18.50L95.50 68.00L95.50 148.00ZM25.00 123.50L17.00 123.50L15.50 122.00L15.50 112.00L16.00 111.50L25.00 111.50L25.50 112.00L25.50 123.00ZM94.00 164.50L58.00 164.50L57.50 164.00L57.50 157.00L58.00 156.50L95.00 156.50L95.50 157.00L95.50 163.00Z";
 
-// The full V2 lockup â€” wordmark + tagline + divider + monogram in one piece.
+// The full V2 lockup — wordmark + tagline + divider + monogram in one piece.
 export const LOCKUP_VIEWBOX = "0 0 499 176";
 
 const LOCKUP_D =
@@ -33,7 +33,7 @@ export const LockupPaths = ({ className = "" }: { className?: string }) => (
   </g>
 );
 
-// Compact logo lockup for headers â€” V2 mark + wordmark, identical DNA both sites.
+// Compact logo lockup for headers — V2 mark + wordmark, identical DNA both sites.
 export default function BrandMark({
   className = "",
   markClass = "h-7 w-7",

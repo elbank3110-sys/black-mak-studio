@@ -1,4 +1,4 @@
-﻿import fs from "fs";
+import fs from "fs";
 
 const objects = [];
 objects.push("<< /Type /Catalog /Pages 2 0 R >>");

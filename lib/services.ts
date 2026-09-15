@@ -42,7 +42,7 @@ export const SERVICE_TIERS: ServiceTier[] = [
     ],
     planExtraKey: "pricing.1e",
     planCtaKey: "pricing.cta1",
-    from: 290,
+    from: 249,
   },
   {
     id: "S.02",
@@ -59,7 +59,7 @@ export const SERVICE_TIERS: ServiceTier[] = [
     ],
     planExtraKey: "pricing.3d",
     planCtaKey: "pricing.cta3",
-    from: 890,
+    from: 749,
     featured: true,
   },
   {
@@ -76,7 +76,7 @@ export const SERVICE_TIERS: ServiceTier[] = [
     ],
     planExtraKey: "pricing.2e",
     planCtaKey: "pricing.cta2",
-    from: 490,
+    from: 390,
   },
   {
     id: "S.04",
@@ -100,7 +100,7 @@ export const SERVICE_TIERS: ServiceTier[] = [
     planItemsKeys: [],
     planExtraKey: "",
     planCtaKey: "",
-    from: 690,
+    from: 590,
   },
   {
     id: "S.06",
@@ -112,7 +112,7 @@ export const SERVICE_TIERS: ServiceTier[] = [
     planItemsKeys: [],
     planExtraKey: "",
     planCtaKey: "",
-    from: 1290,
+    from: 999,
   },
 ];
 

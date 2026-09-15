@@ -1,14 +1,14 @@
-﻿"use client";
+"use client";
 
 import { useI18n } from "@/lib/i18n";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 
 // ============================================================================
-// Footer â€” closes the page with the giant wordmark: BLACK-MAK set in the
+// Footer — closes the page with the giant wordmark: BLACK-MAK set in the
 // brand's TCCC Unity Black at ~15vw, letters outlined (stroke-only) and
 // filling solid as the cursor crosses them, the whole line rising from
-// below the fold on entry. The bottom of the glyphs bleeds off the page â€”
+// below the fold on entry. The bottom of the glyphs bleeds off the page —
 // the mark is bigger than the container, always.
 // ============================================================================
 const WORD = "BLACK-MAK";
@@ -18,7 +18,7 @@ export default function Footer() {
   const reduce = useReducedMotion();
   const bigRef = useRef<HTMLDivElement>(null);
 
-  // the wordmark rises as it enters â€” a 6% lift, once
+  // the wordmark rises as it enters — a 6% lift, once
   const { scrollYProgress } = useScroll({
     target: bigRef,
     offset: ["start end", "end 0.95"],
@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="flex flex-col items-start justify-between gap-10 md:flex-row">
           <div className="max-w-[38ch]">
             <a href="#top" className="text-xl font-black tracking-wider text-ink">
-              BLACK-MAK<span className="align-super text-[0.6em]">Â®</span>
+              BLACK-MAK<span className="align-super text-[0.6em]">®</span>
             </a>
             <p className="mt-3 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-muted">
               Logo & Visual Identity Design
@@ -47,7 +47,7 @@ export default function Footer() {
           <nav className="flex flex-col gap-5 font-mono text-[0.68rem] uppercase tracking-[0.1em] text-muted">
             <a href="#start-a-project" className="btn btn-light w-fit">
               <span>{t("nav.cta")}</span>
-              <span>â†—</span>
+              <span>↗</span>
             </a>
             <div className="flex flex-wrap gap-6">
               <a href="#work" className="transition-colors hover:text-ink">{t("nav.work")}</a>
@@ -60,7 +60,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 transition-colors hover:text-ink"
               >
-                {t("nav.cv")} <span aria-hidden="true">â†—</span>
+                {t("nav.cv")} <span aria-hidden="true">↗</span>
               </a>
             </div>
             <div className="flex flex-wrap gap-6">
@@ -72,9 +72,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* the giant wordmark â€” outlined glyphs, fill on hover, bleeding off-page.
+      {/* the giant wordmark — outlined glyphs, fill on hover, bleeding off-page.
           dir="ltr" hard-locks the letter order: BLACK-MAK reads the same in
-          EN and AR â€” the brand mark never mirrors in RTL pages. */}
+          EN and AR — the brand mark never mirrors in RTL pages. */}
       <div ref={bigRef} className="relative mt-10 overflow-hidden" aria-hidden="true">
         <motion.div
           dir="ltr"

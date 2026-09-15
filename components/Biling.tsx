@@ -8,11 +8,19 @@ import HeadlineReveal from "./HeadlineReveal";
 
 // ============================================================================
 // Biling — the bilingual USP + "Designed Beyond the Screen" as a scroll-linked
-// typographic progression: the survival tests (24px → packaging → signage →
-// monochrome → distance) reveal one by one as the section passes through the
-// viewport. The idea is narrated by the scroll, not just stated.
+// typographic progression: the survival tests (24px / packaging / signage /
+// monochrome / distance) reveal one by one as the section passes through
+// the viewport. The idea is narrated by the scroll, not just stated.
+// Each test carries a one-line caption so the client understands WHAT is
+// being proven, not just the jargon word.
 // ============================================================================
-const TESTS_EN = ["24px", "PACKAGING", "SIGNAGE", "MONOCHROME", "DISTANCE"];
+const TESTS_EN = [
+  { label: "24px", hint: "still clear as a favicon" },
+  { label: "PACKAGING", hint: "prints on a box, one pass" },
+  { label: "SIGNAGE", hint: "holds up on a storefront" },
+  { label: "MONOCHROME", hint: "one ink, no gradients" },
+  { label: "DISTANCE", hint: "readable from across the street" },
+];
 
 export default function Biling() {
   const { t } = useI18n();
@@ -60,11 +68,12 @@ export default function Biling() {
           </Reveal>
 
           {/* the five survival tests — revealed by scroll position */}
-          <div className="mt-10 flex flex-wrap items-baseline gap-x-[clamp(1.2rem,4vw,3rem)] gap-y-4">
-            {TESTS_EN.map((label, i) => (
+          <div className="mt-10 flex flex-wrap items-start gap-x-[clamp(1.2rem,4vw,3rem)] gap-y-5">
+            {TESTS_EN.map((tt, i) => (
               <BeyondItem
-                key={label}
-                label={label}
+                key={tt.label}
+                label={tt.label}
+                hint={t(`bts.hint${i + 1}`)}
                 index={i}
                 progress={scrollYProgress}
                 reduce={!!reduce}
@@ -82,11 +91,13 @@ export default function Biling() {
 
 function BeyondItem({
   label,
+  hint,
   index,
   progress,
   reduce,
 }: {
   label: string;
+  hint: string;
   index: number;
   progress: ReturnType<typeof useScroll>["scrollYProgress"];
   reduce: boolean;
@@ -99,19 +110,22 @@ function BeyondItem({
 
   if (reduce) {
     return (
-      <span className="display text-[clamp(1.3rem,3vw,2.2rem)] tracking-tight text-ink">
-        {label}
+      <span className="flex flex-col gap-1">
+        <span className="display text-[clamp(1.3rem,3vw,2.2rem)] tracking-tight text-ink">
+          {label}
+        </span>
+        <span className="mono text-[0.6rem] uppercase tracking-[0.12em] text-faint" dir="ltr">{hint}</span>
       </span>
     );
   }
 
   return (
-    <motion.span
-      style={{ opacity, y }}
-      className="display text-[clamp(1.3rem,3vw,2.2rem)] tracking-tight text-ink"
-    >
-      {label}
-      {index < 4 && <span className="ms-[clamp(0.6rem,2vw,1.5rem)] text-faint">→</span>}
+    <motion.span style={{ opacity, y }} className="flex flex-col gap-1">
+      <span className="display text-[clamp(1.3rem,3vw,2.2rem)] tracking-tight text-ink">
+        {label}
+        {index < 4 && <span className="ms-[clamp(0.6rem,2vw,1.5rem)] text-faint">→</span>}
+      </span>
+      <span className="mono text-[0.6rem] uppercase tracking-[0.12em] text-faint" dir="ltr">{hint}</span>
     </motion.span>
   );
 }

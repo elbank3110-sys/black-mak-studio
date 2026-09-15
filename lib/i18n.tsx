@@ -68,6 +68,7 @@ const EN: Dict = {
   "scale.note":
     "Drag the slider — one mark, engineered to stay clear at every size a brand actually lives at: favicon, app icon, interface, stationery, signage.",
   "scale.slider": "Test the mark at different sizes",
+  "scale.dragHint": "Drag across the stage — the mark follows your hand",
   "scale.markAlt": "BLACK-MAK monogram",
 
   "statement.index": "THE POINT",
@@ -249,8 +250,8 @@ const EN: Dict = {
   "pricing.upsellA": "Extend the system into a custom digital brand experience.",
   "pricing.upsellCta": "Explore Digital Brand Experiences",
 
-  "pricing.rebrand": "Rebrand projects are custom-scoped from $1,290.",
-  "pricing.digital": "Digital Brand Experiences are custom-quoted from $690.",
+  "pricing.rebrand": "Rebrand projects are custom-scoped from $999.",
+  "pricing.digital": "Digital Brand Experiences are custom-quoted from $590.",
   "pricing.customNote": "Both are quoted precisely after the brief — scope first, price second.",
   "pricing.ctaQ": "Know what you need? Send the brief. I'll take it from there.",
 
@@ -349,8 +350,13 @@ const EN: Dict = {
   "bts.index": "DESIGNED BEYOND THE SCREEN",
   "bts.title": "A strong identity has to survive more than a presentation mockup.",
   "bts.text":
-    "It has to work at 24px, on packaging, on signage, in monochrome, and from a distance. Years of outdoor and large-format work built that instinct into every mark I draw.",
+    "Before any mark is delivered, it is tested in the same real places your brand will live: tiny in a browser tab, printed on a package, mounted on a storefront — all in a single color, and readable from across the street.",
   "bts.testsNote": "Five survival tests every mark passes before it leaves the studio.",
+  "bts.hint1": "still clear as a favicon",
+  "bts.hint2": "prints on a box, one pass",
+  "bts.hint3": "holds up on a storefront",
+  "bts.hint4": "one ink, no gradients",
+  "bts.hint5": "readable from across the street",
 
   "contact.index": "11 / START A BRAND PROJECT",
   "contact.title": "Have a brand worth building?",
@@ -502,6 +508,7 @@ const AR: Dict = {
   "scale.note":
     "اسحب المؤشر — علامة واحدة مهندَسة لتبقى واضحة عند كل حجم تعيشه العلامة فعلًا: أيقونة الموقع، أيقونة التطبيق، الواجهة، المطبوعات، اللوحات.",
   "scale.slider": "اختبر العلامة بأحجام مختلفة",
+  "scale.dragHint": "اسحب عبر المسرح — العلامة تتبع يدك",
   "scale.markAlt": "مونوجرام بلاك-ماك",
 
   "statement.index": "الفكرة",
@@ -663,8 +670,8 @@ const AR: Dict = {
   "pricing.upsellA": "امتد النظام إلى تجربة رقمية مخصصة للعلامة.",
   "pricing.upsellCta": "استكشف التجارب الرقمية للعلامة",
 
-  "pricing.rebrand": "مشاريع إعادة التصميم تُسعَّر مخصصًا من $1,290.",
-  "pricing.digital": "التجارب الرقمية للعلامة تُسعَّر مخصصًا من $690.",
+  "pricing.rebrand": "مشاريع إعادة التصميم تُسعَّر مخصصًا من $999.",
+  "pricing.digital": "التجارب الرقمية للعلامة تُسعَّر مخصصًا من $590.",
   "pricing.customNote": "كلاهما يُسعَّر بدقة بعد البريف — النطاق أولًا ثم السعر.",
   "pricing.ctaQ": "تعرف ما تحتاجه؟ أرسل البريف وأنا أكمل من هناك.",
 
@@ -846,8 +853,13 @@ const AR: Dict = {
   "bts.index": "مصمم ما وراء الشاشة",
   "bts.title": "الهوية القوية يجب أن تنجو من أكثر من موك-أب عرض.",
   "bts.text":
-    "يجب أن تعمل على 24 بكسل، وعلى التغليف، وعلى اللوحات، وبأحادي اللون، ومن مسافة. سنوات العمل الخارجي والصيغ الكبيرة بنت هذا الحسّ في كل علامة أرسمها.",
+    "قبل تسليم أي علامة، أختبرها في الاستخدامات الحقيقية نفسها التي ستواجهها علامتك: صغيرة جدًا في شريط المتصفح، مطبوعة على عبوة، مثبتة على واجهة محل — وكل ذلك في لون واحد ومن مسافة بعيدة.",
   "bts.testsNote": "خمسة اختبارات بقاء تجتازها كل علامة قبل أن تغادر الاستوديو.",
+  "bts.hint1": "واضحة كأيقونة المتصفح",
+  "bts.hint2": "تُطبع على العبوة بتمريرة واحدة",
+  "bts.hint3": "تصمد على واجهة المحل",
+  "bts.hint4": "حبر واحد بلا تدرجات",
+  "bts.hint5": "تُقرأ من آخر الشارع",
 
   "work.cta.line": "أعجبك ما ترى؟<br/><em>علامتك تستحق نفس مستوى التفكير.</em>",
   "work.cta.btn": "ابدأ مشروعك",

@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
 import { unityHeadline, unityText, plexMono, asalArabic } from "@/lib/fonts";
@@ -13,16 +13,16 @@ import { Analytics } from "@vercel/analytics/react";
 import { SERVICE_TIERS, fmtPrice } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "BLACK-MAKÂ® â€” Logo & Visual Identity Designer | Arabic & Latin",
+  title: "BLACK-MAK® — Logo & Visual Identity Designer | Arabic & Latin",
   description:
-    "BLACK-MAKÂ® is an independent logo and visual identity practice by Muhamed Alaa Elbank, specializing in Arabic & Latin typography, calligraphy, identity systems, and real-world brand applications.",
+    "BLACK-MAK® is an independent logo and visual identity practice by Muhamed Alaa Elbank, specializing in Arabic & Latin typography, calligraphy, identity systems, and real-world brand applications.",
   metadataBase: new URL("https://black-mak.vercel.app/"),
   alternates: {
     canonical: "https://black-mak.vercel.app/",
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "BLACK-MAK â€” Logo & Visual Identity Design",
+    title: "BLACK-MAK — Logo & Visual Identity Design",
     description:
       "Marks with meaning. Identity systems built for real-world scale, clarity, and character.",
     type: "website",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BLACK-MAK â€” Logo & Visual Identity Design",
+    title: "BLACK-MAK — Logo & Visual Identity Design",
     description:
       "Marks with meaning. Identity systems built for real-world scale, clarity, and character.",
   },

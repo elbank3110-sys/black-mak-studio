@@ -1,6 +1,6 @@
-﻿"use client";
+"use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import BrandMark from "./BrandMark";
 import ThemeToggle from "./ThemeToggle";
@@ -10,6 +10,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -17,6 +18,16 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Escape closes the menu; menu links are unreachable when closed
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   useEffect(() => {
     const ids = links.map((l) => l.href.slice(1)).concat("start-a-project");
@@ -87,7 +98,7 @@ export default function Header() {
           </a>
           <a href="#start-a-project" className="btn btn-light">
             <span>{t("nav.cta")}</span>
-            <span>â†—</span>
+            <span>↗</span>
           </a>
         </nav>
 
@@ -116,11 +127,12 @@ export default function Header() {
 
       <div
         className={`container grid overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
-          open ? "mt-0 grid-rows-[1fr] py-8 opacity-100" : "mt-0 grid-rows-[0fr] py-0 opacity-0"
+          open ? "grid-rows-[1fr] py-8 opacity-100" : "grid-rows-[0fr] py-0 opacity-0"
         }`}
         aria-hidden={!open}
+        {...(!open ? { inert: "" as unknown as boolean } : {})}
       >
-        <nav className="flex min-h-0 flex-col gap-6 overflow-hidden" aria-label="Mobile navigation">
+        <nav ref={menuRef} className="flex min-h-0 flex-col gap-6 overflow-hidden" aria-label="Mobile navigation">
           {links.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)} className={`text-2xl font-bold transition-all duration-500 ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
               {t(l.k)}

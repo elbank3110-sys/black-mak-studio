@@ -18,19 +18,10 @@ import { MarkPaths, MARK_VIEWBOX, MARK_ASPECT } from "./BrandMark";
 // never pays for it). Reduced-motion + touch render a static rail instead.
 // ============================================================================
 
-const TESTS = [
-  { key: "case.t1", label: "24px" },
-  { key: "case.t2", label: "MONOCHROME" },
-  { key: "case.t3", label: "PACKAGING" },
-  { key: "case.t4", label: "SIGNAGE" },
-  { key: "case.t5", label: "DISTANCE" },
-] as const;
-
 export default function SurvivalStage() {
   const { t } = useI18n();
   const wrapRef = useRef<HTMLDivElement>(null);
   const [staticMode, setStaticMode] = useState(false);
-  const [active, setActive] = useState(0);
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -65,9 +56,8 @@ export default function SurvivalStage() {
             scrub: 0.6,
             pin: true,
             onUpdate: (self) => {
-              const i = Math.min(TESTS.length - 1, Math.floor(self.progress * TESTS.length));
-              setActive(i);
-              if (counter) counter.textContent = `0${i + 1} / 0${TESTS.length}`;
+              const i = Math.min(4, Math.floor(self.progress * 5));
+              if (counter) counter.textContent = `0${i + 1} / 05`;
             },
           },
         });
@@ -135,9 +125,9 @@ export default function SurvivalStage() {
         </svg>
       </div>
 
-      {/* the rail — which test is running */}
+      {/* the rail — a quiet progress cue; the mark's own motion narrates the tests */}
       <div className="absolute inset-x-0 bottom-8 z-20">
-        <div className="container flex items-end justify-between gap-6">
+        <div className="container">
           <div>
             <span className="eyebrow mb-3 block text-faint" data-survival-eyebrow>
               {t("case.survivalIndex")}
@@ -145,18 +135,6 @@ export default function SurvivalStage() {
             <p className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink" data-survival-count>
               01 / 05
             </p>
-          </div>
-          <div className="flex max-w-[60%] flex-wrap justify-end gap-x-6 gap-y-2 text-end">
-            {TESTS.map((tt, i) => (
-              <span
-                key={tt.key}
-                className={`display text-[clamp(1rem,2.2vw,1.6rem)] tracking-tight transition-colors duration-300 ${
-                  (staticMode || active) === i ? "text-ink" : "text-faint opacity-50"
-                }`}
-              >
-                {t(tt.key)}
-              </span>
-            ))}
           </div>
         </div>
       </div>
