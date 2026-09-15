@@ -34,7 +34,13 @@ function buildWaUrl(d: z.infer<typeof schema>): string {
 }
 
 export async function submitInquiry(fd: FormData): Promise<InquiryResult> {
-  const d = schema.parse(fd);
+  // zod v3 parses plain objects — FormData needs materializing first
+  // (entries with File values are skipped; this form is text-only).
+  const raw: Record<string, string> = {};
+  fd.forEach((v, k) => {
+    if (typeof v === "string") raw[k] = v;
+  });
+  const d = schema.parse(raw);
 
   const ip =
     (fd.get("_ip") as string | null) ||

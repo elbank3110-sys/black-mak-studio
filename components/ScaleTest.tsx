@@ -163,10 +163,12 @@ export default function ScaleTest() {
           </span>
         </div>
 
-        {/* the stage — drag anywhere: the mark follows the hand */}
+        {/* the stage — drag anywhere: the mark follows the hand.
+            touch-pan-y keeps vertical page scrolling alive on touch devices
+            while horizontal drags stay ours. */}
         <div
           ref={wrapRef}
-          className="relative flex min-h-[240px] touch-none select-none items-center justify-center overflow-hidden py-10 md:min-h-[300px]"
+          className="relative flex min-h-[240px] touch-pan-y select-none items-center justify-center overflow-hidden py-10 md:min-h-[300px]"
           style={{
             backgroundImage:
               "linear-gradient(to right, var(--line) 1px, transparent 1px), linear-gradient(to bottom, var(--line) 1px, transparent 1px)",
@@ -211,8 +213,11 @@ export default function ScaleTest() {
         {/* the control — a continuous slider mirroring the drag scale */}
         <div className="mt-2 flex items-center gap-5 border-t border-line pt-5">
           <span className="font-mono text-[0.58rem] text-faint">16</span>
+          {/* dir="ltr" locks the slider's visual direction to match the
+              drag stage (left = small) in both languages — one mental model. */}
           <input
             ref={sliderRef}
+            dir="ltr"
             type="range"
             min={0}
             max={1000}

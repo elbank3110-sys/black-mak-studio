@@ -164,6 +164,7 @@ export default function Contact() {
                   <span className="text-[0.62rem] text-muted">{t("form.budget")}</span>
                   <select name="budget" disabled={pending} className="border border-line bg-surface px-4 py-3 outline-none transition-colors focus:border-ink">
                     <option value="Not sure yet">{t("form.budgetOpt5")}</option>
+                    <option value="Up to $300">{t("form.budgetOpt1")}</option>
                     <option value="$300–$600">{t("form.budgetOpt2")}</option>
                     <option value="$600–$1,500">{t("form.budgetOpt3")}</option>
                     <option value="$1,500+">{t("form.budgetOpt4")}</option>
