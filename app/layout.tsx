@@ -1,7 +1,7 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
-import { unityHeadline, unityText, plexMono, asalArabic, holimount, holimountSwash } from "@/lib/fonts";
+import { unityHeadline, unityText, plexMono, asalArabic, soullife } from "@/lib/fonts";
 import UIEffects from "@/components/UIEffects";
 import MagicLayer from "@/components/MagicLayer";
 import Header from "@/components/Header";
@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       dir="ltr"
       suppressHydrationWarning
-      className={`${unityHeadline.variable} ${unityText.variable} ${plexMono.variable} ${asalArabic.variable} ${holimount.variable} ${holimountSwash.variable}`}
+      className={`${unityHeadline.variable} ${unityText.variable} ${plexMono.variable} ${asalArabic.variable} ${soullife.variable}`}
     >
       <head>
         <script

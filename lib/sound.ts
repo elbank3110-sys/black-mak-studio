@@ -35,35 +35,35 @@ class SoundEngine {
 
       if (type === "crisp") {
         osc.type = "triangle";
-        osc.frequency.setValueAtTime(1400, now);
-        osc.frequency.exponentialRampToValueAtTime(320, now + 0.035);
+        osc.frequency.setValueAtTime(1100, now);
+        osc.frequency.exponentialRampToValueAtTime(380, now + 0.019);
 
-        gain.gain.setValueAtTime(0.045, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.035);
+        gain.gain.setValueAtTime(0.018, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.019);
       } else if (type === "soft") {
         osc.type = "sine";
-        osc.frequency.setValueAtTime(620, now);
-        osc.frequency.exponentialRampToValueAtTime(180, now + 0.04);
+        osc.frequency.setValueAtTime(480, now);
+        osc.frequency.exponentialRampToValueAtTime(240, now + 0.018);
 
-        gain.gain.setValueAtTime(0.03, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+        gain.gain.setValueAtTime(0.012, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.018);
       } else if (type === "pop") {
         osc.type = "sine";
-        osc.frequency.setValueAtTime(800, now);
-        osc.frequency.exponentialRampToValueAtTime(450, now + 0.05);
+        osc.frequency.setValueAtTime(650, now);
+        osc.frequency.exponentialRampToValueAtTime(320, now + 0.020);
 
-        gain.gain.setValueAtTime(0.05, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+        gain.gain.setValueAtTime(0.016, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.020);
       }
 
       osc.connect(gain);
       gain.connect(ctx.destination);
 
       osc.start(now);
-      osc.stop(now + 0.05);
+      osc.stop(now + 0.022);
 
       if (typeof navigator !== "undefined" && navigator.vibrate) {
-        navigator.vibrate(10);
+        navigator.vibrate(6);
       }
     } catch {}
   }

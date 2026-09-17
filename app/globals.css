@@ -2,34 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Official Holimount Signature and Swash fonts */
+/* Official Soullife Signature Font */
 @font-face {
-  font-family: 'Holimount';
-  src: url('/fonts/holimount.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: '38-lineart - Holimount';
-  src: url('/fonts/holimount.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Holimount Swash';
-  src: url('/fonts/holimount-swash.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: '38-lineart - Holimount swash';
-  src: url('/fonts/holimount-swash.woff2') format('woff2');
+  font-family: 'Soullife';
+  src: url('/fonts/Soullife.woff2') format('woff2'),
+       url('/fonts/Soullife.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

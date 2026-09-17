@@ -4,18 +4,18 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MARK_D, MARK_VIEWBOX } from "./HeroMark";
 import {
-  HOLIMOUNT_NAME_D,
-  HOLIMOUNT_SWASH_D,
-  HOLIMOUNT_SWASH_TRANSFORM,
+  SOULLIFE_LETTERS,
+  SOULLIFE_SWASH_D,
+  SOULLIFE_VIEWBOX,
 } from "@/lib/signatureData";
 
 // ============================================================================
-// Cinematic Brand Intro — 2.75s Architectural Mark & Holimount Signature
+// Cinematic Brand Intro — Architectural White Monogram & Handwritten Soullife
 // 1. 0–350ms: Drafting blueprint grid & coordinate calibration
-// 2. 350–1450ms: SVG stroke-by-stroke drafting of the monogram with laser precision
-// 3. 1450–2250ms: Solid ink flood + Fast handwritten signature using the official
-//    Holimount & Holimount Swash fonts provided by Muhamed Alaa.
-// 4. 2250–2750ms: Complete brand presence & seamless fade-out curtain
+// 2. 350–1400ms: Pure white stroke-by-stroke drafting of the monogram with ultra-smooth easing
+// 3. 1400–3300ms: Solid white ink flood + progressive handwritten "Muhamed Alaa" in
+//    official Soullife font followed by sweeping calligraphic signature swash
+// 4. 3300–3800ms: Full lockup & seamless fade-out curtain
 // ============================================================================
 
 export default function Intro() {
@@ -31,19 +31,13 @@ export default function Intro() {
       return;
     }
 
-    // Phase Timeline (Total ~2.75 seconds):
-    // 0ms: Blueprint grid
-    // 350ms: Start monogram stroke drawing
-    // 1450ms: Ink flood + Signature writes swiftly
-    // 2250ms: Full lockup resolution
-    // 2750ms: Curtain fade-out
     const t = [
-      setTimeout(() => setStage(1), 100),   // Grid lines initiate
-      setTimeout(() => setStage(2), 350),   // Monogram draws
-      setTimeout(() => setStage(3), 1450),  // Ink flood + Signature writes swiftly
-      setTimeout(() => setStage(4), 2250),  // Final glow & lockup
-      setTimeout(() => setShow(false), 2750), // Fade out
-      setTimeout(() => setGone(true), 3100),  // Unmount from DOM
+      setTimeout(() => setStage(1), 100),    // Grid lines initiate
+      setTimeout(() => setStage(2), 350),    // Smooth white monogram draws
+      setTimeout(() => setStage(3), 1400),   // Ink flood + Soullife signature writes on
+      setTimeout(() => setStage(4), 3300),   // Full resolution lockup
+      setTimeout(() => setShow(false), 3800),// Curtain fade-out
+      setTimeout(() => setGone(true), 4200), // Unmount from DOM
     ];
 
     return () => t.forEach(clearTimeout);
@@ -59,7 +53,7 @@ export default function Intro() {
   return (
     <div
       onClick={handleSkip}
-      className={`fixed inset-0 z-[250] flex flex-col items-center justify-center bg-[#070708] select-none transition-opacity duration-400 cursor-pointer ${
+      className={`fixed inset-0 z-[250] flex flex-col items-center justify-center bg-[#070708] select-none transition-opacity duration-500 cursor-pointer ${
         show ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
       aria-label="Click or press ESC to skip intro"
@@ -70,7 +64,6 @@ export default function Intro() {
         style={{ opacity: stage >= 1 && stage < 4 ? 0.35 : 0.15 }}
       >
         <div className="absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 md:h-[500px] md:w-[500px]">
-          {/* Subtle vertical and horizontal grid lines */}
           {[14, 38, 50, 62, 86].map((x) => (
             <span
               key={x}
@@ -85,9 +78,7 @@ export default function Intro() {
               style={{ top: `${y}%` }}
             />
           ))}
-          {/* Circular precision compass ring */}
           <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-line/40 md:h-[420px] md:w-[420px]" />
-          {/* 45-degree guide line */}
           <div className="absolute left-0 top-0 h-full w-full border-t border-line/30 rotate-45 pointer-events-none" />
         </div>
       </div>
@@ -95,8 +86,8 @@ export default function Intro() {
       {/* 2. Top Minimalist Precision Coordinates */}
       <div className="absolute top-8 inset-x-8 flex items-center justify-between font-mono text-[0.62rem] uppercase tracking-[0.25em] text-faint">
         <span className="flex items-center gap-2">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-seal animate-pulse" />
-          <span>BLACK-MAK® STUDIO</span>
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+          <span className="text-ink">BLACK-MAK® STUDIO</span>
         </span>
         <span className="hidden sm:inline-block text-muted">
           IDENTITY ARCHITECTURE · EST. 2014
@@ -112,30 +103,22 @@ export default function Intro() {
         </button>
       </div>
 
-      {/* 3. Central Stage: Monogram + Authentic Holimount Signature */}
+      {/* 3. Central Stage: Pure White Monogram + Handwritten Soullife Signature */}
       <div className="relative flex flex-col items-center justify-center">
-        {/* Monogram drawing container */}
+        {/* Monogram drawing container: Pure Architectural White with Smoothness */}
         <div className="relative h-28 w-28 md:h-36 md:w-36 flex items-center justify-center">
           <svg
             viewBox={MARK_VIEWBOX}
             shapeRendering="geometricPrecision"
-            className="h-full w-full overflow-visible drop-shadow-[0_0_24px_rgba(201,162,39,0.25)]"
+            className="h-full w-full overflow-visible drop-shadow-[0_0_24px_rgba(255,255,255,0.22)]"
           >
-            <defs>
-              <linearGradient id="introGoldSheen" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f5f5f1" />
-                <stop offset="50%" stopColor="#c9a227" />
-                <stop offset="100%" stopColor="#f5f5f1" />
-              </linearGradient>
-            </defs>
-
-            {/* Stroke drafting path */}
+            {/* Stroke drafting path in pure white with ultra-smooth ease */}
             <motion.path
               fillRule="evenodd"
               clipRule="evenodd"
               d={MARK_D}
-              stroke="url(#introGoldSheen)"
-              strokeWidth={stage >= 3 ? 0.8 : 1.6}
+              stroke="#ffffff"
+              strokeWidth={stage >= 3 ? 0.9 : 1.5}
               strokeLinejoin="miter"
               strokeMiterlimit={10}
               initial={{ pathLength: 0, fillOpacity: 0 }}
@@ -144,71 +127,134 @@ export default function Intro() {
                 fillOpacity: stage >= 3 ? 1 : 0,
               }}
               transition={{
-                pathLength: { duration: 1.1, ease: [0.5, 0, 0.2, 1] },
-                fillOpacity: { duration: 0.45, ease: "easeOut", delay: 0.05 },
+                pathLength: { duration: 1.15, ease: [0.22, 1, 0.36, 1] },
+                fillOpacity: { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.05 },
               }}
-              fill="#f5f5f1"
+              fill="#ffffff"
             />
           </svg>
 
-          {/* Golden laser drafting spark following apex during drawing */}
+          {/* Diamond white drafting spark following apex during drawing */}
           <AnimatePresence>
             {stage === 2 && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: [1, 1.4, 1] }}
+                animate={{ opacity: 1, scale: [1, 1.3, 1] }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-                className="absolute left-1/2 top-4 h-2 w-2 -translate-x-1/2 rounded-full bg-seal shadow-[0_0_12px_#c9a227]"
+                transition={{ duration: 0.75, repeat: Infinity }}
+                className="absolute left-1/2 top-4 h-2 w-2 -translate-x-1/2 rounded-full bg-white shadow-[0_0_14px_rgba(255,255,255,0.9)]"
               />
             )}
           </AnimatePresence>
         </div>
 
-        {/* 4. Authentic Handwritten Signature: Muhamed Alaa (38-lineart - Holimount + Holimount swash) */}
-        <div className="mt-5 flex flex-col items-center justify-center min-h-[105px]">
+        {/* 4. Handwritten Soullife Signature: Muhamed Alaa + Signature Swash */}
+        <div className="mt-5 flex flex-col items-center justify-center min-h-[110px]">
           {stage >= 3 && (
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
               className="flex flex-col items-center"
             >
               {/* Authentic Vector Calligraphic Signature */}
-              <div className="relative overflow-hidden w-[280px] sm:w-[350px] md:w-[420px] aspect-[440/130] flex items-center justify-center">
-                <motion.svg
-                  viewBox="-20 -8 440 130"
+              <div className="relative overflow-hidden w-[300px] sm:w-[380px] md:w-[440px] aspect-[375/105] flex items-center justify-center">
+                <svg
+                  viewBox={SOULLIFE_VIEWBOX}
                   shapeRendering="geometricPrecision"
-                  className="w-full h-full overflow-visible drop-shadow-[0_2px_18px_rgba(201,162,39,0.45)] select-none"
-                  initial={{ clipPath: "inset(0 100% 0 0)" }}
-                  animate={{ clipPath: "inset(0 0% 0 0)" }}
-                  transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                  className="w-full h-full overflow-visible drop-shadow-[0_0_16px_rgba(255,255,255,0.3)] select-none"
                   role="img"
                   aria-label="Muhamed Alaa Signature"
                 >
                   <defs>
-                    <linearGradient id="introSigGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#f5f5f1" />
-                      <stop offset="35%" stopColor="#f5f5f1" />
-                      <stop offset="60%" stopColor="#c9a227" />
-                      <stop offset="100%" stopColor="#e8c85a" />
-                    </linearGradient>
+                    {/* Individual letter reveal masks: creates authentic progressive handwriting effect */}
+                    {SOULLIFE_LETTERS.map((letter, i) => {
+                      const startX = letter.bbox.x1 - 3;
+                      const startY = letter.bbox.y1 - 4;
+                      const w = letter.bbox.x2 - letter.bbox.x1 + 6;
+                      const h = letter.bbox.y2 - letter.bbox.y1 + 8;
+                      const isFirstWord = i < 7; // "Muhamed" (0..6)
+                      const delay = isFirstWord
+                        ? 0.05 + i * 0.09
+                        : 0.76 + (i - 7) * 0.11;
+
+                      return (
+                        <clipPath id={`soullife-clip-${i}`} key={i}>
+                          <motion.rect
+                            x={startX}
+                            y={startY}
+                            height={h}
+                            initial={{ width: 0 }}
+                            animate={{ width: w }}
+                            transition={{
+                              duration: 0.14,
+                              delay,
+                              ease: [0.25, 0.1, 0.25, 1],
+                            }}
+                          />
+                        </clipPath>
+                      );
+                    })}
                   </defs>
-                  {/* Exact vector curves of 'Muhamed Alaa' from 38-lineart - Holimount */}
-                  <path d={HOLIMOUNT_NAME_D} fill="url(#introSigGold)" />
-                  {/* Exact underline swash from 38-lineart - Holimount swash */}
-                  <g transform={HOLIMOUNT_SWASH_TRANSFORM}>
-                    <path d={HOLIMOUNT_SWASH_D} fill="#c9a227" />
+
+                  {/* The 11 letters of Muhamed Alaa in Soullife font */}
+                  <g id="soullife-signature-letters">
+                    {SOULLIFE_LETTERS.map((letter, i) => (
+                      <path
+                        key={i}
+                        d={letter.d}
+                        fill="#ffffff"
+                        clipPath={`url(#soullife-clip-${i})`}
+                      />
+                    ))}
                   </g>
-                </motion.svg>
+
+                  {/* Professional Underline Signature Swash — Draws progressively */}
+                  <motion.path
+                    d={SOULLIFE_SWASH_D}
+                    fill="none"
+                    stroke="#ffffff"
+                    strokeWidth={2.4}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{
+                      pathLength: {
+                        duration: 0.55,
+                        delay: 1.3,
+                        ease: [0.22, 1, 0.36, 1],
+                      },
+                      opacity: { duration: 0.05, delay: 1.3 },
+                    }}
+                  />
+
+                  {/* Subtle white calligraphic pen nib glint following the stroke */}
+                  <motion.circle
+                    r={2}
+                    fill="#ffffff"
+                    className="drop-shadow-[0_0_8px_#ffffff]"
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: [0, 1, 1, 1, 0],
+                      cx: [25, 230, 245, 340, 376],
+                      cy: [75, 88, 75, 88, 96],
+                    }}
+                    transition={{
+                      duration: 1.85,
+                      times: [0, 0.38, 0.45, 0.72, 1],
+                      ease: "easeInOut",
+                    }}
+                  />
+                </svg>
               </div>
 
               {/* Professional Craft Designation */}
               <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: 0.35 }}
-                className="mt-2 font-mono text-[0.62rem] sm:text-[0.68rem] uppercase tracking-[0.35em] text-muted text-center"
+                initial={{ opacity: 0, letterSpacing: "0.25em" }}
+                animate={{ opacity: 1, letterSpacing: "0.35em" }}
+                transition={{ duration: 0.45, delay: 1.7 }}
+                className="mt-2 font-mono text-[0.62rem] sm:text-[0.68rem] uppercase text-muted text-center"
               >
                 Muhamed Alaa Elbank · Logo & Visual Identity Practice
               </motion.span>
@@ -224,10 +270,10 @@ export default function Intro() {
         </span>
         <div className="w-24 h-[1px] bg-line overflow-hidden">
           <motion.div
-            className="h-full bg-seal"
+            className="h-full bg-white"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ duration: 2.7, ease: "linear" }}
+            transition={{ duration: 3.6, ease: "linear" }}
           />
         </div>
       </div>

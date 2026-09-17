@@ -1,16 +1,10 @@
-﻿import localFont from "next/font/local";
+import localFont from "next/font/local";
 import { IBM_Plex_Mono } from "next/font/google";
 
-// Official Holimount Signature & Swash Fonts provided by Muhamed Alaa
-export const holimount = localFont({
-  src: [{ path: "../public/fonts/holimount.woff2", weight: "400", style: "normal" }],
+// Official Soullife Signature Font provided by Muhamed Alaa
+export const soullife = localFont({
+  src: [{ path: "../public/fonts/Soullife.woff2", weight: "400", style: "normal" }],
   variable: "--font-signature",
-  display: "swap",
-});
-
-export const holimountSwash = localFont({
-  src: [{ path: "../public/fonts/holimount-swash.woff2", weight: "400", style: "normal" }],
-  variable: "--font-swash",
   display: "swap",
 });
 
