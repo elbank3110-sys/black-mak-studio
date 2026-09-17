@@ -175,9 +175,9 @@ export default function Intro() {
               className="flex flex-col items-center"
             >
               {/* Authentic Vector Calligraphic Signature */}
-              <div className="relative overflow-hidden w-[280px] sm:w-[350px] md:w-[410px] aspect-[430/120] flex items-center justify-center">
+              <div className="relative overflow-hidden w-[280px] sm:w-[350px] md:w-[420px] aspect-[440/130] flex items-center justify-center">
                 <motion.svg
-                  viewBox="-15 5 435 115"
+                  viewBox="-20 -8 440 130"
                   shapeRendering="geometricPrecision"
                   className="w-full h-full overflow-visible drop-shadow-[0_2px_18px_rgba(201,162,39,0.45)] select-none"
                   initial={{ clipPath: "inset(0 100% 0 0)" }}

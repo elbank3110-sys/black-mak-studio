@@ -1,10 +1,12 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
 import { sound } from "@/lib/sound";
 import Reveal from "./Reveal";
+
+import { SERVICE_TIERS } from "@/lib/services";
 
 type Option = {
   id: string;
@@ -13,60 +15,65 @@ type Option = {
   price: number;
 };
 
+const getTierPrice = (id: string, fallback: number): number => {
+  const tier = SERVICE_TIERS.find((s) => s.id === id);
+  return tier?.from ?? fallback;
+};
+
 const DELIVERABLES: Option[] = [
   {
     id: "mark",
     name: { en: "Primary Logo & Mark Design", ar: "تصميم الشعار والرمز الأساسي" },
     desc: {
-      en: "Distinctive mark, monogram, or custom wordmark built with strategic depth and meaning.",
-      ar: "شعار أو مونوغرام أو لوجوتايب فريد مبني بعمق استراتيجي يعكس شخصية مشروعك.",
+      en: "Distinctive mark, monogram, or custom wordmark built with strategic depth (Focused Logo Project).",
+      ar: "تصميم الشعار والرمز الأساسي الفريد (باقة الشعار المركّز مع ملفات المصدر المتجهية وتنويعات الاستخدام).",
     },
-    price: 490,
+    price: getTierPrice("S.01", 290),
   },
   {
     id: "calligraphy",
-    name: { en: "Bilingual Calligraphy & Custom Lettering", ar: "كاليجرافي عربي وحروفية مخصصة" },
+    name: { en: "Bilingual Calligraphy & Custom Lettering", ar: "مارك تايبوغرافي / كاليجرافي مخصص" },
     desc: {
-      en: "Hand-drawn Arabic script paired seamlessly with Latin typographic hierarchy.",
-      ar: "تكوينات خط عربي حر وحروف مرسومة يدوياً متجانسة كلغة بصرية واحدة مع اللاتيني.",
+      en: "Hand-drawn Arabic script paired seamlessly with Latin typographic hierarchy (Custom Typographic Mark).",
+      ar: "تكوينات خط عربي حر وحروف مرسومة يدوياً متجانسة كلغة بصرية واحدة مع اللاتيني (باقة المارك التايبوغرافي).",
     },
-    price: 390,
+    price: getTierPrice("S.03", 490),
   },
   {
     id: "system",
-    name: { en: "Complete Visual Identity System", ar: "نظام هوية بصرية متكامل" },
+    name: { en: "Complete Visual Identity System", ar: "نظام هوية بصرية متكامل (شامل)" },
     desc: {
-      en: "Color strategy, typography system, visual behavior, layout grids, and brand assets.",
-      ar: "استراتيجية ألوان، تسلسل تايبوغرافي، شبكات تصميم هندسية، ودليل أصول الهوية.",
+      en: "Comprehensive system: primary & alternate marks, color strategy, typography hierarchy, guidelines, and applications.",
+      ar: "باقة الهوية الشاملة الأكثر اكتمالاً: الشعار الأساسي والبديل، استراتيجية الألوان، التايبوغرافي، ودليل معايير الهوية.",
     },
-    price: 590,
+    price: getTierPrice("S.02", 890),
   },
   {
     id: "stationery",
     name: { en: "Brand Collateral & Stationery", ar: "أصول ومطبوعات الهوية الأساسية" },
     desc: {
       en: "Business cards, corporate stationery, official invoices, stamps, and presentation kit.",
-      ar: "كروت الأعمال، المطبوعات الرسمية، الأختام، وقوالب العروض التقديمية الاحترافية.",
+      ar: "كروت الأعمال، المطبوعات الرسمية، الأختام، وقوالب العروض التقديمية الاحترافية (تطبيقات الهوية).",
     },
     price: 350,
   },
   {
-    id: "guidelines",
-    name: { en: "Master Brand Book & Vector Source Kit", ar: "دليل الهوية الشامل وملفات الماستر" },
+    id: "digital",
+    name: { en: "Digital Brand Experiences", ar: "تجارب وتطبيقات العلامة الرقمية" },
     desc: {
-      en: "Full Brand Guidelines book (PDF) + native source vectors (AI, EPS, SVG, PDF, PNG).",
-      ar: "دليل معايير الهوية الشامل (Brand Book) مع كافة ملفات الفيكتور المصدرية للإنتاج.",
+      en: "Interactive digital brand presence, custom UI/UX design, digital social templates, and web art direction.",
+      ar: "تصميم وتطبيق العلامة على المنصات الرقمية، قوالب السوشيال ميديا، وتوجيه فني وتفاعلي للويب (خدمة التجارب الرقمية).",
     },
-    price: 290,
+    price: getTierPrice("S.05", 690),
   },
   {
     id: "rebrand",
     name: { en: "Rebrand & Strategic Identity Evolution", ar: "تطوير وإعادة تصميم الهوية القائمة" },
     desc: {
-      en: "Brand audit, repositioning strategy, and modernizing legacy marks for future growth.",
-      ar: "تدقيق الهوية الحالية، إعادة التموضع الاستراتيجي، وتحديث العلامة لتواكب المستقبل.",
+      en: "In-depth brand audit, repositioning strategy, modernization of legacy assets, and complete evolution.",
+      ar: "تدقيق شامل للهوية الحالية، إعادة التموضع الاستراتيجي، وتحديث متكامل يواكب نمو علامتك مستقبلاً (خدمة إعادة التصميم الشامل).",
     },
-    price: 450,
+    price: getTierPrice("S.06", 1290),
   },
 ];
 
@@ -85,9 +92,20 @@ export default function ScopeEstimator() {
     } else {
       sound.click("crisp");
     }
-    setSelected((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
+    setSelected((prev) => {
+      if (prev.includes(id)) {
+        return prev.filter((item) => item !== id);
+      }
+      // If user chooses Full Identity ("system"), it already includes the Primary Logo ("mark")
+      if (id === "system") {
+        return [...prev.filter((item) => item !== "mark"), id];
+      }
+      // If user chooses Primary Logo ("mark") while "system" is active, swap "system" for "mark"
+      if (id === "mark" && prev.includes("system")) {
+        return [...prev.filter((item) => item !== "system"), id];
+      }
+      return [...prev, id];
+    });
   };
 
   const basePrice = selected.reduce((sum, id) => {
@@ -243,6 +261,11 @@ export default function ScopeEstimator() {
                       {active && (
                         <span className="inline-block mt-1 font-mono text-[0.62rem] text-seal/90 uppercase tracking-wider bg-seal/15 px-1.5 py-0.5 border border-seal/30">
                           {lang === "ar" ? "مُحدد ✓" : "ADDED ✓"}
+                        </span>
+                      )}
+                      {!active && selected.includes("system") && item.id === "mark" && (
+                        <span className="inline-block mt-1 font-mono text-[0.58rem] text-seal/80 uppercase tracking-wider bg-seal/10 px-1.5 py-0.5 border border-seal/20">
+                          {lang === "ar" ? "مشمول بالهوية الكاملة ✓" : "INCLUDED IN IDENTITY ✓"}
                         </span>
                       )}
                     </div>
