@@ -1,5 +1,18 @@
-import localFont from "next/font/local";
+﻿import localFont from "next/font/local";
 import { IBM_Plex_Mono } from "next/font/google";
+
+// Official Holimount Signature & Swash Fonts provided by Muhamed Alaa
+export const holimount = localFont({
+  src: [{ path: "../public/fonts/holimount.woff2", weight: "400", style: "normal" }],
+  variable: "--font-signature",
+  display: "swap",
+});
+
+export const holimountSwash = localFont({
+  src: [{ path: "../public/fonts/holimount-swash.woff2", weight: "400", style: "normal" }],
+  variable: "--font-swash",
+  display: "swap",
+});
 
 // One font system, self-hosted via next/font — zero CDN, zero render-blocking
 // Google Fonts <link>. The Latin face is TCCC Unity (official identity

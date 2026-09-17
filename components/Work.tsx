@@ -1,10 +1,11 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 import Reveal from "./Reveal";
 import ScaleTest from "./ScaleTest";
 import HeadlineReveal from "./HeadlineReveal";
+import { sound } from "@/lib/sound";
 
 // Cards open INTERNAL case-study pages (/work/[slug]) — the visitor stays
 // inside the studio's narrative (pricing, process, CTA all one scroll away).
@@ -68,6 +69,8 @@ function Card({ w, i, eager }: { w: (typeof FEATURED)[number]; i: number; eager?
     <Reveal delay={i * 0.05} className={w.cls}>
       <a
         href={w.href}
+        onClick={() => sound.click("pop")}
+        onMouseEnter={() => sound.click("soft")}
         className="work-card group block"
       >
         <div className="work-img-mask relative overflow-hidden border border-line bg-surface">
@@ -147,7 +150,7 @@ export default function Work() {
         <Reveal>
           <div className="mt-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <p className="max-w-[46ch] text-muted">{t("work.footer")}</p>
-            <a href="https://www.behance.net/Muhmed-alaa-el-bank" target="_blank" rel="noopener" className="text-link">
+            <a href="https://www.behance.net/Muhmed-alaa-el-bank" target="_blank" rel="noopener" onClick={() => sound.click("crisp")} className="text-link">
               <span>{t("work.archive")}</span>
               <span>↗</span>
             </a>

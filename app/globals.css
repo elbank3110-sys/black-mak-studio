@@ -2,8 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Arabic face is now self-hosted through next/font (lib/fonts.ts) and wired
-   to --font-ar — this @font-face block is no longer needed. */
+/* Official Holimount Signature and Swash fonts */
+@font-face {
+  font-family: 'Holimount';
+  src: url('/fonts/holimount.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '38-lineart - Holimount';
+  src: url('/fonts/holimount.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Holimount Swash';
+  src: url('/fonts/holimount-swash.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '38-lineart - Holimount swash';
+  src: url('/fonts/holimount-swash.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --bg: #070708;
@@ -13,6 +43,7 @@
   --muted: #9a9a96;
   /* 4.6:1 on #070708 — clears WCAG AA for the eyebrow/caption voice */
   --faint: #8b8b87;
+  --seal: #c9a227; /* luxury gold accent */
   /* navy accents removed — black/white only */
   --line: rgba(255, 255, 255, 0.12);
   --line-strong: rgba(255, 255, 255, 0.26);

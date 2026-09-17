@@ -44,7 +44,7 @@ export default function BrandMark({
   showWordmark?: boolean;
 }) {
   return (
-    <span className={`flex items-center gap-3 ${className}`}>
+    <span className={`flex items-center gap-1.5 whitespace-nowrap sm:gap-3 ${className}`}>
       <svg
         viewBox={MARK_VIEWBOX}
         aria-hidden="true"
@@ -53,7 +53,7 @@ export default function BrandMark({
         <MarkPaths />
       </svg>
       {showWordmark && (
-        <span className="text-lg font-black text-ink transition-colors duration-500">
+        <span className="text-sm font-black text-ink transition-colors duration-500 sm:text-lg">
           BLACK-MAK
         </span>
       )}

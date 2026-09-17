@@ -1,6 +1,7 @@
 "use client";
 
 import { useI18n } from "@/lib/i18n";
+import { sound } from "@/lib/sound";
 import Reveal from "./Reveal";
 import HeroTitle from "./HeroTitle";
 import MarkDraw from "./MarkDraw";
@@ -9,10 +10,10 @@ import MarkDraw from "./MarkDraw";
 // Hero — the first 100vh is the WORK, not words about work. The monogram
 // draws itself like a pen stroke (the calligrapher's proof), flanked by the
 // two real differentiators promoted from section 03: bilingual calligraphy
-// and outdoor/large-format survival. The CSS business cards are gone.
+// and outdoor/large-format survival. Fully responsive across mobile & desktop.
 // ============================================================================
 export default function Hero() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
 
   return (
     <section
@@ -35,14 +36,13 @@ export default function Hero() {
           </div>
         </Reveal>
 
-        <div className="mt-[clamp(2rem,5vh,4rem)] grid grid-cols-1 gap-[clamp(3rem,8vw,10rem)] lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.6fr)] lg:items-end">
+        <div className="mt-[clamp(2rem,5vh,4rem)] grid grid-cols-1 gap-[clamp(2.5rem,6vw,8rem)] lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,0.6fr)] lg:items-end">
           <div>
             <HeroTitle />
             <Reveal delay={0.24}>
               <p className="lede mt-[clamp(1.8rem,3vw,2.6rem)]">{t("hero.lede")}</p>
             </Reveal>
-            {/* the two differentiators promoted to the first screen —
-                the things a Berlin designer can't imitate */}
+            {/* the two differentiators promoted to the first screen */}
             <Reveal delay={0.3}>
               <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[0.72rem] uppercase tracking-[0.14em]">
                 <span className="flex items-center gap-2 text-muted">
@@ -57,11 +57,21 @@ export default function Hero() {
             </Reveal>
             <Reveal delay={0.34}>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#start-a-project" data-magnetic className="btn btn-light">
+                <a
+                  href="#start-a-project"
+                  data-magnetic
+                  onClick={() => sound.click("crisp")}
+                  className="btn btn-light"
+                >
                   <span>{t("hero.cta")}</span>
                   <span aria-hidden="true">↗</span>
                 </a>
-                <a href="#work" data-magnetic className="btn btn-ghost">
+                <a
+                  href="#work"
+                  data-magnetic
+                  onClick={() => sound.click("soft")}
+                  className="btn btn-ghost"
+                >
                   <span>{t("hero.work")}</span>
                   <span aria-hidden="true">↓</span>
                 </a>
@@ -69,11 +79,10 @@ export default function Hero() {
             </Reveal>
           </div>
 
-          {/* the mark, drawing itself — one real piece of work in the
-              hero instead of a generated mockup */}
-          <div className="hidden lg:block">
+          {/* the mark, drawing itself — responsive on all viewports */}
+          <div className="w-[75%] max-w-[280px] self-center sm:w-[65%] lg:w-full lg:max-w-[420px] lg:justify-self-end">
             <Reveal delay={0.3}>
-              <div className="relative aspect-square w-full max-w-[420px] justify-self-end border border-line bg-surface/40 p-[clamp(1.5rem,3vw,2.5rem)]">
+              <div className="relative aspect-square w-full border border-line bg-surface/40 p-[clamp(1.2rem,3vw,2.5rem)] shadow-2xl transition-all duration-500 hover:border-seal hover:shadow-[0_16px_48px_rgba(0,0,0,0.4)]">
                 <span className="absolute -left-[1px] -top-[1px] h-4 w-4 border-l border-t border-ink" aria-hidden="true" />
                 <span className="absolute -bottom-[1px] -right-[1px] h-4 w-4 border-b border-r border-ink" aria-hidden="true" />
                 <MarkDraw />
@@ -93,8 +102,8 @@ export default function Hero() {
               <span className="text-muted">{t("hero.world")}</span>
             </div>
             <div>
-              <b className="block text-lg">2014—2026</b>
-              <span className="text-muted">{t("hero.experience")}</span>
+              <b className="block text-lg">{t("hero.years")}</b>
+              <span className="text-muted">{t("hero.since")}</span>
             </div>
           </div>
         </Reveal>

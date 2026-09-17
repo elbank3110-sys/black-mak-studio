@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 
 type Fmt = "pdf" | "ats" | "jpg";
@@ -23,16 +23,44 @@ export default function CvViewer({
 }) {
   const { t, lang } = useI18n();
   const [fmt, setFmt] = useState<Fmt>("pdf");
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!open) return;
     setFmt("pdf");
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const panel = panelRef.current;
+    const getFocusable = () =>
+      Array.from(
+        panel?.querySelectorAll<HTMLElement>(
+          'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        ) ?? []
+      ).filter((el) => !el.hasAttribute("disabled"));
+    requestAnimationFrame(() => getFocusable()[0]?.focus());
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const focusable = getFocusable();
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      previousFocus?.focus();
     };
   }, [open, onClose]);
 
@@ -53,11 +81,14 @@ export default function CvViewer({
       aria-modal="true"
       aria-label={t("cv.title")}
     >
-      <div
+      <button
+        type="button"
         className="absolute inset-0 bg-black/85 backdrop-blur-md"
         onClick={onClose}
+        aria-label={t("cv.close")}
+        tabIndex={-1}
       />
-      <div className="relative z-10 flex h-[92vh] w-full max-w-5xl flex-col border border-line-strong bg-bg shadow-2xl">
+      <div ref={panelRef} className="relative z-10 flex h-[92vh] w-full max-w-5xl flex-col border border-line-strong bg-bg shadow-2xl">
         {/* header */}
         <div className="flex flex-col gap-4 border-b border-line px-5 py-4 md:flex-row md:items-center md:justify-between">
           <div>

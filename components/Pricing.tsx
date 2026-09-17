@@ -79,17 +79,21 @@ export default function Pricing() {
         {/* custom-scope anchors — Rebrand + Digital get their starting points */}
         <Reveal delay={0.16}>
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="flex items-center justify-between gap-4 border border-line bg-bg px-6 py-5">
+            <div className="flex flex-col items-start gap-3 border border-line bg-bg px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
               <span className="font-mono text-[0.62rem] uppercase tracking-[0.12em] text-muted">
                 {t("services.s6name")}
               </span>
-              <strong className="shrink-0 font-mono text-[0.78rem] text-ink">{t("pricing.rebrand")}</strong>
+              <strong className="max-w-full font-mono text-[0.78rem] leading-relaxed text-ink sm:max-w-[28ch] sm:text-end">
+                {t("pricing.rebrand")}
+              </strong>
             </div>
-            <div className="flex items-center justify-between gap-4 border border-line bg-bg px-6 py-5">
+            <div className="flex flex-col items-start gap-3 border border-line bg-bg px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
               <span className="font-mono text-[0.62rem] uppercase tracking-[0.12em] text-muted">
                 {t("services.s5name")}
               </span>
-              <strong className="shrink-0 font-mono text-[0.78rem] text-ink">{t("pricing.digital")}</strong>
+              <strong className="max-w-full font-mono text-[0.78rem] leading-relaxed text-ink sm:max-w-[28ch] sm:text-end">
+                {t("pricing.digital")}
+              </strong>
             </div>
           </div>
           <p className="mt-3 font-mono text-[0.58rem] uppercase tracking-[0.12em] text-faint">

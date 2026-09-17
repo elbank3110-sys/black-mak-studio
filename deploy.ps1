@@ -1,20 +1,13 @@
-# BLACK-MAK Deploy — one command, zero token in chat/history.
-# Usage: .\deploy.ps1            (production)
-#        .\deploy.ps1 -Preview   (preview URL only)
-#
-# Token lives in .env.deploy.local (git-ignored). If missing, the script
-# tells you exactly what to do — no guesswork.
 param([switch]$Preview)
 
 $ErrorActionPreference = "Stop"
 $root = $PSScriptRoot
 $envFile = Join-Path $root ".env.deploy.local"
 
+$env:PATH = "D:\New folder\Compressed\AI-Motion-Gen-Baraa\node;$env:PATH"
+
 if (-not (Test-Path $envFile)) {
   Write-Host "ERROR: .env.deploy.local not found." -ForegroundColor Red
-  Write-Host "Create it with one line:"
-  Write-Host '  VERCEL_DEPLOY_TOKEN=vcp_xxxxxxxx'
-  Write-Host "Then re-run this script."
   exit 1
 }
 
@@ -24,8 +17,7 @@ if (-not $token) {
   exit 1
 }
 
-# Run vercel through cmd so its stderr banner doesn't poison PowerShell.
-$vercelCmd = if ($Preview) { "vercel --yes --token $token" } else { "vercel deploy --prod --yes --token $token" }
+$vercelCmd = if ($Preview) { "npx vercel --yes --token $token" } else { "npx vercel deploy --prod --yes --token $token" }
 
 Push-Location $root
 try {

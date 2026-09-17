@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useI18n } from "@/lib/i18n";
+import { sound } from "@/lib/sound";
 import { MarkPaths, MARK_VIEWBOX, MARK_ASPECT } from "./BrandMark";
 import Reveal from "./Reveal";
 
@@ -10,35 +11,34 @@ import Reveal from "./Reveal";
 // to a facade". Drag anywhere on the stage (or use the slider / arrow keys)
 // and the mark scales continuously with the hand — butter-smooth via a
 // rAF-lerped loop that mutates DOM directly (no React re-render per frame).
-// Pure CSS transform scaling of one inline SVG — zero image swaps, 60fps.
+// Enhanced with real-world contextual surfaces (Favicon -> Packaging -> Facade).
 // ============================================================================
 
-// real-world stop sizes — used for labels (snap-shown when near)
 const STOPS = [
-  { size: 16, label: "16px — favicon" },
-  { size: 24, label: "24px — app icon" },
-  { size: 48, label: "48px — UI mark" },
-  { size: 120, label: "120px — stationery" },
-  { size: 320, label: "320px — facade signage" },
+  { size: 16, label: "16px — Favicon & Tab", contextEn: "Browser Tab & Small Mobile Header", contextAr: "أيقونة تبويب المتصفح وهيدر الموبايل" },
+  { size: 24, label: "24px — App Icon", contextEn: "Touch Interface & App Dock Icon", contextAr: "أيقونة تطبيقات الهواتف والواجهات" },
+  { size: 48, label: "48px — UI Mark", contextEn: "Digital Brand Header & Avatar", contextAr: "ترويسة المواقع وحسابات التواصل" },
+  { size: 120, label: "120px — Stationery & Box", contextEn: "Embossed Paper, Packaging & Labels", contextAr: "حفر بارز على المطبوعات والعلب والورق" },
+  { size: 320, label: "320px — Facade Signage", contextEn: "Storefront Architectural Metal Sign", contextAr: "لافتات المحلات والواجهات المعمارية الضخمة" },
 ] as const;
 
 const MIN_PX = 16;
 const MAX_PX = 320;
 
 export default function ScaleTest() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const stageRef = useRef<HTMLDivElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLInputElement>(null);
   const labelRef = useRef<HTMLSpanElement>(null);
+  const contextBadgeRef = useRef<HTMLSpanElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
 
-  // the target scale (0..1) — source of truth, mutated by pointer/keys
   const target = useRef(0.35);
-  // the smoothed scale actually rendered (lerped toward target in rAF)
   const smooth = useRef(0.35);
   const wrapW = useRef(320);
   const dragging = useRef(false);
+  const lastStopIndex = useRef(-1);
 
   const nearestStop = useCallback((frac: number) => {
     const px = MIN_PX + frac * (MAX_PX - MIN_PX);
@@ -51,35 +51,56 @@ export default function ScaleTest() {
     return best;
   }, []);
 
-  // the render side — pure DOM writes, never setState inside the loop
   const paint = useCallback((frac: number) => {
     const w = wrapW.current;
     const maxRender = Math.min(w * 0.86, 420);
     const px = Math.round(MIN_PX + frac * (MAX_PX - MIN_PX));
     const propPx = px <= 48 ? px : Math.round(maxRender * (px / MAX_PX));
     const render = Math.min(propPx, maxRender);
+
     if (boxRef.current) {
       boxRef.current.style.width = `${render}px`;
       boxRef.current.style.height = `${render * MARK_ASPECT}px`;
+
+      // Contextual material treatment based on scale
+      if (px <= 32) {
+        boxRef.current.style.filter = "none";
+      } else if (px <= 140) {
+        boxRef.current.style.filter = "drop-shadow(0 4px 12px rgba(0,0,0,0.35))";
+      } else {
+        boxRef.current.style.filter = "drop-shadow(0 10px 30px rgba(201,162,39,0.25)) drop-shadow(0 2px 4px rgba(0,0,0,0.8))";
+      }
     }
+
     if (sliderRef.current) sliderRef.current.value = String(Math.round(frac * 1000));
+
+    const stopIdx = nearestStop(frac);
+    if (stopIdx !== lastStopIndex.current) {
+      lastStopIndex.current = stopIdx;
+      sound.click("soft");
+    }
+
+    const stop = STOPS[stopIdx];
     if (labelRef.current) {
-      const stop = STOPS[nearestStop(frac)];
-      if (labelRef.current.dataset.stop !== String(nearestStop(frac))) {
-        labelRef.current.dataset.stop = String(nearestStop(frac));
+      if (labelRef.current.dataset.stop !== String(stopIdx)) {
+        labelRef.current.dataset.stop = String(stopIdx);
         labelRef.current.textContent = stop.label;
       }
     }
+
+    if (contextBadgeRef.current) {
+      contextBadgeRef.current.textContent = lang === "ar" ? stop.contextAr : stop.contextEn;
+    }
+
     if (stageRef.current) {
       stageRef.current.setAttribute("aria-valuenow", String(px));
       stageRef.current.setAttribute(
         "aria-valuetext",
-        `${px}px — ${STOPS[nearestStop(frac)].label.split("—")[1]?.trim() ?? ""}`
+        `${px}px — ${stop.label.split("—")[1]?.trim() ?? ""}`
       );
     }
-  }, [nearestStop]);
+  }, [nearestStop, lang]);
 
-  // measure the stage so the mark scales relative to it, not the viewport
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
@@ -90,17 +111,15 @@ export default function ScaleTest() {
     return () => ro.disconnect();
   }, [paint]);
 
-  // the animation loop — ONE rAF, lerping toward target; DOM-direct writes
   useEffect(() => {
     let raf = 0;
     let last = performance.now();
     const tick = (now: number) => {
       const dt = Math.min(64, now - last);
       last = now;
-      const k = 1 - Math.pow(0.001, dt / 1000); // frame-rate independent ease
+      const k = 1 - Math.pow(0.001, dt / 1000);
       const before = smooth.current;
       smooth.current += (target.current - smooth.current) * k;
-      // only paint when meaningfully moved (kills idle churn)
       if (Math.abs(smooth.current - before) > 0.0004) paint(smooth.current);
       raf = requestAnimationFrame(tick);
     };
@@ -108,9 +127,9 @@ export default function ScaleTest() {
     return () => cancelAnimationFrame(raf);
   }, [paint]);
 
-  // pointer drag — horizontal position on the stage maps to the scale
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     dragging.current = true;
+    sound.click("pop");
     stageRef.current?.setPointerCapture(e.pointerId);
     onPointerMove(e);
   };
@@ -127,7 +146,6 @@ export default function ScaleTest() {
     stageRef.current?.releasePointerCapture?.(e.pointerId);
   };
 
-  // keyboard — arrows walk the continuous scale; Home/End jump extremes
   const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     const step = e.shiftKey ? 0.02 : 0.08;
     if (e.key === "ArrowRight" || e.key === "ArrowUp") {
@@ -152,7 +170,15 @@ export default function ScaleTest() {
     <Reveal delay={0.1}>
       <div className="mt-[clamp(3rem,7vw,6rem)] border border-line bg-surface p-[clamp(1.2rem,3.5vw,2.5rem)]">
         <div className="flex flex-col justify-between gap-3 border-b border-line pb-4 md:flex-row md:items-center">
-          <span className="eyebrow text-faint">{t("scale.index")}</span>
+          <div className="flex items-center gap-3">
+            <span className="eyebrow text-faint">{t("scale.index")}</span>
+            <span
+              ref={contextBadgeRef}
+              className="inline-block border border-seal/40 bg-seal/10 px-2.5 py-0.5 mono text-[0.62rem] uppercase tracking-wider text-seal font-semibold transition-all duration-300"
+            >
+              {lang === "ar" ? STOPS[2].contextAr : STOPS[2].contextEn}
+            </span>
+          </div>
           <span
             ref={labelRef}
             data-stop="2"
@@ -163,12 +189,10 @@ export default function ScaleTest() {
           </span>
         </div>
 
-        {/* the stage — drag anywhere: the mark follows the hand.
-            touch-pan-y keeps vertical page scrolling alive on touch devices
-            while horizontal drags stay ours. */}
+        {/* The interactive scaling stage */}
         <div
           ref={wrapRef}
-          className="relative flex min-h-[240px] touch-pan-y select-none items-center justify-center overflow-hidden py-10 md:min-h-[300px]"
+          className="relative flex min-h-[260px] touch-pan-y select-none items-center justify-center overflow-hidden py-12 md:min-h-[340px]"
           style={{
             backgroundImage:
               "linear-gradient(to right, var(--line) 1px, transparent 1px), linear-gradient(to bottom, var(--line) 1px, transparent 1px)",
@@ -191,9 +215,10 @@ export default function ScaleTest() {
             onPointerCancel={onPointerUp}
             className="absolute inset-0 cursor-ew-resize focus-visible:outline-2 focus-visible:outline-offset-[-2px]"
           />
+
           <div
             ref={boxRef}
-            className="pointer-events-none grid place-items-center"
+            className="pointer-events-none grid place-items-center transition-all duration-75"
             style={{ width: 48, height: 48 * MARK_ASPECT }}
           >
             <svg
@@ -205,16 +230,15 @@ export default function ScaleTest() {
               <MarkPaths />
             </svg>
           </div>
+
           <span className="pointer-events-none absolute bottom-3 font-mono text-[0.56rem] uppercase tracking-[0.14em] text-faint">
             {t("scale.dragHint")}
           </span>
         </div>
 
-        {/* the control — a continuous slider mirroring the drag scale */}
+        {/* Slider control */}
         <div className="mt-2 flex items-center gap-5 border-t border-line pt-5">
-          <span className="font-mono text-[0.58rem] text-faint">16</span>
-          {/* dir="ltr" locks the slider's visual direction to match the
-              drag stage (left = small) in both languages — one mental model. */}
+          <span className="font-mono text-[0.58rem] text-faint">16px</span>
           <input
             ref={sliderRef}
             dir="ltr"
@@ -227,7 +251,7 @@ export default function ScaleTest() {
             aria-label={t("scale.slider")}
             className="h-1 w-full cursor-pointer appearance-none rounded-none bg-line-strong accent-ink"
           />
-          <span className="font-mono text-[0.58rem] text-faint">320</span>
+          <span className="font-mono text-[0.58rem] text-faint">320px</span>
         </div>
         <p className="mt-3 max-w-[64ch] text-[0.83rem] leading-relaxed text-muted">
           {t("scale.note")}

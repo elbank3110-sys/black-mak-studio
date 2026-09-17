@@ -2,6 +2,7 @@
 
 import { schema } from "./form-schema";
 import type { z } from "zod";
+import { headers } from "next/headers";
 
 export type InquiryResult =
   | { ok: true; waUrl: string }
@@ -40,11 +41,21 @@ export async function submitInquiry(fd: FormData): Promise<InquiryResult> {
   fd.forEach((v, k) => {
     if (typeof v === "string") raw[k] = v;
   });
-  const d = schema.parse(raw);
+  const parsed = schema.safeParse(raw);
+  if (!parsed.success) {
+    return {
+      ok: false,
+      error: parsed.error.issues[0]?.message || "Please check the form and try again.",
+    };
+  }
+  const d = parsed.data;
 
+  const requestHeaders = await headers();
+  const forwardedFor = requestHeaders.get("x-forwarded-for");
   const ip =
-    (fd.get("_ip") as string | null) ||
-    (process.env.VERCEL_REGION ? process.env.VERCEL_REGION : "local");
+    forwardedFor?.split(",")[0]?.trim() ||
+    requestHeaders.get("x-real-ip") ||
+    "local";
   if (limited(ip)) {
     return { ok: false, error: "Too many requests — please try again shortly." };
   }

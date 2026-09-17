@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   createContext,
@@ -250,8 +250,8 @@ const EN: Dict = {
   "pricing.upsellA": "Extend the system into a custom digital brand experience.",
   "pricing.upsellCta": "Explore Digital Brand Experiences",
 
-  "pricing.rebrand": "Rebrand projects are custom-scoped from $999.",
-  "pricing.digital": "Digital Brand Experiences are custom-quoted from $590.",
+  "pricing.rebrand": "Rebrand projects are custom-scoped from $1,290.",
+  "pricing.digital": "Digital Brand Experiences are custom-quoted from $690.",
   "pricing.customNote": "Both are quoted precisely after the brief — scope first, price second.",
   "pricing.ctaQ": "Know what you need? Send the brief. I'll take it from there.",
 
@@ -347,16 +347,21 @@ const EN: Dict = {
   "biling.text":
     "I design bilingual identities where Arabic and Latin calligraphy feel like one coherent visual language — not two separate systems.",
 
-  "bts.index": "DESIGNED BEYOND THE SCREEN",
-  "bts.title": "A strong identity has to survive more than a presentation mockup.",
+  "bts.index": "06 / REAL-WORLD ESSENTIALS",
+  "bts.title": "A logo designed to work everywhere your business goes.",
   "bts.text":
-    "Before any mark is delivered, it is tested in the same real places your brand will live: tiny in a browser tab, printed on a package, mounted on a storefront — all in a single color, and readable from across the street.",
-  "bts.testsNote": "Five survival tests every mark passes before it leaves the studio.",
-  "bts.hint1": "still clear as a favicon",
-  "bts.hint2": "prints on a box, one pass",
-  "bts.hint3": "holds up on a storefront",
-  "bts.hint4": "one ink, no gradients",
-  "bts.hint5": "readable from across the street",
+    "Your mark should not just look good on a presentation slide. Before delivery, we ensure it performs effortlessly across the everyday places your brand actually lives:",
+  "bts.testsNote": "Tested and guaranteed for real-world commercial use.",
+  "bts.label1": "Mobile & Browser Icons",
+  "bts.label2": "Packaging & Boxes",
+  "bts.label3": "Storefronts & Signs",
+  "bts.label4": "Single-Color Print",
+  "bts.label5": "Distant Recognition",
+  "bts.hint1": "Crystal clear on small phone screens and browser tabs, without losing its shape.",
+  "bts.hint2": "Prints cleanly on product boxes, shipping cartons, and paper bags without ink blur.",
+  "bts.hint3": "Commands attention on outdoor building signs, storefronts, and 3D letters.",
+  "bts.hint4": "Looks bold and sharp in solid black & white, with zero need for complex effects.",
+  "bts.hint5": "Instantly recognized from across the street or from a passing car in a second.",
 
   "contact.index": "11 / START A BRAND PROJECT",
   "contact.title": "Have a brand worth building?",
@@ -399,7 +404,6 @@ const EN: Dict = {
   "form.opt6": "Other",
   "form.budget": "Estimated Investment",
   "form.budgetLead": "I'm ready to invest in a professional identity",
-  "form.budgetOpt1": "Up to $300",
   "form.budgetOpt2": "$300–$600",
   "form.budgetOpt3": "$600–$1,500",
   "form.budgetOpt4": "$1,500+",
@@ -671,8 +675,8 @@ const AR: Dict = {
   "pricing.upsellA": "امتد النظام إلى تجربة رقمية مخصصة للعلامة.",
   "pricing.upsellCta": "استكشف التجارب الرقمية للعلامة",
 
-  "pricing.rebrand": "مشاريع إعادة التصميم تُسعَّر مخصصًا من $999.",
-  "pricing.digital": "التجارب الرقمية للعلامة تُسعَّر مخصصًا من $590.",
+  "pricing.rebrand": "مشاريع إعادة التصميم تُسعَّر مخصصًا من $1,290.",
+  "pricing.digital": "التجارب الرقمية للعلامة تُسعَّر مخصصًا من $690.",
   "pricing.customNote": "كلاهما يُسعَّر بدقة بعد البريف — النطاق أولًا ثم السعر.",
   "pricing.ctaQ": "تعرف ما تحتاجه؟ أرسل البريف وأنا أكمل من هناك.",
 
@@ -775,7 +779,6 @@ const AR: Dict = {
   "form.opt6": "أخرى",
   "form.budget": "الاستثمار المتوقع",
   "form.budgetLead": "أنا مستعد للاستثمار في هوية احترافية",
-  "form.budgetOpt1": "حتى $300",
   "form.budgetOpt2": "$300–$600",
   "form.budgetOpt3": "$600–$1,500",
   "form.budgetOpt4": "$1,500+",
@@ -851,16 +854,21 @@ const AR: Dict = {
   "biling.text":
     "أصمم هويات ثنائية اللغة حيث يبدو الكاليجرافي العربي واللاتيني لغة بصرية واحدة متماسكة — لا نظامين منفصلين.",
 
-  "bts.index": "مصمم ما وراء الشاشة",
-  "bts.title": "الهوية القوية يجب أن تنجو من أكثر من موك-أب عرض.",
+  "bts.index": "٠٦ / في عالم الواقع",
+  "bts.title": "شعار مصمم ليعمل في كل مكان يذهب إليه مشروعك.",
   "bts.text":
-    "قبل تسليم أي علامة، أختبرها في الاستخدامات الحقيقية نفسها التي ستواجهها علامتك: صغيرة جدًا في شريط المتصفح، مطبوعة على عبوة، مثبتة على واجهة محل — وكل ذلك في لون واحد ومن مسافة بعيدة.",
-  "bts.testsNote": "خمسة اختبارات بقاء تجتازها كل علامة قبل أن تغادر الاستوديو.",
-  "bts.hint1": "واضحة كأيقونة المتصفح",
-  "bts.hint2": "تُطبع على العبوة بتمريرة واحدة",
-  "bts.hint3": "تصمد على واجهة المحل",
-  "bts.hint4": "حبر واحد بلا تدرجات",
-  "bts.hint5": "تُقرأ من آخر الشارع",
+    "الشعار الناجح لا يقتصر دوره على شاشة العرض فقط. قبل تسليم أي علامة، نتأكد أنها تعمل بكفاءة وسهولة في كافة الاستخدامات الواقعية لمشروعك:",
+  "bts.testsNote": "تم اختباره ومضمون للجودة في كافة الاستخدامات التجارية الفعلية.",
+  "bts.label1": "أيقونات الموبايل والمتصفح",
+  "bts.label2": "العلب وأكياس التغليف",
+  "bts.label3": "واجهات المتاجر واللافتات",
+  "bts.label4": "الطباعة بلون واحد",
+  "bts.label5": "التمييز السريع من بعيد",
+  "bts.hint1": "واضح ومقروء تماماً في أصغر شاشات الهواتف وتبويب المتصفح دون أن يفقد ملامحه.",
+  "bts.hint2": "ينطبع بنقاء واحترافية على علب المنتجات، أكياس الشحن، والكرتون دون تلطيخ.",
+  "bts.hint3": "حضور فخم وواضح على لافتات المتاجر الخارجية، واجهات المباني، والحروف البارزة.",
+  "bts.hint4": "قوي وثابت حتى بالحبر الأسود الخالص دون الحاجة لألوان أو مؤثرات معقدة.",
+  "bts.hint5": "سهل التعرف والتذكر من أول نظرة، حتى للمشاة وحركة السيارات في الشارع.",
 
   "work.cta.line": "أعجبك ما ترى؟<br/><em>علامتك تستحق نفس مستوى التفكير.</em>",
   "work.cta.btn": "ابدأ مشروعك",

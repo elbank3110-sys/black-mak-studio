@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useI18n } from "@/lib/i18n";
+import { sound } from "@/lib/sound";
 import BrandMark from "./BrandMark";
 import ThemeToggle from "./ThemeToggle";
 
@@ -19,7 +20,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Escape closes the menu; menu links are unreachable when closed
+  // Escape closes the menu
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -28,6 +29,14 @@ export default function Header() {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
+
+  const links = [
+    { href: "#work", k: "nav.work" },
+    { href: "#services", k: "nav.services" },
+    { href: "#estimator", labelEn: "Estimator", labelAr: "حاسبة النطاق" },
+    { href: "#pricing", k: "nav.pricing" },
+    { href: "#about", k: "nav.about" },
+  ];
 
   useEffect(() => {
     const ids = links.map((l) => l.href.slice(1)).concat("start-a-project");
@@ -45,14 +54,17 @@ export default function Header() {
     );
     sections.forEach((s) => obs.observe(s));
     return () => obs.disconnect();
-  }, []);
+  }, [links]);
 
-  const links = [
-    { href: "#work", k: "nav.work" },
-    { href: "#services", k: "nav.services" },
-    { href: "#pricing", k: "nav.pricing" },
-    { href: "#about", k: "nav.about" },
-  ];
+  const handleLangToggle = () => {
+    sound.click("crisp");
+    setLang(lang === "ar" ? "en" : "ar");
+  };
+
+  const handleMenuToggle = () => {
+    sound.click("pop");
+    setOpen((o) => !o);
+  };
 
   return (
     <header
@@ -63,11 +75,12 @@ export default function Header() {
           : "border-transparent"
       }`}
     >
-      <div className="container flex min-h-[76px] items-center justify-between gap-8">
+      <div className="container flex min-h-[76px] items-center justify-between gap-2 md:gap-8">
         <a
           href="#top"
           onClick={(e) => {
             e.preventDefault();
+            sound.click("soft");
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           aria-label="BLACK-MAK home"
@@ -75,28 +88,34 @@ export default function Header() {
           <BrandMark />
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-7 md:flex" aria-label="Main navigation">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
+              onClick={() => sound.click("soft")}
               className={`font-mono text-[0.68rem] uppercase tracking-[0.16em] transition-colors hover:text-ink ${
-                active === l.href.slice(1) ? "text-ink" : "text-muted"
+                active === l.href.slice(1) ? "text-ink font-semibold" : "text-muted"
               }`}
-              aria-current={active === l.href.slice(1) ? "true" : undefined}
+              aria-current={active === l.href.slice(1) ? "location" : undefined}
             >
-              {t(l.k)}
+              {l.k ? t(l.k) : (lang === "ar" ? l.labelAr : l.labelEn)}
             </a>
           ))}
           <a
             href="https://muhamed-cv.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => sound.click("crisp")}
             className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-faint transition-colors hover:text-muted"
           >
             {t("nav.cv")}
           </a>
-          <a href="#start-a-project" className="btn btn-light">
+          <a
+            href="#start-a-project"
+            onClick={() => sound.click("crisp")}
+            className="btn btn-light"
+          >
             <span>{t("nav.cta")}</span>
             <span>↗</span>
           </a>
@@ -106,7 +125,7 @@ export default function Header() {
           <ThemeToggle />
           <button
             type="button"
-            onClick={() => setLang(lang === "ar" ? "en" : "ar")}
+            onClick={handleLangToggle}
             aria-label="Switch language"
             className="grid h-10 place-items-center border border-line-strong px-3 font-mono text-[0.7rem] text-muted transition-colors hover:border-ink hover:text-ink"
           >
@@ -114,7 +133,7 @@ export default function Header() {
           </button>
           <button
             type="button"
-            onClick={() => setOpen((o) => !o)}
+            onClick={handleMenuToggle}
             aria-label="Toggle menu"
             aria-expanded={open}
             className="grid h-11 w-11 place-items-center border border-line-strong md:hidden"
@@ -134,20 +153,38 @@ export default function Header() {
       >
         <nav ref={menuRef} className="flex min-h-0 flex-col gap-6 overflow-hidden" aria-label="Mobile navigation">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className={`text-2xl font-bold transition-all duration-500 ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
-              {t(l.k)}
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => {
+                sound.click("soft");
+                setOpen(false);
+              }}
+              className={`text-2xl font-bold transition-all duration-500 ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
+            >
+              {l.k ? t(l.k) : (lang === "ar" ? l.labelAr : l.labelEn)}
             </a>
           ))}
           <a
             href="https://muhamed-cv.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              sound.click("crisp");
+              setOpen(false);
+            }}
             className={`text-2xl font-bold transition-all duration-500 ${open ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}
           >
             {t("nav.cv")}
           </a>
-          <a href="#start-a-project" onClick={() => setOpen(false)} className="btn btn-light w-full">
+          <a
+            href="#start-a-project"
+            onClick={() => {
+              sound.click("crisp");
+              setOpen(false);
+            }}
+            className="btn btn-light w-full"
+          >
             {t("nav.cta")}
           </a>
         </nav>

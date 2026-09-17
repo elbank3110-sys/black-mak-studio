@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { sound } from "@/lib/sound";
 
 export default function ThemeToggle() {
   const [light, setLight] = useState(false);
@@ -14,6 +15,7 @@ export default function ThemeToggle() {
   }, []);
 
   const toggle = () => {
+    sound.click("crisp");
     if (light) {
       document.documentElement.removeAttribute("data-theme");
       localStorage.setItem("bm-theme", "dark");
